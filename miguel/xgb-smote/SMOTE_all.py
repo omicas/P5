@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import os
 # Import Libraries
 import time
 import warnings
@@ -19,10 +20,15 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import RobustScaler
 from tqdm import tqdm
 
+#  Change current working directory to so that opening relative paths will work
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 warnings.filterwarnings("ignore")
 
 # Define input and output folders
-output_folder = 'miguel/xgb-smote/example/output/'
+output_folder = 'example/output/'
 
 
 # Default colors
@@ -299,7 +305,7 @@ def false_positive_export(false_positive, best_target, label_df, tnames, auc_val
     for k, v in zip(best_target, false_positive):
         dtmp[k] = pd.Series(v)
     fp_df = pd.DataFrame(dtmp)
-    fp_df.to_csv(r'fp-genes.csv', index=False)
+    fp_df.to_csv(output_folder+'fp-genes.csv', index=False)
     data = list()
 
     for target, auct in zip(best_target, auc_val):
@@ -326,7 +332,7 @@ def false_positive_export(false_positive, best_target, label_df, tnames, auc_val
                           'id', 'desc', 'totalfp', 'uniquefp', 'maxtries', 'freq', 'aucval'])
     res_df.sort_values(by=['freq'])
     res_df.sort_values(by=['aucval', 'maxtries'], ascending=False)
-    res_df.to_csv(r'fp-resume.csv', index=False)
+    res_df.to_csv(output_folder+'fp-resume.csv', index=False)
 
 
 # training under vs over sampling
@@ -460,8 +466,8 @@ Output:
 
 
 def main():
-    data_file = 'miguel/xgb-smote/example/PCC/PCC.csv'
-    type_file = 'miguel/xgb-smote/example/PCC/go_name.csv'
+    data_file = 'example/PCC/PCC.csv'
+    type_file = 'example/PCC/go_name.csv'
     label_col = 'gene'
     # need to evaluate more feature, even if they are not relevant for the example
     features = ['BetweennessCentrality', 'ClosenessCentrality', 'ClusteringCoefficient',
@@ -477,7 +483,7 @@ def main():
     df, label_df = load_dataset(data_file, label_col)
     df = scale_data(df, features)
     tnames = load_type_name(type_file)
-    top_features = select_obj_feature(df, obj_features, threshold)
+    # top_features = select_obj_feature(df, obj_features, threshold)
 
     # Annotations which the topological models improve the prediction model using ATTED data
     # atted = ['0006397', '0006281', '0055114', '0006886', '0006888', '0030244', '0045454', '0007165', '0006357', '0006457', '0006952', '0006096']
