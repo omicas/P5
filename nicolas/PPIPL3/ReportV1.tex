@@ -1,6 +1,6 @@
 %% LyX 2.3.5-1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[twocolumn,english]{article}
+\documentclass[onecolumn,english]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{float}
@@ -19,27 +19,13 @@
 
 \usepackage{babel}
 \begin{document}
-\title{Enhanced Prediction of Protein-Protein Interactions on the Human and
-Rice Interactome with Machine Learning}
-\author{Nicolás Antonio López Rozo}
+\title{Prediction of Protein-Protein Interactions on the Human and
+Rice Interactome}
+\author{Nicol\'as Antonio L\'opez Rozo}
 \maketitle
 \begin{abstract}
-Computational tools offer an alternative to identify unmapped, biologically
-significant protein-protein interactions (PPI's). A novel approach
-by Barabási et al, based on network paths of length three (L3) on
-the interactome, outperforms all existing link prediction methods.
-L3 can offer therefore a new approach to reveal a smaller subset of
-potential interactions for a more affordable experimental validation. 
-
-In this study, the previous approach for link prediction is expanded
-by using \texttt{XGBoost} module of Machine Learning (ML). For the
-feature extraction from the network, the \texttt{Node2Vec} module
-was applied, although L3 information is added as a feature for improving
-link prediction. Results show that L3 feature is very important for
-the ML procedure, although a significant feature importance lies on
-the features retrieved from the network structure using \texttt{Node2Vec}.
-The mentioned approaches are compared using the human and the rice
-interactomes.
+Networks science provides a set of computational tools to identify unmapped protein-protein interactions (PPI's). Barab\'asi et al. recently introduced a metric (based on network paths of length three) which 
+proved to be an important feature in predicting links of the interactome network. In other words, paths of length three (L3) enable us to discover hidden link candidates for experimental validation. This paper extends the previous approach by Barab\'asi et al. using \texttt{XGBoost} module of Machine Learning (ML). We train the model using handcrafted features as well as features learned from embeddings. For the feature extraction from the network, \texttt{Node2Vec} is applied. Results show that while L3 feature remains important for predicting links, so are the features retrieved from the network structure using \texttt{Node2Vec}. The mentioned approaches are compared using the human and the rice interactomes.
 \end{abstract}
 
 \section{Introduction}
@@ -96,23 +82,22 @@ of the proteins.
 
 For achieving the described results, several networks are used and
 compared using state-of-the-art methods, as well as the proposed ones
-(CN, A3, L3). For this report, the human interactome was used (\emph{HI-II-14.txt}).
-A curated version of the mentioned network (\emph{HI-TESTED.txt})
+(CN, A3, L3). For this report, the human interactome was used (\emph{HI-II-14}).
+A curated version of the mentioned network (\emph{HI-TESTED})
 was also used in order to compare the influence of research bias on
 the network predictions. A massive experimental assay was carried
 on and its results are consolidated and used to build a validation
-network (\emph{HI-III.txt}).
+network (\emph{HI-III}).
 
 \section{Materials and Methods}
 
 \subsection{Data Availability}
 
 Human interactome data and base source code were downloaded from the
-repository of the length-3 degree normalized paths methodology\cite{Kovacs2019}:
-the dataset \emph{HI-II-14.txt} and \emph{HI-TESTED.txt} are used
-for prediction and the dataset \emph{HI-III.txt} is used for validation.
-Rice interactome information was downloaded from the STRING database
-\cite{Szklarczyk2019}, corresponding to the \emph{Oryza sativa} subspecies.
+repository of the length-3 degree normalized paths methodology~\cite{Kovacs2019}:
+the dataset \emph{HI-II-14} and \emph{HI-TESTED} are used
+for prediction and the dataset \emph{HI-III} is used for validation.
+Rice interactome information was downloaded from the STRING database~\cite{Szklarczyk2019}, corresponding to the \emph{Oryza sativa} subspecies.
 The downloaded file was \emph{4530.protein.links.detailed.v11.0.txt}.
 and contains more than 8 million PPIs from several resources. For
 the purpose of this study and based on the previous work, only PPIs
@@ -155,7 +140,7 @@ represents and interaction among proteins $v_{i}$ and $v_{j}$.
 \begin{figure}[h]
 \caption{Edge Prediction Paradigms}
 
-\noindent \centering{}\includegraphics[width=0.8\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/TCP_extract\string".eps}
+\noindent \centering{}\includegraphics[width=0.8\columnwidth]{TCP_extract.png}
 \end{figure}
 
 \begin{description}
@@ -253,13 +238,8 @@ the training data $X_{i}$ has multiple features and pretends to explain
 (or predict) a target variable $Y_{i}$. The corresponding implementation
 applied for this study is \texttt{XGBoost}, available publicly.
 
-The selected parameters for the model were:
-\begin{itemize}
-\item \texttt{max\_depth=3}
-\item \texttt{colsample\_bytree=0.6}
-\item \texttt{eval\_metric='auc'}
-\end{itemize}
-
+The selected parameters for the model were \texttt{max\_depth=3}, \texttt{colsample\_bytree=0.6}
+and \texttt{eval\_metric=`auc'}.
 \subsection{Result Validation}
 
 For applying the test results, a partition of the whole dataset was
@@ -282,15 +262,15 @@ As explained above, the precision trend for each of the networks are
 presented for the predicted top 2000 interactions.
 
 \begin{figure}[h]
-\caption{Methods Comparison for \emph{HI-II-14.txt}}
+\caption{Methods Comparison for \emph{HI-II-14}}
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-ii-14.txt\string".eps}
+\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-ii-14.png}
 \end{figure}
 
 \begin{figure}[h]
-\caption{Methods Comparison for \emph{HI-TESTED.txt}}
+\caption{Methods Comparison for \emph{HI-TESTED}}
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-tested.txt\string".eps}
+\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-tested.png}
 \end{figure}
 
 As it can be inferred from the plots, L3-based predictions outperform
@@ -349,6 +329,6 @@ if weighted spectral distribution (WSD) is used, then the used networks
 are on average twice as robust as their random network versions.
 
 \bibliographystyle{plain}
-\bibliography{\string"/home/ocin/Documents/02 Asignaturas/refs\string"}
+\bibliography{\string"refs\string"}
 
 \end{document}
