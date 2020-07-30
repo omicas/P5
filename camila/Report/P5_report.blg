@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: P5_report.aux
+The style file: acm.bst
+Database file #1: mybibliography.bib
+You're missing a field name---line 2 of file mybibliography.bib
+ : 
+ : %  title={Using LASSO in gene co-expression network for genome-wide identification of gene interactions responding to salt stress in rice},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 11 of file mybibliography.bib
+ : 
+ : %  title={Network-based feature selection reveals substructures of gene modules responding to salt stress in rice},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in GEOAcces90:online
+You've used 5 entries,
+            2253 wiz_defined-function locations,
+            565 strings with 5102 characters,
+and the built_in function-call counts, 1844 in all, are:
+= -- 168
+> -- 119
+< -- 0
++ -- 49
+- -- 44
+* -- 171
+:= -- 313
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 43
+empty$ -- 127
+format.name$ -- 44
+if$ -- 363
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 28
+num.names$ -- 8
+pop$ -- 35
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 26
+stack$ -- 0
+substring$ -- 102
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 1
+while$ -- 14
+width$ -- 6
+write$ -- 51
+(There were 2 error messages)
