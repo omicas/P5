@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{GEOAcces90:online}
+Geo accession viewer.
+\newblock \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE98455}.
+\newblock (Accessed on 10/16/2019).
+
+\bibitem{ahn2010link}
+{\sc Ahn, Y.-Y., Bagrow, J.~P., and Lehmann, S.}
+\newblock Link communities reveal multiscale complexity in networks.
+\newblock {\em nature 466}, 7307 (2010), 761--764.
+
+\bibitem{campbell2017allelic}
+{\sc Campbell, M.~T., Bandillo, N., Al~Shiblawi, F. R.~A., Sharma, S., Liu, K.,
+  Du, Q., Schmitz, A.~J., Zhang, C., V{\'e}ry, A.-A., Lorenz, A.~J., et~al.}
+\newblock Allelic variants of oshkt1; 1 underlie the divergence between indica
+  and japonica subspecies of rice (oryza sativa) for root sodium content.
+\newblock {\em PLoS genetics 13}, 6 (2017), e1006823.
+
+\bibitem{gaiteri2014beyond}
+{\sc Gaiteri, C., Ding, Y., French, B., Tseng, G.~C., and Sibille, E.}
+\newblock Beyond modules and hubs: the potential of gene coexpression networks
+  for investigating molecular mechanisms of complex brain disorders.
+\newblock {\em Genes, brain and behavior 13}, 1 (2014), 13--24.
+
+\bibitem{love2014moderated}
+{\sc Love, M.~I., Huber, W., and Anders, S.}
+\newblock Moderated estimation of fold change and dispersion for rna-seq data
+  with deseq2.
+\newblock {\em Genome biology 15}, 12 (2014), 550.
+
+\end{thebibliography}
