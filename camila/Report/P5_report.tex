@@ -7,7 +7,7 @@
 %\documentclass[11pt,twocolumn]{article} %doble columna
 %\documentclass[11pt]{article}
 
-\documentclass[conference]{IEEEtran}
+\documentclass[journal, onecolumn]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 
@@ -48,10 +48,11 @@
 \maketitle
 
 \begin{abstract}
-A gene co-expression network is an undirected graph , where each node corresponds to a gene, and a pair of nodes is connected if there is a significant co-expression relationship between them, that is, if they show similar expression patterns. These co-expression networks are of biological interest since the co-expressed genes are usually controlled by the same transcriptional regulatory pathway, functionally related or members of the same pathway or metabolic complex. Weighted gene co-expression network analysis (WGCNA)  is a method of data mining widely used to build co-expression networks, identify groups (modules) of highly correlated genes and relate these modules to external traits.
+A gene co-expression network is an undirected graph, where each node corresponds to a gene. A pair of nodes is connected if they show similar expression patterns. These co-expression networks are of biological interest since the co-expressed genes are usually controlled by the same transcriptional regulatory pathway, functionally related or members of the same pathway or metabolic complex. Weighted gene co-expression network analysis (WGCNA)  is a method of data mining widely used to build co-expression networks, identify groups (modules) of highly correlated genes and relate these modules to external traits.
 
-The aim of this work is to identify rice genes that respond to saline stress. The methodology is based on WGCNA with a new aproach in the modules detection, using  the hierarchical link clustering (HLC) technique that allows the recognition of overlapping communities, which may have more biological meaning given the overlapping regulatory domains of systems that generate coexpression \cite{gaiteri2014beyond}. Finally the LASSO method is used to select the most significant modules associated with rice phenotypical responses to salt stress. The genes differentially expressed within the selected modules are enriched with gene ontology annotations and their interaction networks are studied.
+The aim of this work is to identify rice genes that respond to saline stress. The methodology is based on WGCNA with a new approach in the modules detection, using  the hierarchical link clustering (HLC) technique that allows the recognition of overlapping communities, which may have more biological meaning given the overlapping regulatory domains of systems that generate co-expression \cite{gaiteri2014beyond}. Finally the LASSO method is used to select the most significant modules associated with rice phenotypical responses to salt stress. The genes differentially expressed within the selected modules are enriched with gene ontology annotations and their interaction networks are studied.
 %\keywords{First keyword  \and Second keyword \and Another keyword.}
+% need to focus on the main results, need to say what your main findings are - the set of genes, and how they are validated
 \end{abstract}
 
 
@@ -65,11 +66,11 @@ Introduction text
 %-----------------------------
 RNA-seq data was accessed through GEO database \cite{GEOAcces90:online} (Accession number GSE98455), corresponding to $n=57845$ gene expression profiles of shoot tissues measured for both control and salt condition in $p=92$ accessions of the Rice Diversity Panel 1 (with two biological repetitions). \\
 
-The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. The normalization tecnique used was DESeq2 \cite{love2014moderated}. From the normalized data, the two biological repetitions of each accession were averaged and genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. At this point, control and salinity stress treatment data are separated into two matrices $C=[c_{ij}]_{n \times p}$ and $T=[t_{ij}]_{n \times p}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.
+The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. The normalization technique used was DESeq2 \cite{love2014moderated}. From the normalized data, the two biological repetitions of each accession were averaged and genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. At this point, control and salinity stress treatment data are separated into two matrices $C=[c_{ij}]_{n \times p}$ and $T=[t_{ij}]_{n \times p}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.
 
 Changes in gene expression between control and stress conditions, are measured in terms of log ratios. Matrix $E=[e_{ij}]_{n \times p}$, known as the Log Fold Change matrix, is computed by setting $e_{ij}=\log_2 (t_{ij}/c_{ij})$. 
 
-Genes with the ratio of upper quantile to lower quantile larger than $0.25$ were kept. This procedure aims to remove genes with low variance in the differential expression paterns. The final network contains $8928$ genes of the initial $57845$.
+Genes with the ratio of upper quantile to lower quantile larger than $0.25$ were kept. This procedure aims to remove genes with low variance in the differential expression patterns. The final network contains $8928$ genes of the initial $57845$.
 
 
 \subsection{Network construction}
@@ -77,12 +78,12 @@ The co-expression network is constructed based on WGCNA, as explained below.\\
 
 The Log Fold Change matrix is used to construct the weighted co-expression network using the absolute value of the Pearson correlation as the similarity measure between genes. The matrix $S=[s_{ij}]_{n\times n}$ measures the level of concordance between gene expression profiles across experiments and is transformed into an adjacency matrix $A=[a_{ij}]_{n\times n}$ where $a_{ij} = (s_{ij})^\beta $ encodes the connection strength between each pair of genes. In other words, the elements of the adjacency matrix are the similarity values up to the power $\beta > 1$ so the degree distribution will fit a scale-free network. This kind of networks contain many nodes with very few connections and a small number of hubs with high connections. \\
 
-In a strict scale-free network the logarithm of $P(k)$ (the probability of a node to have degree $k$) is approximately inversely proportional to the logarithm of $k$ (the degree of a node). So the parameter $\beta$ is chosen as the smallest value of $\beta$ such that the $R^2$ of the linear regression between $log_{10}(p(k))$ and $log_{10}(k)$ is close to $1$ (e.g. $R^2 > 0.85$). Figure~\ref{fig:beta} shows the degree distribution of the similarity matrix (left) and the degree distribution of the adjacency matrix (rigth) which is the degree distribution of a scale-free forced network with $R^2 = 0.8$ corresponding to $\beta = 3$.
+In a strict scale-free network the logarithm of $P(k)$ (the probability of a node to have degree $k$) is approximately inversely proportional to the logarithm of $k$ (the degree of a node). So the parameter $\beta$ is chosen as the smallest value of $\beta$ such that the $R^2$ of the linear regression between $log_{10}(p(k))$ and $log_{10}(k)$ is close to $1$ (e.g. $R^2 > 0.85$). Figure~\ref{fig:beta} shows the degree distribution of the similarity matrix (left) and the degree distribution of the adjacency matrix (right) which is the degree distribution of a scale-free forced network with $R^2 = 0.8$ corresponding to $\beta = 3$.
 
 %scale-free beta 1 y 3
 \begin{figure}[h]
   \centering
-    \includegraphics[clip,width=0.4\textwidth]{Figures/pick_beta.png}
+    \includegraphics[clip,width=0.8\textwidth]{Figures/pick_beta.png}
   \caption{Degree distributions}
   \label{fig:beta}
 \end{figure}
@@ -90,9 +91,9 @@ In a strict scale-free network the logarithm of $P(k)$ (the probability of a nod
 \subsection{Module detection}	
 Once the network has been constructed, the next step is to study its structure and dynamics identifying communities also called modules. Membership in these modules may overlap in biological contexts, where modules may be related to specific molecular, cellular or tissue functions and the biological components (i.e. genes) are involved in multiple functions.\\
 
-To identify these overlapping communities we make use of the Hierarchical Link Clustering (HLC) algorithm proposed in~\cite{ahn2010link}. HLC aproach reinvent communities as groups of links rather than nodes, each node inherits all memberships of its links and can thus belong to multiple, overlapping communities. The algorithm maps links to nodes and connects them if a pair of links shares a node. They compute the similarity between links using the Jaccard index for unweigthed networks and the tanimoto coefficient for weighted networks. With this similarity, they use single-linkage hierarchical clustering to build a dendrogram where each leaf is a link from the original network and branches represent link communities. Finally, the most relevant communities are established at the maximal partition density, a function  based on link density inside communities.\\
+To identify these overlapping communities we make use of the Hierarchical Link Clustering (HLC) algorithm proposed in~\cite{ahn2010link}. HLC approach reinvent communities as groups of links rather than nodes, each node inherits all memberships of its links and can thus belong to multiple, overlapping communities. The algorithm maps links to nodes and connects them if a pair of links shares a node. They compute the similarity between links using the Jaccard index for unweighted networks and the Tanimoto coefficient for weighted networks. With this similarity, they use single-linkage hierarchical clustering to build a dendrogram where each leaf is a link from the original network and branches represent link communities. Finally, the most relevant communities are established at the maximal partition density, a function  based on link density inside communities.\\
 
-The current network represented by the adjacency matrix $A$, corresponds to a complete and weigthed network of $8,928$ genes (nodes) and $39,850,128$ edges. For computational reasons, this network was transformed into an unweighted one $\hat{A}$, keeping only the connections above the cutoff value of $0.2$. The resulting unweighted network has a total of $5,810$ nodes and $16,875,145$ edges. After applying the HLC algorithm, a total of $4,131$ genes were distributed in $5,143$ overlapping modules of $3$ or more genes. Figure~\ref{fig:overlap} shows a histogram of the overlapping percentage of these genes, measured as the proportion of modules to which each gene belongs.\\
+The current network represented by the adjacency matrix $A$, corresponds to a complete and weighted network of $8,928$ genes (nodes) and $39,850,128$ edges. For computational reasons, this network was transformed into an unweighted one $\hat{A}$, keeping only the connections above the cutoff value of $0.2$. The resulting unweighted network has a total of $5,810$ nodes and $16,875,145$ edges. After applying the HLC algorithm, a total of $4,131$ genes were distributed in $5,143$ overlapping modules of $3$ or more genes. Figure~\ref{fig:overlap} shows a histogram of the overlapping percentage of these genes, measured as the proportion of modules to which each gene belongs.\\
 
 %overlapping percentage
 \begin{figure}[h]
@@ -109,7 +110,7 @@ Our approach to identify the most relevant gene groups (modules) in the response
 % boxplots
 \begin{figure}[h]
   \centering
-    \includegraphics[clip,width=0.5\textwidth]{Figures/phenotypic_traits.png}
+    \includegraphics[clip,width=1\textwidth]{Figures/phenotypic_traits.png}
   \caption{Phenotipic traits distribution under control and salt stress}
   \label{fig:pdata}
 \end{figure}
@@ -134,7 +135,7 @@ In order to relate the modules to the phenotypic traits, we represent each modul
 \newpage
 \section*{Appendix}
 \subsection{A: Variable selection with LASSO}
-LASSO (Least Absolute Shrinkage Selector Operator) is a regularized linear regression technique, a method that combines a regression model with a procedure of contraction of some parameters towards zero and selection of variables, imposing a restriction or a penalty on the regression coefficients. Very usefull in problems where the number of variables (genes) $ n $ is much greater than the number of samples $ p $ ($ n \gg p $). Lasso solves the least squares problem with restriction on the $ L_1$-norm of the coefficient vector:
+LASSO (Least Absolute Shrinkage Selector Operator) is a regularized linear regression technique, a method that combines a regression model with a procedure of contraction of some parameters towards zero and selection of variables, imposing a restriction or a penalty on the regression coefficients. Very useful in problems where the number of variables (genes) $ n $ is much greater than the number of samples $ p $ ($ n \gg p $). Lasso solves the least squares problem with restriction on the $ L_1$-norm of the coefficient vector:
 
 \begin{equation}
 \min \left\lbrace\sum_{i=1}^{p}{\left( y_i-\sum_{j=1}^n{\beta_j x_{ij}}\right)^2} \right\rbrace , \textrm{sujeto a} \sum_{j=1}^n\abs{\beta_j}\leq s
@@ -150,9 +151,9 @@ being $ s $, $ \lambda \geq 0 $ the respective penalty parameters for complexity
 
 %if $ \lambda = 0 $ the estimator corresponds to the ordinary least squares estimator.
 
-Since the $\lambda$ value determines the degree of penality, the accuracy of the model depends on its choice. Cross-validation is often used to select the regularization parameter, choosing the one that minimizes the mean-squered error. With that selected $\lambda$ value, the model is adjusted again, this time using all the observations.\\
+Since the $\lambda$ value determines the degree of penalty, the accuracy of the model depends on its choice. Cross-validation is often used to select the regularization parameter, choosing the one that minimizes the mean-squared error. With that selected $\lambda$ value, the model is adjusted again, this time using all the observations.\\
 
-In the module gene selection context, the outcome variable correspond to the phenotipic trait, whereas the predictors are the modules, detected by the hierarchical clustering, represented by the first principal component of the module. After running the Lasso regression will select the most significant modules associated with phenotyping data.  
+In the module gene selection context, the outcome variable correspond to the phenotypic trait, whereas the predictors are the modules, detected by the hierarchical clustering, represented by the first principal component of the module. After running the Lasso regression will select the most significant modules associated with phenotypic data.  
 
 
 \end{document}
