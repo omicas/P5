@@ -57,6 +57,13 @@ Geo accession viewer.
   promoting bacteria as one of the tools for its alleviation.
 \newblock {\em Saudi journal of biological sciences 22}, 2 (2015), 123--131.
 
+\bibitem{szklarczyk2016string}
+{\sc Szklarczyk, D., Morris, J.~H., Cook, H., Kuhn, M., Wyder, S., Simonovic,
+  M., Santos, A., Doncheva, N.~T., Roth, A., Bork, P., et~al.}
+\newblock The string database in 2017: quality-controlled protein--protein
+  association networks, made broadly accessible.
+\newblock {\em Nucleic acids research\/} (2016), gkw937.
+
 \bibitem{tian2018identifying}
 {\sc Tian, H., Guan, D., and Li, J.}
 \newblock Identifying osteosarcoma metastasis associated genes by weighted gene
