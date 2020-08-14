@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.21)  12 AUG 2020 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.21)  12 AUG 2020 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**P5_report.tex
-(./P5_report.tex
+**article_CR.tex
+(./article_CR.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
@@ -274,8 +274,8 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count196
 \l__pdf_internal_box=\box51
 )
-(./P5_report.aux)
-\openout1 = `P5_report.aux'.
+(./article_CR.aux)
+\openout1 = `article_CR.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
@@ -315,24 +315,27 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
@@ -341,112 +344,109 @@ Overfull \vbox (4.77391pt too high) has occurred while \output is active []
 
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-<Figures/pick_beta.png, id=18, 704.3916pt x 343.0416pt>
+<Figures/pick_beta.png, id=11, 704.3916pt x 343.0416pt>
 File: Figures/pick_beta.png Graphic file (type png)
 <use Figures/pick_beta.png>
-Package pdftex.def Info: Figures/pick_beta.png  used on input line 95.
+Package pdftex.def Info: Figures/pick_beta.png  used on input line 77.
 (pdftex.def)             Requested size: 375.80544pt x 183.02031pt.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[3 <./Figures/pick_beta.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
-
- []
-
-<Figures/artificial_modules.png, id=29, 609.2361pt x 377.06873pt>
+<Figures/artificial_modules.png, id=20, 609.2361pt x 377.06873pt>
 File: Figures/artificial_modules.png Graphic file (type png)
 <use Figures/artificial_modules.png>
-Package pdftex.def Info: Figures/artificial_modules.png  used on input line 110
-.
+Package pdftex.def Info: Figures/artificial_modules.png  used on input line 92.
+
 (pdftex.def)             Requested size: 187.89914pt x 116.29172pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-
- []
-
-<Figures/phenotypic_traits.png, id=31, 879.7668pt x 292.2117pt>
-File: Figures/phenotypic_traits.png Graphic file (type png)
-<use Figures/phenotypic_traits.png>
-Package pdftex.def Info: Figures/phenotypic_traits.png  used on input line 121.
-
-(pdftex.def)             Requested size: 469.75502pt x 156.02628pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-(./P5_report.bbl [4 <./Figures/artificial_modules.png>]) [5 <./Figures/phenotyp
-ic_traits.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 156--158
+<Figures/phenotypic_traits.png, id=22, 879.7668pt x 292.2117pt>
+File: Figures/phenotypic_traits.png Graphic file (type png)
+<use Figures/phenotypic_traits.png>
+Package pdftex.def Info: Figures/phenotypic_traits.png  used on input line 103.
+
+(pdftex.def)             Requested size: 469.75502pt x 156.02628pt.
+[3 <./Figures/pick_beta.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
-[6] (./P5_report.aux) ) 
+(./article_CR.bbl [4 <./Figures/artificial_modules.png> <./Figures/phenotypic_t
+raits.png>]) [5]
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+[6] (./article_CR.aux) ) 
 Here is how much of TeX's memory you used:
- 3993 strings out of 481239
- 58633 string characters out of 5920377
- 310989 words of memory out of 5000000
- 19203 multiletter control sequences out of 15000+600000
- 571969 words of font info for 102 fonts, out of 8000000 for 9000
+ 3983 strings out of 481239
+ 58566 string characters out of 5920377
+ 309997 words of memory out of 5000000
+ 19198 multiletter control sequences out of 15000+600000
+ 569317 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,5n,27p,2237b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.e
-nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on P5_report.pdf (6 pages, 599436 bytes).
+ 30i,5n,27p,2287b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on article_CR.pdf (6 pages, 569484 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  34 words of extra memory for PDF output out of 10000 (max. 10000000)
 

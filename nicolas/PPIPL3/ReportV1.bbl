@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{Kovacs2019}
+{Kov\'acs, I.A., Luck, K., Spirohn, K. et al}.
+\newblock Network-based prediction of protein interactions.
+\newblock {\em Nature Communications}, 2019.
+
+\bibitem{Szklarczyk2019}
+Damian Szklarczyk, Annika~L. Gable, David Lyon, Alexander Junge, Stefan Wyder,
+  Jaime Huerta-Cepas, Milan Simonovic, Nadezhda~T. Doncheva, John~H. Morris,
+  Peer Bork, Lars~J. Jensen, and Christian~von Mering.
+\newblock String v11: protein-protein association networks with increased
+  coverage, supporting functional discovery in genome-wide experimental
+  datasets.
+\newblock {\em Nucleic acids research}, 47(30476243):D607--D613, January 2019.
+
+\end{thebibliography}
