@@ -47,16 +47,6 @@
 
 \maketitle
 
-\begin{abstract}
-A gene co-expression network is an undirected graph, where each node corresponds to a gene. A pair of nodes is connected if they show similar expression patterns. These co-expression networks are of biological interest since the co-expressed genes are usually controlled by the same transcriptional regulatory pathway, functionally related or members of the same pathway or metabolic complex. Weighted gene co-expression network analysis (WGCNA)  is a method of data mining widely used to build co-expression networks, identify groups (modules) of highly correlated genes and relate these modules to external traits.
-
-The aim of this work is to identify rice genes that respond to saline stress. The methodology is based on WGCNA with a new approach in the modules detection, using  the hierarchical link clustering (HLC) technique that allows the recognition of overlapping communities, which may have more biological meaning given the overlapping regulatory domains of systems that generate co-expression \cite{gaiteri2014beyond}. Finally the LASSO method is used to select the most significant modules associated with rice phenotypical responses to salt stress. The genes differentially expressed within the selected modules are enriched with gene ontology annotations and their interaction networks are studied.
-
-In our study, 6 modules were detected as relevant in the response to salt stress in rice: 3 modules of 3 genes each one associated with shoot K content, 2 modules of 3 genes associated with  shoot biomass, and 1 module of 4 genes associated with root biomass. From those 19 genes, all but 3 genes (associated with K content), were also identified as differentially expressed ($|LFC|\geq 2$) for at least one of the 92 accessions. Only 2 of those 16 genes are named and have an associated protein product: Spermidine hydroxycinnamoyltransferase 2 (SHT2) and Lipoxygenase. Both genes belonging to the same module associated with shoot biomass. These genes may act as potential targets for the improvement of salinity tolerance in rice cultivars. Further studies are needed to elucidate the detailed biological function of these genes in the rice response to salt stress.
-%\keywords{First keyword  \and Second keyword \and Another keyword.}
-% need to focus on the main results, need to say what your main findings are - the set of genes, and how they are validated
-\end{abstract}
-
 
 \section*{Introduction}
 Abiotic stresses are the key factors which negatively influence plant development and productivity. They are the main cause of extensive agricultural production losses worldwide. One of the most devastating abiotic stresses, causing reduction in the cultivable land, crop quality and productivity is soil salinity. It has been estimated that 20\% of total cultivated and 33\% of irrigated agricultural lands worldwide are already affected by high salinity. Due to the human activities and natural causes, salinized areas are gradually increasing every year and are expected to reach 50\% by the end of year 2050~\cite{shrivastava2015soil}. Salinity effects are the result of elaborated interactions among morphological, physiological, and biochemical processes. Those processes are regulated by multiple genes and determine the salt tolerance or susceptibility of the crop~\cite{reddy2017salt}. Thus, identifying this group of stress responsive genes may lead to crop improvement in salt tolerance, which is known as a complex quantitative trait. Find this target genes is a complex task, because the function of many genes are still not understood and many novel non-coding genes have been discovered. Particularly rice (\textit{Oryza sativa}), the major food source around the world, is highly sensitive to salt stress~\cite{chang2019morphological}. Therefore, identification of target genes in rice may allow biologist use them as a genetic resource to develop new cultivars with resistance to salinity.\\
@@ -70,17 +60,11 @@ The proposed methodology is modular, since other module detection and selection 
 
 \section{Methodology}
 \subsection{Data pre-processing} 
-%-----------------------------
-% RNA-seq data
-%-----------------------------
-RNA-seq data was accessed through GEO database \cite{GEOAcces90:online} (Accession number GSE98455), corresponding to $n=57845$ gene expression profiles of shoot tissues measured for both control and salt condition in $p=92$ accessions of the Rice Diversity Panel 1 (with two biological repetitions). \\
+The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. The normalization technique used was DESeq2 \cite{love2014moderated}. From the normalized data, the two biological repetitions of each accession were averaged and genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. At this point, control and salinity stress treatment data are separated into two matrices $C=[c_{ij}]_{n \times p}$ and $T=[t_{ij}]_{n \times p}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.\\
 
-The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. The normalization technique used was DESeq2 \cite{love2014moderated}. From the normalized data, the two biological repetitions of each accession were averaged and genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. At this point, control and salinity stress treatment data are separated into two matrices $C=[c_{ij}]_{n \times p}$ and $T=[t_{ij}]_{n \times p}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.
-
-Changes in gene expression between control and stress conditions, are measured in terms of log ratios. Matrix $E=[e_{ij}]_{n \times p}$, known as the Log Fold Change matrix, is computed by setting $e_{ij}=\log_2 (t_{ij}/c_{ij})$. 
+Changes in gene expression between control and stress conditions, are measured in terms of log ratios. Matrix $E=[e_{ij}]_{n \times p}$, known as the Log Fold Change matrix, is computed by setting $e_{ij}=\log_2 (t_{ij}/c_{ij})$.\\
 
 Genes with the ratio of upper quantile to lower quantile larger than $0.25$ were kept. This procedure aims to remove genes with low variance in the differential expression patterns. The final network contains $8928$ genes of the initial $57845$.
-
 
 \subsection{Network construction}
 The co-expression network is constructed based on WGCNA, as explained below.\\
@@ -125,7 +109,7 @@ Our approach to identify the most relevant gene groups (modules) in the response
 
 In order to relate the modules to the phenotypic traits, we represent each module with the first principal component of the Log Fold Change submatrix, corresponding to the genes of such module, which can be thought of as an average differential expression profile for each community. These profiles are then associated with each phenotypic trait using the LASSO variable selection method, allowing to identify a set of relevant modules related to the response to salinity conditions in rice plants. See Appendix A for a LASSO method description.\\
 
-In our study, 6 modules were detected as relevant in the response to salt stress in rice: 3 modules of 3 genes each one associated with shoot K content, 2 modules of 3 genes associated with  shoot biomass, and 1 module of 4 genes associated with root biomass. 
+In our case study, 6 modules were detected as relevant in the response to salt stress in rice: 3 modules of 3 genes each one associated with shoot K content, 2 modules of 3 genes associated with  shoot biomass, and 1 module of 4 genes associated with root biomass. 
 %Módulos seleccionados + cantidad de genes por módulo
 
 \subsection{Genes enrichment}
