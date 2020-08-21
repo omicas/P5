@@ -1,11 +1,11 @@
-%% LyX 2.3.5-1 created this file.  For more info, see http://www.lyx.org/.
-%% Do not edit unless you really know what you are doing
-\documentclass[onecolumn,english]{article}
+%% LyX 2.3.4.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage{verbatim}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage{todonotes}
 
 \makeatletter
 
@@ -20,38 +20,73 @@
 
 \usepackage{babel}
 \begin{document}
-\title{Prediction of Protein-Protein Interactions on the Human and
-Rice Interactome}
-\author{Nicol\'as Antonio L\'opez Rozo}
+\title{Prediction of Protein-Protein Interactions on the Human and Rice Interactome }
+\author{Nicolás Antonio López Rozo}
 \maketitle
 \begin{abstract}
-Previous Network-based efforts to predict unmapped protein-protein interactions (PPI's) suggest that proteins with multiple paths of length~3 (L3) are more likely to be connected. This paper extends this so-called L3 principle by taking into account feature extraction and using \texttt{XGBoost} techniques for prediction. In particular, we train the model using handcrafted features as well as features learned from embeddings using \texttt{Node2Vec}. Our main result shows that while L3 remains an important principle for predicting links, the approach is outperform by using embedded features. The mentioned approaches are compared using the human and the rice interactomes.
 
-% need include a feature that compares the dimension of the embedding is useful for prediction with L3 to show that they independent measures - we do not want to be learning L3 through node2vec
+Previous Network-based efforts to predict unmapped protein-protein
+interactions (PPI's) suggest that proteins with multiple paths of
+length 3 (L3) are more likely to be connected. This paper extends
+this so-called L3 principle by taking into account feature extraction
+and using \texttt{XGBoost} techniques for prediction. In particular,
+we train the model using handcrafted features as well as features
+learned from embeddings using \texttt{Node2Vec}. Our main result shows
+that while L3 remains an important principle for predicting links,
+the approach is outperform by using embedded features. The mentioned
+approaches are compared using the human and the rice interactomes.
 \end{abstract}
+\begin{comment}
+need include a feature that compares the dimension of the embedding
+is useful for prediction with L3 to show that they independent measures
+- we do not want to be learning L3 through node2vec
+\end{comment}
 
 
 \section{Introduction}
-% need to add other relevant references 
-Proteins, as a fundamental constituents of any living being and their
-``building blocks'' in terms of biological functionality, interact
-among themselves and with other molecules according to their amino
-acid sequences and specific three-dimensional structure and folding.
-These interactions also depend on many physical and chemical properties
-of each macro-molecule and on the cellular organelle where they operate,
-such as pH and temperature. For this reason, experimental ways to
-reproduce all of the necessary conditions to validate if an interaction
-actually occurs within the cell are generally expensive.
+
+\begin{comment}
+Need to add other relevant references
+\end{comment}
+
+Proteins are the chief actors of biological functionality inside of
+the cell, and as such, do not usually work as single substances but
+rather as a part of dynamic networks, interacting with other substances
+for a wide variety of purposes \cite{Lin2017}.
+
+Protein-protein interactions (PPIs) have a key role in a variety of
+biological processes such as signal transduction, homeostasis control,
+stress responses, plant defense and organ formation. On the molecular
+level, PPIs have importance in protein phosphorylation, transcriptional
+co-factor recruitment, transporter activation and many others, thus
+playing an essential role in many physiological and developmental
+processes in virtually all organisms \cite{Zhang_2010_PPI}.
+
+Prediction of potentially relevant, yet unexplored PPIs is a current
+research topic on bioinformatics and therefore, several authors have
+proposed different methods for extrapolating information from the
+existing PPI networks. As presented by Kovacs et al (2019), information
+related to counting paths of length 3 (L3) seems to outperform state-of-the-art
+methods when it comes to predict interactions among proteins for a
+variety of model organisms such as yeast (\emph{S. cerevisiae}), Arabidopsis
+(\emph{A. thaliana}), worm (\emph{C. elegans}), fly (\emph{D. melanogaster}),
+fission yeast (\emph{S. pombe}) and mouse (\emph{M. musculus}), as
+well as on the human interactome \cite{Kovacs2019}.
 
 The most common way to validate PPI's is the \emph{Yeast-Two-Hybrid}
 technique (also known as \emph{two-hybrid screening} or \emph{Y2H}),
 which is based on the expression of a specific reporter gene that
 activates by the binding of a DNA-binding Domain (DB) and an Activation
-Domain (AD) of a Transcription Factor. For the Y2H technique, a protein
-is fused to the DB domain (known as \emph{bait}) and another one to
-the AD (known as \emph{prey}). If the proteins do not interact, then
-the reporter gene is not expressed. Otherwise, the reporter gene expression
-is activated by the activation domain.
+Domain (AD) of a Transcription Factor that binds to an Upstream Activation
+Sequence (UAS). For the Y2H technique, a protein is fused to the DB
+domain (known as \emph{bait}) and another one to the AD (known as
+\emph{prey}). If the proteins do not interact, then the reporter gene
+is not expressed. Otherwise, the reporter gene expression is activated
+by the activation domain.
+
+\begin{comment}
+NL: I will make this figure myself
+\end{comment}
 
 \begin{figure}[h]
 \caption{Yeast-2-Hybrid Technique}
@@ -64,14 +99,8 @@ a PPI network, where all known interactions for each protein are represented.
 Several algorithms are proposed over these networks in order to predict
 unknown interactions. In this report, three prediction methods are
 presented and their results are shown: Common Neighbors (\textbf{CN}),
-which uses the length-2 path count; length-3 path count (\textbf{A3});
-and degree-normalized length-3 paths score (\textbf{L3}).
-
-\begin{figure}[h]
-\caption{Protein-Protein Interaction Prediction Scheme}
-
-\noindent \centering{}\includegraphics[width=0.9\columnwidth]{PPI_prediction}
-\end{figure}
+which uses the length-2 path count; raw count of paths of length 3
+(\textbf{A3}); and degree-normalized length-3 paths score (\textbf{L3}).
 
 Focus of the present study is to evaluate different methods for predicting
 protein-protein interactions (PPIs) using the existing knowledge of
@@ -79,55 +108,55 @@ the network, which is an undirected graph. The traditional way is
 usually based on social networks analysis, more specifically on the
 Triadic Closure Principle (TCP), that states that the more common
 shared friends that two people have, the more likely that they know
-each other. As shown in the next sections, the mentioned approach
-fails because it does not consider the structural and chemical properties
-of the proteins.
+each other. As shown by previous studies, the mentioned approach fails
+because it does not consider the structural and chemical properties
+of the proteins \cite{Kovacs2019}.
 
-For achieving the described results, several networks are used and
-compared using state-of-the-art methods, as well as the proposed ones
-(CN, A3, L3). For this report, the human interactome was used (\emph{HI-II-14}).
-A curated version of the mentioned network (\emph{HI-TESTED})
-was also used in order to compare the influence of research bias on
-the network predictions. A massive experimental assay was carried
-on and its results are consolidated and used to build a validation
-network (\emph{HI-III}).
+For achieving the described results, human and rice PPI networks are
+used and compared using state-of-the-art methods, as well as the proposed
+ones (CN, A3, L3). In the case of the human network, human interactome
+(\emph{HI-II-14}), as well as a curated version of it (\emph{HI-TESTED})
+were used. A massive experimental assay was carried on and its results
+were consolidated and used to build a validation network (\emph{HI-III}). 
 
 \section{Materials and Methods}
 
 \subsection{Data Availability}
 
 Human interactome data and base source code were downloaded from the
-repository of the length-3 degree normalized paths methodology~\cite{Kovacs2019}:
-the dataset \emph{HI-II-14} and \emph{HI-TESTED} are used
-for prediction and the dataset \emph{HI-III} is used for validation.
-Rice interactome information was downloaded from the STRING database~\cite{Szklarczyk2019}, corresponding to the \emph{Oryza sativa} subspecies.
+repository of the length-3 degree normalized paths methodology \cite{Kovacs2019}:
+the dataset \emph{HI-II-14} and \emph{HI-TESTED} are used for prediction
+and the dataset \emph{HI-III} is used for validation.
+
+Rice interactome information was downloaded from the STRING database
+\cite{Szklarczyk2019}, corresponding to the \emph{Oryza sativa} subspecies.
 The downloaded file was \emph{4530.protein.links.detailed.v11.0.txt}.
 and contains more than 8 million PPIs from several resources. For
-the purpose of this study and based on the previous work, only PPIs
-with evidence from curated databases were used (rows where \emph{databases}
-column has a value greater than zero), resulting in a network with
-NNNN nodes and MMMM edges.
+the purpose of this study and based on previous work, only PPIs with
+evidence from curated databases were used (i.e. rows where the column
+\emph{databases} has a value greater than zero), resulting in a network
+with $5025$ nodes and $164420$ edges.
 
 \subsection{Code Implementation}
 
 Previous code implementation was adapted from \texttt{C++} to \texttt{Python}
-(3.6), in order to unify the algorithms into one single script. For
+(V3.6), in order to unify the algorithms into one single script. For
 the purpose of algorithmic validation, the three methods were implemented
 from scratch with basic functionalities and data structures of the
-\emph{Python} (V3.6) language.
+\texttt{Python} language.
 
 \subsection{Data Preprocessing}
 
 Information for the human interactome was used as-is, which corresponds
 to networks of $4298$, $3727$ and $5604$ proteins and $13868$,
-$9433$ and $23322$ interactions. For the rice interactome, an additional
-preprocessing was performed. The filtered network for rice consists
-of $5025$ proteins (nodes) and $164420$ interactions (edges) distributed
-among $178$ connected components. The connected component with the
-greatest number of edges was selected in this case. 
+$9433$ and $23322$ interactions.
 
-The extracted connected component consists of $n=4390$ nodes and
-$m=163319$ edges, which corresponds to $99.33%\%
+For the rice interactome, an additional preprocessing was performed.
+The filtered network for rice consists of $5025$ proteins (nodes)
+and $164420$ interactions (edges) distributed among $178$ connected
+components. The connected component with the greatest number of edges
+was selected in this case. The extracted connected component consists
+of $n=4390$ nodes and $m=163319$ edges, which corresponds to $99.33%\%
 $ of filtered edges. Further investigation is applied to this network,
 which is very similar in number of nodes to the curated information
 on the human interactome, although rice network is much more connected.
@@ -139,13 +168,6 @@ below were used. It is important to keep in mind how the protein-protein
 interaction (PPI) network $G=(V,E)$ is conceptualized: each node
 ($v_{i}\in V$) represents a protein and each undirected edge ($e_{b}=\{v_{i},v_{j}\},\,e_{b}\in E$)
 represents and interaction among proteins $v_{i}$ and $v_{j}$.
-
-\begin{figure}[h]
-\caption{Edge Prediction Paradigms}
-
-\noindent \centering{}\includegraphics[width=0.8\columnwidth]{TCP_extract.png}
-\end{figure}
-
 \begin{description}
 \item [{Common~Neighbors~(CN)}] This method is based on the Triadic Closure
 Principle: ``the more common friends two individuals have, the more
@@ -170,26 +192,29 @@ where $A_{ij}$ represents the value of the adjacency matrix for nodes
 $i$ and $j$: 1 if the edge $\{i,j\}$ exists, 0 otherwise.
 \end{description}
 
-\subsection{Sampling and Precision Counting}
+\subsection{Sampling Procedure}
 
-Sampling proceeds as follows: first, a fraction (10\%) of the edges
-is removed at random from the network. Then, for each method (\textbf{CN},
-\textbf{A3}, \textbf{L3}) the prediction of the removed fraction is
-performed. The new edges are then compared against the original (removed)
-edges according to the ranking that each method yields. Edges belonging
-to the original connected component are considered positive in the
-sense that they are experimentally validated interactions. For each
-of the tested networks and a rank $r$, the precision was calculated
-as 
-\[
-P_{r}=\frac{L_{r}}{r}
-\]
-\\
-where $L_{r}$ is the total number of positive edges in the range
-$[1,r]$.
-
-The previous procedure was applied for a fraction of 0.90 remaining
-edges, and a mean of 10 simulations was obtained.
+For each network of protein interactions, the following procedure
+was performed 10 times in order to address the stochastic nature of
+the process and have a consensus:
+\begin{itemize}
+\item A percentage of interactions is removed at random from the network
+(20\%).
+\item The same amount of removed interactions are then predicted using the
+main methods for prediction mentioned by Kovacs et al (2019): Common
+Neighbors (\textbf{A2}), raw path count of paths of length 3 (\textbf{A3})
+and the Length-3 degree-normalized score (\textbf{L3}).
+\item A test dataset is created as follows: all removed edges are included
+(as observed positives for the ML algorithm) and from the predicted
+edges of \textbf{A2}, \textbf{A3} and \textbf{L3} that don't lie in
+the previous classification (observed negatives), a random subset
+is chosen such that the dataset is balanced, that is, the amount of
+observed positive labels is equal to the observed negative labels.
+\item Once the dataset is ready, it is randomly partitioned: 80\% is used
+for \texttt{XGBoost} model training and 20\% is used for validation.
+It is important to have in mind that balanced distribution of the
+positive and negative labels in the datasets was satisfied.
+\end{itemize}
 
 \subsection{Feature Extraction with \texttt{Node2Vec}}
 
@@ -241,14 +266,14 @@ the training data $X_{i}$ has multiple features and pretends to explain
 (or predict) a target variable $Y_{i}$. The corresponding implementation
 applied for this study is \texttt{XGBoost}, available publicly.
 
-The selected parameters for the model were \texttt{max\_depth=3}, \texttt{colsample\_bytree=0.6}
-and \texttt{eval\_metric=`auc'}.
+The selected parameters for the model were:\texttt{ max\_depth=3},
+\texttt{colsample\_bytree=0.6} and \texttt{eval\_metric=''auc''}.
+
 \subsection{Result Validation}
 
-For applying the test results, a partition of the whole dataset was
-made: 80\% of the data was randomly selected and used for training,
-while the remaining 20\% was used for validation. The whole training-validation
-procedure was applied 5 times.
+As mentioned before, 80\% of the final dataset was randomly selected
+and used for training, while the remaining 20\% was used for validation.
+The whole training-validation procedure was applied 10 times.
 
 The chosen metric for validation was the Area under the Curve (\textbf{AUC})
 of the Receiver Operating Characteristic (\textbf{ROC}). This curve
@@ -259,21 +284,40 @@ move in the range $[0,1]$, where 1 is a perfect prediction and 0.5
 corresponds to a random guess. Normally, values over 0.8 of AUC are
 considered good.
 
-\section{Results}
+\section{Results and Discussion}
 
-As explained above, the precision trend for each of the networks are
-presented for the predicted top 2000 interactions.
+\subsection{Rice Interactome}
+
+For the rice interactome, the different model-features combinations
+were trained and validated. After executing the mentioned routines,
+the results are shown in Figure \ref{F1}. First, one should have
+a baseline of comparison, which in this case corresponds to \texttt{Node2Vec}
+without any additional feature included. The plot below shows those
+results, and one can see that its mean performance using the AUC metric
+is 0.52, and that the results among the 10 repetitions are consistent.
+This results mean that the model using only the default features perform
+barely as good as a random choice of the labels.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\caption{\label{F1}Summary ROC curves for \texttt{Node2Vec} model alone}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.95\columnwidth]{Only_ML/ROConlyML_SUMMARY}
+\end{figure}
+
+
+\section{(PENDING FROM HERE ON)}
 
 \begin{figure}[h]
 \caption{Methods Comparison for \emph{HI-II-14}}
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-ii-14.png}
+\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-ii-14.txt\string".eps}
 \end{figure}
 
 \begin{figure}[h]
 \caption{Methods Comparison for \emph{HI-TESTED}}
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-tested.png}
+\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-tested.txt\string".eps}
 \end{figure}
 
 As it can be inferred from the plots, L3-based predictions outperform
@@ -322,17 +366,20 @@ on PPI networks.
 Previous result comes as no surprise when the biological basis of
 protein interactions is considered: It is necessary that protein A
 and protein B have complementary structures in order to interact,
-and when classical paths of length~2 are used, the predicted protein
+and when classical paths of length 2 are used, the predicted protein
 interactions usually have the same structures, and not complementary
 ones.
 
-% please update the conclusions - WSD does not seem relevant 
+\begin{comment}
+please update the conclusions - WSD does not seem relevant
+\end{comment}
+
 For the analyzed networks, it is also important to highlight their
 robustness when compared to a random network with the same density:
 if weighted spectral distribution (WSD) is used, then the used networks
 are on average twice as robust as their random network versions.
 
 \bibliographystyle{plain}
-\bibliography{refs.bib}
+\bibliography{refs}
 
 \end{document}
