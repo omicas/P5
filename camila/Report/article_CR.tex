@@ -7,7 +7,7 @@
 %\documentclass[11pt,twocolumn]{article} %doble columna
 %\documentclass[11pt]{article}
 
-\documentclass[journal, onecolumn]{IEEEtran}
+\documentclass[12pt,journal, onecolumn]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 
@@ -20,6 +20,8 @@
 
 % Paquetes de la AMS:
 \usepackage{amsmath, amsthm, amsfonts, amssymb}
+
+\usepackage{mathtools}
 
 % Atajos.
 % Se pueden definir comandos nuevos para acortar cosas que se usan
@@ -55,21 +57,58 @@ We propose a methodology to identify stress responsive genes to salt conditions 
 
 With the development of high-throughput technologies, including microarrays and RNA sequencing (RNA-seq), genome-wide gene expression can be studied under different environmental stimuli (e.g. salt stress). Our methodology uses this kind of transcriptomic data measured for two different conditions (control and stress). After a process of normalization and filtering of the raw data, a differential expression profile of the genes is built calculating the log fold change (LFC) from control to stress condition. The LFC matrix will be the input for the co-expression network construction trough the WGCNA method. A similarity matrix is calculated using the absolute value of Pearson's correlation coefficient between pairs of genes. Then, the similarity matrix is forced to be a scale-free network, finding a beta exponent such that by raising each entry of the matrix to that value, the probability distribution follows a power law. Next, unlike WGCNA, the scale-free network is used to detect overlapping rather than non-overlapping communities, using the HLC technique. We also implement a LASSO regression~\cite{tibshirani1996regression} to select the most significant modules associated with rice phenotypical responses to salt stress. Finally, for the genes found, we look for previous evidence of important biological implications in tolerance to salt stress. That is, the genes deferentially expressed within the selected modules are enriched with gene ontology annotations from QuikGO database~\cite{binns2009quickgo} and their interaction networks reported in STRING database~\cite{szklarczyk2016string} are reviewed.\\
 
-The proposed methodology is modular, since other module detection and selection techniques could be used, instead HLC and LASSO respectively. The advantage of using HLC as clustering method is its ability to detect overlapping modules, since biological components are involved in multiple functions and therefore biological communities tend to be highly overlapping ( ). On the other hand, LASSO is a regularized regression technique widely used in variable selection, thanks to its ability to obtain zero regression coefficients for the less relevant variables~\cite{desboulets2018review}. Additionally, LASSO is especially useful in problems where the number of variables is much larger than the number of samples, which is our case having more than 5000 modules (variables) and 92 accession (samples). The combinations of these techniques would allow finding target genes for future biological studies that evaluate their potential as genes that respond to salt stress in rice. Furthermore, this study can be extended to other stresses and even to other crops.\\
+The proposed methodology is modular, since other module detection and selection techniques could be used, instead HLC and LASSO respectively. The advantage of using HLC as clustering method is its ability to detect overlapping modules, since biological components are involved in multiple functions and therefore biological communities tend to be highly overlapping. On the other hand, LASSO is a regularized regression technique widely used in variable selection, thanks to its ability to obtain zero regression coefficients for the less relevant variables~\cite{desboulets2018review}. Additionally, LASSO is especially useful in problems where the number of variables is much larger than the number of samples, which is our case having more than 5000 modules (variables) and 92 accession (samples). The combinations of these techniques would allow finding target genes for future biological studies that evaluate their potential as genes that respond to salt stress in rice. Furthermore, this study can be extended to other stresses and even to other crops.\\
 
 
 \section{Methodology}
-\subsection{Data pre-processing} 
-The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. The normalization technique used was DESeq2 \cite{love2014moderated}. From the normalized data, the two biological repetitions of each accession were averaged and genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. At this point, control and salinity stress treatment data are separated into two matrices $C=[c_{ij}]_{n \times p}$ and $T=[t_{ij}]_{n \times p}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.\\
 
-Changes in gene expression between control and stress conditions, are measured in terms of log ratios. Matrix $L=[e_{ij}]_{n \times p}$, known as the Log Fold Change matrix, is computed by setting $\ell_{ij}=\log_2 (t_{ij}/c_{ij})$.\\
+This methodology uses as input data RNA-seq read counts, representing gene expression levels. More precisely, $n$ gene expression profiles of an organism, measured for $m$ different genotypes under control and treatment conditions, and $r$ biological replicates. This data can be represented as a matrix $D=[d_{ij}]$, where $d_{ij} \in \mathbb{N}_0$ for all $i = 1,2,..n$ and $j=1,2,..,2mr$. To discover key genes and their interaction for treatment-tolerance related phenotypes, the methodology also requires a set of $p$ phenotypic traits, measured for the $m$ genotypes. The phenotypic data can be seen as a matrix $P=[p_{jk}]$, where $p_{jk} \in \mathbb{R}$ for all $k = 1,2,...,p$. 
 
-Genes with the ratio of upper quantile to lower quantile larger than $0.25$ were kept. This procedure aims to remove genes with low variance in the differential expression patterns. The final network contains $8928$ genes of the initial $57845$.
+\subsection{Data pre-processing}
 
-\subsection{Network construction}
-The Log Fold Change matrix is used to construct the weighted co-expression network using the absolute value of the Pearson correlation as the similarity measure between genes. The matrix $S=[s_{ij}]_{n\times n}$ measures the level of concordance between gene expression profiles across experiments and is transformed into an adjacency matrix $A=[a_{ij}]_{n\times n}$ where $a_{ij} = (s_{ij})^\beta $ encodes the connection strength between each pair of genes. In other words, the elements of the adjacency matrix are the similarity values up to the power $\beta > 1$ so the degree distribution will fit a scale-free network. This kind of networks contain many nodes with very few connections and a small number of hubs with high connections. \\
+The RNA-seq data cannot be directly interpreted, therefore a normalization process has to be done to deal with the various biases that affect quantification results. In order to correct library size and RNA composition bias, the suggested normalization technique is DESeq2 \cite{love2014moderated}. Then, from the normalized data, average the biological replicates of each accession and remove genes exhibiting low variance or low expression. Next, separate control and salinity stress treatment data into two matrices $C=[c_{ij}]_{n \times m}$ and $T=[t_{ij}]_{n \times m}$, respectively, where $c_{ij}$ and $t_{ij}$ represent normalized expression level of the gene $i$ in the accession $j$.\\
 
-In a strict scale-free network the logarithm of $P(k)$ (the probability of a node to have degree $k$) is approximately inversely proportional to the logarithm of $k$ (the degree of a node). So the parameter $\beta$ is chosen as the smallest value of $\beta$ such that the $R^2$ of the linear regression between $log_{10}(p(k))$ and $log_{10}(k)$ is close to $1$ (e.g. $R^2 > 0.85$). Figure~\ref{fig:beta} shows the degree distribution of the similarity matrix (left) and the degree distribution of the adjacency matrix (right) which is the degree distribution of a scale-free forced network with $R^2 = 0.8$ corresponding to $\beta = 3$.
+Next step is to compile the control and treatment data by measuring the changes in expression levels in terms of logarithmic ratios. Matrix $L=[\ell_{ij}]_{n \times p}$, known as the Log Fold Change matrix, is computed by setting $\ell_{ij}=\log_2 (t_{ij}/c_{ij})$. Finally, filter $L$ matrix by removing rows (genes) with low variance in the differential expression patterns.
+
+
+\subsection{Co-expression network construction}
+
+The Log fold change matrix $L$ is used to build the co-expression network following the first steps of the WGCNA methodology. First, measure the level of concordance between gene differential expression profiles across samples. Use the absolute value of the Pearson correlation coefficient as the similarity measure between genes and store the values in the similarity matrix $S=[s_{ij}]_{n\times n}$.\\
+
+Then, transform $S$ into an adjacency matrix $A=[a_{ij}]_{n\times n}$ where $a_{ij} = (s_{ij})^\beta $ encodes the connection strength between each pair of genes. In other words, the elements of the adjacency matrix are the similarity values up to the power $\beta > 1$ so the degree distribution will fit a scale-free network. This kind of networks contain many nodes with very few connections and a small number of hubs with high connections. In a strict scale-free network the logarithm of $P(k)$ (the probability of a node to have degree $k$) is approximately inversely proportional to the logarithm of $k$ (the degree of a node). So the parameter $\beta$ is chosen as the smallest value of $\beta$ such that the $R^2$ of the linear regression between $log_{10}(p(k))$ and $log_{10}(k)$ is close to $1$ (e.g. $R^2 > 0.85$). \\
+
+Finally, prepare matrix $A$ to apply the clustering algorithm, transforming it into an unweighted network $\hat{A}$. To determine the Pearson Correlation Coefficient (PCC) cutoff for finding biologically relevant co-expressed modules, we use the approach described by~\cite{aoki2007approaches} based on density of the network combined with decreasing number of nodes and edges with higher PCC values.\\
+
+The matrix $\hat{A}$ can be seen as an undirected graph $G=(V,E)$ where ${V=\{v_1,v_2,\ldots,v_n\}}$ is a set of vertices or nodes and ${E=\{e_1,e_2,\ldots,e_p\}}$ is a set of edges or links that connect the vertices. In this genomic context, the graph $G$ represents a co-expression network, where each node corresponds to a gene and a pair of genes is connected if they show similar differential expression patterns.
+
+\subsection{Co-expression module identification}
+
+Next step in the methodology is to study the co-expression network structure and dynamics identifying communities also called modules. The idea is to cluster genes with similar differential expression change patterns. Membership in these modules may overlap in biological contexts, where modules may be related to specific molecular, cellular or tissue functions and the biological components (i.e. genes) are involved in multiple functions. Thus, unlike WGCNA, the co-expression network $G$ is used to detect overlapping rather than non-overlapping communities, using the Hierarchical Link Clustering (HLC) algorithm proposed in~\cite{ahn2010link}.\\
+
+HLC approach reinvent communities as groups of links rather than nodes, each node inherits all memberships of its links and can thus belong to multiple, overlapping communities. The algorithm maps links to nodes and connects them if a pair of links shares a node. They compute the similarity between links using the Jaccard index for unweighted networks. With this similarity, they use single-linkage hierarchical clustering to build a dendrogram where each leaf is a link from the original network and branches represent link communities. Finally, the most relevant communities are established at the maximal partition density, a function  based on link density inside communities.
+
+\subsection{Modules association to phenotypic traits}
+
+To identify the most relevant gene groups (modules), associated with the phenotypic response to a specific treatment in an organism, we use a LASSO based approach. Each module can be represented by a eigengene, which is defined as the first principal component of such module. A eigengene can be thought of as an average differential expression profile for each community and is computed from the Log Fold Change matrix rows corresponding to the genes belonging to a specific module. \\
+
+These profiles are then associated with each phenotypic trait using the least absolute shrinkage and selection operator (LASSO). LASSO combines a regression model with a procedure of contraction of some parameters towards zero, imposing a restriction or a penalty on the regression coefficients. This technique allows selection of the most relevant variables. In our context, the eigenges act as regressor variables and each phenotypic trait its used as an outcome variable. \\
+
+The output after applying LASSO is a set of modules for each phenotypic trait. The union of genes belonging to the selected modules are the target genes for downstream analysis.
+
+\subsection{Genes enrichment}
+
+For the genes found, first identify the differential expressed ones, that is genes showing an absolute value of the log fold change greater than 2 ($|\ell_{ij}|\geq 2$) for at least one sample. This represents genes whose level of expression is quadrupled (up or down) from control to treatment condition, suggesting that those genes are strong candidates as treatment responsive genes.\\
+
+You also can perform a functional category enrichment looking for the Gene Ontology (GO) annotations from databases like QuikGO~\cite{binns2009quickgo}. This annotations can provide evidence of biological implications of the target genes in the treatment-tolerance mechanisms.\\
+
+Those named genes (with GO annotations), can be used to performe another relevant analysis reviewing their reported protein-protein interaction networks using the STRING database~\cite{szklarczyk2016string}. The interactions include direct (physical) and indirect (functional) associations; they stem from computational prediction, from knowledge transfer between organisms, and from interactions aggregated from other (primary) databases. This information elucidates how the selected genes are involved in functional pathways that can be related with the treatment of interest.
+
+\section{Case study}
+RNA-seq data was accessed through GEO database \cite{GEOAcces90:online} (Accession number GSE98455), corresponding to $n=57845$ gene expression profiles of shoot tissues measured for both control and salt condition in $m=92$ accessions of the Rice Diversity Panel 1, with two biological repetitions ($r=2$). \\
+
+Genes exhibiting low variance (the ratio of upper quantile to lower quantile smaller than 1.5) or low expression (more than 80\% samples with values smaller than 10) were removed. The final network contains $8928$ genes of the initial $57845$.\\
+
+Figure~\ref{fig:beta} shows the degree distribution of the similarity matrix (left) and the degree distribution of the adjacency matrix (right) which is the degree distribution of a scale-free forced network with $R^2 = 0.8$ corresponding to $\beta = 3$.
 
 %scale-free beta 1 y 3
 \begin{figure}[h]
@@ -79,12 +118,7 @@ In a strict scale-free network the logarithm of $P(k)$ (the probability of a nod
   \label{fig:beta}
 \end{figure}
 
-\subsection{Module detection}	
-Once the network has been constructed, the next step is to study its structure and dynamics identifying communities also called modules. The idea is to cluster genes with similar expression change patterns. Membership in these modules may overlap in biological contexts, where modules may be related to specific molecular, cellular or tissue functions and the biological components (i.e. genes) are involved in multiple functions.\\
-
-To identify these overlapping communities we make use of the Hierarchical Link Clustering (HLC) algorithm proposed in~\cite{ahn2010link}. HLC approach reinvent communities as groups of links rather than nodes, each node inherits all memberships of its links and can thus belong to multiple, overlapping communities. The algorithm maps links to nodes and connects them if a pair of links shares a node. They compute the similarity between links using the Jaccard index for unweighted networks and the Tanimoto coefficient for weighted networks. With this similarity, they use single-linkage hierarchical clustering to build a dendrogram where each leaf is a link from the original network and branches represent link communities. Finally, the most relevant communities are established at the maximal partition density, a function  based on link density inside communities.\\
-
-The current network represented by the adjacency matrix $A$, corresponds to a complete and weighted network of $8928$ genes (nodes) and $39850128$ edges. For computational reasons, this network was transformed into an unweighted one $\hat{A}$, keeping only the connections above the cutoff value of $0.2$. The resulting unweighted network has a total of $5810$ nodes and $16875145$ edges. After applying the HLC algorithm, a total of $4131$ genes were distributed in $5143$ overlapping modules of $3$ or more genes. Figure~\ref{fig:overlap} shows a histogram of the overlapping percentage of these genes, measured as the proportion of modules to which each gene belongs.\\
+The current network represented by the adjacency matrix $A$, corresponds to a complete and weighted network of $8928$ genes (nodes) and $39850128$ edges. For computational reasons, this network was transformed into an unweighted one $\hat{A}$, keeping only the connections above the cutoff value of $0.2$. The resulting unweighted network has a total of $5810$ nodes and $16875145$ edges. After applying the HLC algorithm, a total of $4131$ genes were distributed in $5143$ overlapping modules of $3$ or more genes. Figure~\ref{fig:overlap} shows a histogram of the overlapping percentage of these genes, measured as the proportion of modules to which each gene belongs.
 
 %overlapping percentage
 \begin{figure}[h]
@@ -94,8 +128,7 @@ The current network represented by the adjacency matrix $A$, corresponds to a co
   \label{fig:overlap}
 \end{figure}
 
-\subsection{Modules association to phenotypic traits}
-Our approach to identify the most relevant gene groups (modules) in the response to salt stress, consists in relating the co-expression network with phenotypic data from the samples. We use 3 phenotypic traits: shoot $K^+$ content, root biomass and shoot biomass. These were measured for the 92 genotypes studied, under  control and salt stress conditions. These data can be found in the supplementary information of~\cite{campbell2017allelic}. As shown in Figure \ref{fig:pdata}, there are significant differences in the values of these phenotypic traits between both stress and control conditions. This supports the idea that these variables represent tolerance-associated traits in rice under salt stress.\\
+As shown in Figure \ref{fig:pdata}, there are significant differences in the values of these phenotypic traits between both stress and control conditions. This supports the idea that these variables represent tolerance-associated traits in rice under salt stress.
 
 % boxplots
 \begin{figure}[h]
@@ -105,14 +138,11 @@ Our approach to identify the most relevant gene groups (modules) in the response
   \label{fig:pdata}
 \end{figure}
 
-In order to relate the modules to the phenotypic traits, we represent each module with the first principal component of the Log Fold Change submatrix, corresponding to the genes of such module, which can be thought of as an average differential expression profile for each community. These profiles are then associated with each phenotypic trait using the LASSO variable selection method, allowing to identify a set of relevant modules related to the response to salinity conditions in rice plants. See Appendix A for a LASSO method description.\\
+We use 3 phenotypic traits: shoot $K^+$ content, root biomass and shoot biomass. These were measured for the 92 genotypes studied, under  control and salt stress conditions. These data can be found in the supplementary information of~\cite{campbell2017allelic}.\\
 
-In our case study, 6 modules were detected as relevant in the response to salt stress in rice: 3 modules of 3 genes each one associated with shoot K content, 2 modules of 3 genes associated with  shoot biomass, and 1 module of 4 genes associated with root biomass.\\
+Finally, 6 modules were detected as relevant in the response to salt stress in rice: 3 modules of 3 genes each one associated with shoot K content, 2 modules of 3 genes associated with  shoot biomass, and 1 module of 4 genes associated with root biomass.
+From those 19 genes, all but 3 genes (associated with $K$ content), were also identified as deferentially expressed ($|LFC| > 2$) for at least one of the 92 accessions. Only 2 of the 16 diferentially expressed genes, both from the module related with shoot biomass, are named and have an associated protein product: Spermidine hydroxycinnamoyltransferase 2 (SHT2) and Lipoxygenase.
 
-\subsection{Genes enrichment}
-% genes seleccionados con expresión diferencial según análisis DEA. 
-% gene ontology de esos genes
-% redes de interacción PP de los genes nombrados
 
 \section{Discussion}
 
