@@ -20,21 +20,13 @@
 
 \usepackage{babel}
 \begin{document}
-\title{Prediction of Protein-Protein Interactions on the Human and Rice Interactome }
+\title{Prediction of Protein-Protein Interactions on the Human and Rice Interactomes}
 \author{Nicolás Antonio López Rozo}
 \maketitle
 \begin{abstract}
 
-Previous Network-based efforts to predict unmapped protein-protein
-interactions (PPI's) suggest that proteins with multiple paths of
-length 3 (L3) are more likely to be connected. This paper extends
-this so-called L3 principle by taking into account feature extraction
-and using \texttt{XGBoost} techniques for prediction. In particular,
-we train the model using handcrafted features as well as features
-learned from embeddings using \texttt{Node2Vec}. Our main result shows
-that while L3 remains an important principle for predicting links,
-the approach is outperform by using embedded features. The mentioned
-approaches are compared using the human and the rice interactomes.
+Network analysis for  predict unmapped protein-protein interactions (PPI) suggest that the higher the number of paths of
+length~3 (L3) between two proteins, the more likely they are to interact. This paper extends previous work based on the L3 principle by taking into account the representation learning of node features of the PPI network. In particular, we train an XGBoost model using L3 and handcrafted features, as well as embeddings from \texttt{Node2Vec}. Our main result shows that while L3 is an important feature for predicting links, best performance is achieved when combined with edge embeddings. The proposed approached is evaluated for the human and rice interactomes.
 \end{abstract}
 \begin{comment}
 need include a feature that compares the dimension of the embedding
@@ -49,43 +41,19 @@ is useful for prediction with L3 to show that they independent measures
 Need to add other relevant references
 \end{comment}
 
-Proteins are the chief actors of biological functionality inside of
-the cell, and as such, do not usually work as single substances but
-rather as a part of dynamic networks, interacting with other substances
-for a wide variety of purposes \cite{Lin2017}.
+Proteins are the key actors of biological processes inside cells. As they carry out a variety of tasks, cells do not work as single agents but
+rather as a part of dynamic networks of protein-protein interaction (PPI)~\cite{Lin2017}. PPI networks play a key role in a variety of interdependent mechanisms, including signal transduction, homeostasis control, stress responses, plant defense and organ formation. At the molecular level, PPIs play an essential role in many physiological and developmental processes, including protein phosphorylation, transcriptional co-factor recruitment, transporter activation~\cite{Zhang_2010_PPI}.
 
-Protein-protein interactions (PPIs) have a key role in a variety of
-biological processes such as signal transduction, homeostasis control,
-stress responses, plant defense and organ formation. On the molecular
-level, PPIs have importance in protein phosphorylation, transcriptional
-co-factor recruitment, transporter activation and many others, thus
-playing an essential role in many physiological and developmental
-processes in virtually all organisms \cite{Zhang_2010_PPI}.
+Prediction of potentially relevant yet unexplored PPIs is a current research topic on bioinformatics. Several authors have
+proposed different methods for extrapolating information from the existing PPI networks. Kovacs et al. (2019) introduces an approach which relies on counting paths of length 3 (L3) to predict interactions among proteins for a variety of model organisms. The proposed approach outperform previous methods in different PPI networks of yeast (\emph{S. cerevisiae}), Arabidopsis (\emph{A. thaliana}), worm (\emph{C. elegans}), fly (\emph{D. melanogaster}), fission yeast (\emph{S. pombe}) and mouse (\emph{M. musculus}), as well as for the human interactome \cite{Kovacs2019}.
 
-Prediction of potentially relevant, yet unexplored PPIs is a current
-research topic on bioinformatics and therefore, several authors have
-proposed different methods for extrapolating information from the
-existing PPI networks. As presented by Kovacs et al (2019), information
-related to counting paths of length 3 (L3) seems to outperform state-of-the-art
-methods when it comes to predict interactions among proteins for a
-variety of model organisms such as yeast (\emph{S. cerevisiae}), Arabidopsis
-(\emph{A. thaliana}), worm (\emph{C. elegans}), fly (\emph{D. melanogaster}),
-fission yeast (\emph{S. pombe}) and mouse (\emph{M. musculus}), as
-well as on the human interactome \cite{Kovacs2019}.
-
-The most common way to validate PPI's is the \emph{Yeast-Two-Hybrid}
-technique (also known as \emph{two-hybrid screening} or \emph{Y2H}),
-which is based on the expression of a specific reporter gene that
-activates by the binding of a DNA-binding Domain (DB) and an Activation
-Domain (AD) of a Transcription Factor that binds to an Upstream Activation
-Sequence (UAS). For the Y2H technique, a protein is fused to the DB
-domain (known as \emph{bait}) and another one to the AD (known as
-\emph{prey}). If the proteins do not interact, then the reporter gene
-is not expressed. Otherwise, the reporter gene expression is activated
-by the activation domain.
+A most common way to uncover (or validate) PPIs is the \emph{Yeast-Two-Hybrid} technique (also known as \emph{two-hybrid screening} or \emph{Y2H}),
+which is based on (i) the expression of a specific reporter gene that is activated by the binding of a DNA-binding Domain (DB); and (ii) an activation domain (AD) of a transcription factor that binds to an upstream activation sequence (UAS). For the Y2H technique, a protein is fused to the DB domain (known as \emph{bait}) and another one to the AD (known as \emph{prey}). If the proteins do not interact, then the reporter gene
+is not expressed. Otherwise, the reporter gene expression is activated by the activation domain.
 
 \begin{comment}
 NL: I will make this figure myself
+JF: Good idea
 \end{comment}
 
 \begin{figure}[h]
@@ -94,31 +62,26 @@ NL: I will make this figure myself
 \noindent \centering{}\includegraphics[width=1\columnwidth]{Y2H}
 \end{figure}
 
-Having several of these Y2H results allows scientists to establish
-a PPI network, where all known interactions for each protein are represented.
-Several algorithms are proposed over these networks in order to predict
-unknown interactions. In this report, three prediction methods are
-presented and their results are shown: Common Neighbors (\textbf{CN}),
-which uses the length-2 path count; raw count of paths of length 3
-(\textbf{A3}); and degree-normalized length-3 paths score (\textbf{L3}).
+Based on the outcome of numerous Y2H experiments PPI networks can be constructed, in which known interactions for each protein are represented. Several algorithms are proposed over these networks in order to predict yet unknown interactions. This paper evaluates predictions based on three measures: Common Neighbors (\textbf{CN}), based on the count of paths of length 2; the raw count of paths of length 3
+(\textbf{A3}); and the degree-normalized count of paths of length 3(\textbf{L3}).
 
-Focus of the present study is to evaluate different methods for predicting
-protein-protein interactions (PPIs) using the existing knowledge of
-the network, which is an undirected graph. The traditional way is
-usually based on social networks analysis, more specifically on the
-Triadic Closure Principle (TCP), that states that the more common
-shared friends that two people have, the more likely that they know
-each other. As shown by previous studies, the mentioned approach fails
-because it does not consider the structural and chemical properties
+\begin{comment}
+JF: Yet you do more than evaluating this three measures so this has to be updated. 
+JF: Not sure we should use L3 above since it is being redefined as a normalized measure here!
+\end{comment}
+
+The focus of this paper is to evaluate different methods for predicting PPIs using the existing knowledge of the network of interactions, which is represented as an undirected graph. The traditional way is of approaching the problem is usually based on social networks analysis, more specifically on the triadic closure principle (TCP), that states that the more common shared friends that two people have, the more likely that they know each other. As shown by previous studies, the mentioned approach fails because it does not consider the structural and chemical properties
 of the proteins \cite{Kovacs2019}.
 
-For achieving the described results, human and rice PPI networks are
-used and compared using state-of-the-art methods, as well as the proposed
-ones (CN, A3, L3). In the case of the human network, human interactome
-(\emph{HI-II-14}), as well as a curated version of it (\emph{HI-TESTED})
-were used. A massive experimental assay was carried on and its results
-were consolidated and used to build a validation network (\emph{HI-III}). 
+\begin{comment}
+JF: Not sure this is the place to introduce TCP. You are already stating what the paper will do. Sees like TCP, should be introduced before the L3 measure is introduces, as part of the history of past approaches. Also TCP is not referred to later on...
+\end{comment}
 
+
+For achieving the described results, human and rice PPI networks are used and compared using state-of-the-art methods, as well as the proposed ones (CN, A3, L3). In the case of the human network, human interactome (\emph{HI-II-14}), as well as a curated version of it (\emph{HI-TESTED}) were used. A massive experimental assay was carried on and its results were consolidated and used to build a validation network (\emph{HI-III}). 
+
+
+%% read throughout the document but edited up here. I prefer to read the results before editing the materials and methods section. 
 \section{Materials and Methods}
 
 \subsection{Data Availability}
@@ -308,17 +271,19 @@ barely as good as a random choice of the labels.
 
 \section{(PENDING FROM HERE ON)}
 
-\begin{figure}[h]
-\caption{Methods Comparison for \emph{HI-II-14}}
+% cannot compile doc given the way images are being imported
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-ii-14.txt\string".eps}
-\end{figure}
-
-\begin{figure}[h]
-\caption{Methods Comparison for \emph{HI-TESTED}}
-
-\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-tested.txt\string".eps}
-\end{figure}
+%\begin{figure}[h]
+%\caption{Methods Comparison for \emph{HI-II-14}}
+%
+%\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-ii-14.txt\string".eps}
+%\end{figure}
+%
+%\begin{figure}[h]
+%\caption{Methods Comparison for \emph{HI-TESTED}}
+%
+%\noindent \centering{}\includegraphics[width=1\columnwidth]{\string"/home/ocin/Documents/02 Asignaturas/10 GraphAnalytics/Project1/hi-tested.txt\string".eps}
+%\end{figure}
 
 As it can be inferred from the plots, L3-based predictions outperform
 their $A{{}^2}$ counterparts. Results also show that L3-score and
