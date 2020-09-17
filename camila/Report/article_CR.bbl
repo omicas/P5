@@ -10,6 +10,12 @@ Geo accession viewer.
 \newblock Link communities reveal multiscale complexity in networks.
 \newblock {\em nature 466}, 7307 (2010), 761--764.
 
+\bibitem{aoki2007approaches}
+{\sc Aoki, K., Ogata, Y., and Shibata, D.}
+\newblock Approaches for extracting practical information from gene
+  co-expression networks in plant biology.
+\newblock {\em Plant and Cell Physiology 48}, 3 (2007), 381--390.
+
 \bibitem{binns2009quickgo}
 {\sc Binns, D., Dimmer, E., Huntley, R., Barrell, D., O'donovan, C., and
   Apweiler, R.}
@@ -34,11 +40,35 @@ Geo accession viewer.
 \newblock A review on variable selection in regression analysis.
 \newblock {\em Econometrics 6}, 4 (2018), 45.
 
+\bibitem{du2019network}
+{\sc Du, Q., Campbell, M., Yu, H., Liu, K., Walia, H., Zhang, Q., and Zhang,
+  C.}
+\newblock Network-based feature selection reveals substructures of gene modules
+  responding to salt stress in rice.
+\newblock {\em Plant direct 3}, 8 (2019), e00154.
+
 \bibitem{gaiteri2014beyond}
 {\sc Gaiteri, C., Ding, Y., French, B., Tseng, G.~C., and Sibille, E.}
 \newblock Beyond modules and hubs: the potential of gene coexpression networks
   for investigating molecular mechanisms of complex brain disorders.
 \newblock {\em Genes, brain and behavior 13}, 1 (2014), 13--24.
+
+\bibitem{gupta2013plant}
+{\sc Gupta, K., Dey, A., and Gupta, B.}
+\newblock Plant polyamines in abiotic stress responses.
+\newblock {\em Acta physiologiae plantarum 35}, 7 (2013), 2015--2036.
+
+\bibitem{hou2015persimmon}
+{\sc Hou, Y., Meng, K., Han, Y., Ban, Q., Wang, B., Suo, J., Lv, J., and Rao,
+  J.}
+\newblock The persimmon 9-lipoxygenase gene dklox3 plays positive roles in both
+  promoting senescence and enhancing tolerance to abiotic stress.
+\newblock {\em Frontiers in plant science 6\/} (2015), 1073.
+
+\bibitem{langfelder2008wgcna}
+{\sc Langfelder, P., and Horvath, S.}
+\newblock Wgcna: an r package for weighted correlation network analysis.
+\newblock {\em BMC bioinformatics 9}, 1 (2008), 559.
 
 \bibitem{love2014moderated}
 {\sc Love, M.~I., Huber, W., and Anders, S.}
@@ -46,10 +76,31 @@ Geo accession viewer.
   with deseq2.
 \newblock {\em Genome biology 15}, 12 (2014), 550.
 
+\bibitem{mittova2002salt}
+{\sc Mittova, V., Tal, M., Volokita, M., and Guy, M.}
+\newblock Salt stress induces up-regulation of an efficient chloroplast
+  antioxidant system in the salt-tolerant wild tomato species lycopersicon
+  pennellii but not in the cultivated species.
+\newblock {\em Physiologia Plantarum 115}, 3 (2002), 393--400.
+
+\bibitem{peng2019novel}
+{\sc Peng, H., Meyer, R.~S., Yang, T., Whitaker, B.~D., Trouth, F., Shangguan,
+  L., Huang, J., Litt, A., Little, D.~P., Ke, H., et~al.}
+\newblock A novel hydroxycinnamoyl transferase for synthesis of
+  hydroxycinnamoyl spermine conjugates in plants.
+\newblock {\em BMC plant biology 19}, 1 (2019), 1--13.
+
 \bibitem{reddy2017salt}
 {\sc Reddy, I. N. B.~L., Kim, B.-K., Yoon, I.-S., Kim, K.-H., and Kwon, T.-R.}
 \newblock Salt tolerance in rice: focus on mechanisms and approaches.
 \newblock {\em Rice Science 24}, 3 (2017), 123--144.
+
+\bibitem{roychoudhury2011amelioration}
+{\sc Roychoudhury, A., Basu, S., and Sengupta, D.~N.}
+\newblock Amelioration of salinity stress by exogenously applied spermidine or
+  spermine in three varieties of indica rice differing in their level of salt
+  tolerance.
+\newblock {\em Journal of plant physiology 168}, 4 (2011), 317--328.
 
 \bibitem{shrivastava2015soil}
 {\sc Shrivastava, P., and Kumar, R.}
