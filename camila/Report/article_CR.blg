@@ -8,51 +8,46 @@ You're missing a field name---line 2 of file mybibliography.bib
  : %  title={Using LASSO in gene co-expression network for genome-wide identification of gene interactions responding to salt stress in rice},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You're missing a field name---line 11 of file mybibliography.bib
- : 
- : %  title={Network-based feature selection reveals substructures of gene modules responding to salt stress in rice},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in GEOAcces90:online
-You've used 13 entries,
+You've used 21 entries,
             2253 wiz_defined-function locations,
-            620 strings with 6937 characters,
-and the built_in function-call counts, 4811 in all, are:
-= -- 448
-> -- 300
+            675 strings with 8913 characters,
+and the built_in function-call counts, 8057 in all, are:
+= -- 749
+> -- 521
 < -- 0
-+ -- 125
-- -- 110
-* -- 449
-:= -- 817
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 92
++ -- 217
+- -- 192
+* -- 766
+:= -- 1371
+add.period$ -- 63
+call.type$ -- 21
+change.case$ -- 156
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 115
-empty$ -- 331
-format.name$ -- 110
-if$ -- 944
+cite$ -- 22
+duplicate$ -- 187
+empty$ -- 538
+format.name$ -- 192
+if$ -- 1573
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 12
-newline$ -- 68
-num.names$ -- 24
-pop$ -- 76
+int.to.str$ -- 21
+missing$ -- 20
+newline$ -- 108
+num.names$ -- 40
+pop$ -- 124
 preamble$ -- 1
-purify$ -- 79
+purify$ -- 135
 quote$ -- 0
-skip$ -- 67
+skip$ -- 108
 stack$ -- 0
-substring$ -- 299
-swap$ -- 25
+substring$ -- 502
+swap$ -- 41
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 84
 warning$ -- 1
-while$ -- 42
-width$ -- 15
-write$ -- 130
-(There were 2 error messages)
+while$ -- 71
+width$ -- 23
+write$ -- 210
+(There was 1 error message)
