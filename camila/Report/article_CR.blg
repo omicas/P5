@@ -9,45 +9,45 @@ You're missing a field name---line 2 of file mybibliography.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in GEOAcces90:online
-You've used 21 entries,
+You've used 22 entries,
             2253 wiz_defined-function locations,
-            675 strings with 8913 characters,
-and the built_in function-call counts, 8057 in all, are:
-= -- 749
-> -- 521
+            681 strings with 9011 characters,
+and the built_in function-call counts, 8338 in all, are:
+= -- 776
+> -- 533
 < -- 0
-+ -- 217
-- -- 192
-* -- 766
-:= -- 1371
-add.period$ -- 63
-call.type$ -- 21
-change.case$ -- 156
++ -- 222
+- -- 196
+* -- 790
+:= -- 1419
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 160
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 187
-empty$ -- 538
-format.name$ -- 192
-if$ -- 1573
+cite$ -- 23
+duplicate$ -- 196
+empty$ -- 562
+format.name$ -- 196
+if$ -- 1631
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 20
-newline$ -- 108
-num.names$ -- 40
-pop$ -- 124
+int.to.str$ -- 22
+missing$ -- 21
+newline$ -- 113
+num.names$ -- 42
+pop$ -- 126
 preamble$ -- 1
-purify$ -- 135
+purify$ -- 138
 quote$ -- 0
-skip$ -- 108
+skip$ -- 114
 stack$ -- 0
-substring$ -- 502
-swap$ -- 41
+substring$ -- 519
+swap$ -- 43
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 88
 warning$ -- 1
-while$ -- 71
-width$ -- 23
-write$ -- 210
+while$ -- 74
+width$ -- 24
+write$ -- 220
 (There was 1 error message)
