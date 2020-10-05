@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.21)  11 SEP 2020 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.6.21)  30 SEP 2020 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,62 +425,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--79
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--107
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 109.
+
+<Figures/flow_chart.pdf, id=20, 995.72pt x 1137.24875pt>
+File: Figures/flow_chart.pdf Graphic file (type pdf)
+<use Figures/flow_chart.pdf>
+Package pdftex.def Info: Figures/flow_chart.pdf  used on input line 111.
+(pdftex.def)             Requested size: 469.75502pt x 536.5373pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+[4] [5 <./Figures/flow_chart.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
@@ -490,27 +484,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
@@ -519,115 +508,171 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-<Figures/pick_beta.png, id=32, 704.3916pt x 343.0416pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+<Figures/pick_beta.png, id=134, 704.3916pt x 343.0416pt>
 File: Figures/pick_beta.png Graphic file (type png)
 <use Figures/pick_beta.png>
-Package pdftex.def Info: Figures/pick_beta.png  used on input line 165.
+Package pdftex.def Info: Figures/pick_beta.png  used on input line 188.
 (pdftex.def)             Requested size: 375.80544pt x 183.02031pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
-
- []
-
-[7 <./Figures/pick_beta.png>]
-<Figures/artificial_modules.png, id=41, 609.2361pt x 377.06873pt>
-File: Figures/artificial_modules.png Graphic file (type png)
-<use Figures/artificial_modules.png>
-Package pdftex.def Info: Figures/artificial_modules.png  used on input line 180
-.
-(pdftex.def)             Requested size: 234.8775pt x 145.37039pt.
-<Figures/phenotypic_traits.png, id=43, 879.7668pt x 292.2117pt>
-File: Figures/phenotypic_traits.png Graphic file (type png)
-<use Figures/phenotypic_traits.png>
-Package pdftex.def Info: Figures/phenotypic_traits.png  used on input line 192.
-
-(pdftex.def)             Requested size: 469.75502pt x 156.02628pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
-
- []
-
-<Figures/lambda_kshoot_2.png, id=45, 481.8pt x 481.8pt>
-File: Figures/lambda_kshoot_2.png Graphic file (type png)
-<use Figures/lambda_kshoot_2.png>
-Package pdftex.def Info: Figures/lambda_kshoot_2.png  used on input line 203.
-(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
-<Figures/lambda_BMshoot_2.png, id=46, 481.8pt x 481.8pt>
-File: Figures/lambda_BMshoot_2.png Graphic file (type png)
-<use Figures/lambda_BMshoot_2.png>
-Package pdftex.def Info: Figures/lambda_BMshoot_2.png  used on input line 207.
-(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
-<Figures/lambda_BMroot.png, id=47, 481.8pt x 481.8pt>
-File: Figures/lambda_BMroot.png Graphic file (type png)
-<use Figures/lambda_BMroot.png>
-Package pdftex.def Info: Figures/lambda_BMroot.png  used on input line 211.
-(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[8 <./Figures/artificial_modules.png> <./Figures/phenotypic_traits.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+[8]
+<Figures/artificial_modules.png, id=140, 609.2361pt x 377.06873pt>
+File: Figures/artificial_modules.png Graphic file (type png)
+<use Figures/artificial_modules.png>
+Package pdftex.def Info: Figures/artificial_modules.png  used on input line 203
+.
+(pdftex.def)             Requested size: 234.8775pt x 145.37039pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-<Figures/structure_LOC_Os12g27254.png, id=55, 1816.7875pt x 1816.7875pt>
+<Figures/phenotypic_traits.png, id=142, 879.7668pt x 292.2117pt>
+File: Figures/phenotypic_traits.png Graphic file (type png)
+<use Figures/phenotypic_traits.png>
+Package pdftex.def Info: Figures/phenotypic_traits.png  used on input line 215.
+
+(pdftex.def)             Requested size: 469.75502pt x 156.02628pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+[9 <./Figures/pick_beta.png> <./Figures/artificial_modules.png>]
+<Figures/lambda_kshoot_2.png, id=151, 481.8pt x 481.8pt>
+File: Figures/lambda_kshoot_2.png Graphic file (type png)
+<use Figures/lambda_kshoot_2.png>
+Package pdftex.def Info: Figures/lambda_kshoot_2.png  used on input line 227.
+(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
+<Figures/lambda_BMshoot_2.png, id=152, 481.8pt x 481.8pt>
+File: Figures/lambda_BMshoot_2.png Graphic file (type png)
+<use Figures/lambda_BMshoot_2.png>
+Package pdftex.def Info: Figures/lambda_BMshoot_2.png  used on input line 231.
+(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
+<Figures/lambda_BMroot.png, id=153, 481.8pt x 481.8pt>
+File: Figures/lambda_BMroot.png Graphic file (type png)
+<use Figures/lambda_BMroot.png>
+Package pdftex.def Info: Figures/lambda_BMroot.png  used on input line 235.
+(pdftex.def)             Requested size: 140.92793pt x 140.92409pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+[10 <./Figures/phenotypic_traits.png> <./Figures/lambda_kshoot_2.png (PNG copy)
+> <./Figures/lambda_BMshoot_2.png (PNG copy)> <./Figures/lambda_BMroot.png (PNG
+ copy)>]
+<Figures/structure_LOC_Os12g27254.png, id=161, 1816.7875pt x 1816.7875pt>
 File: Figures/structure_LOC_Os12g27254.png Graphic file (type png)
 <use Figures/structure_LOC_Os12g27254.png>
 Package pdftex.def Info: Figures/structure_LOC_Os12g27254.png  used on input li
-ne 229.
+ne 252.
 (pdftex.def)             Requested size: 115.09126pt x 115.07364pt.
-<Figures/structure_LOC_Os12g37260.png, id=56, 1816.7875pt x 1816.7875pt>
+<Figures/structure_LOC_Os12g37260.png, id=162, 1816.7875pt x 1816.7875pt>
 File: Figures/structure_LOC_Os12g37260.png Graphic file (type png)
 <use Figures/structure_LOC_Os12g37260.png>
 Package pdftex.def Info: Figures/structure_LOC_Os12g37260.png  used on input li
-ne 233.
+ne 256.
 (pdftex.def)             Requested size: 115.09126pt x 115.07364pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-
- []
-
-[9 <./Figures/lambda_kshoot_2.png (PNG copy)> <./Figures/lambda_BMshoot_2.png (
-PNG copy)> <./Figures/lambda_BMroot.png (PNG copy)> <./Figures/structure_LOC_Os
-12g27254.png> <./Figures/structure_LOC_Os12g37260.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
-(./article_CR.bbl [10]) [11] (./article_CR.aux) ) 
+[11 <./Figures/structure_LOC_Os12g27254.png> <./Figures/structure_LOC_Os12g3726
+0.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+(./article_CR.bbl [12]) [13] (./article_CR.aux) ) 
 Here is how much of TeX's memory you used:
- 5766 strings out of 481239
- 90862 string characters out of 5920377
- 342317 words of memory out of 5000000
- 20949 multiletter control sequences out of 15000+600000
- 571378 words of font info for 104 fonts, out of 8000000 for 9000
+ 5776 strings out of 481239
+ 91097 string characters out of 5920377
+ 342342 words of memory out of 5000000
+ 20957 multiletter control sequences out of 15000+600000
+ 572485 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,7n,46p,2322b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,7n,46p,2321b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist
 /fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
@@ -640,12 +685,12 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on article_CR.pdf (11 pages, 3188856 bytes).
+e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
+mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on article_CR.pdf (13 pages, 3486494 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 222 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 70 words of extra memory for PDF output out of 10000 (max. 10000000)
 
