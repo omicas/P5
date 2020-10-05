@@ -35,6 +35,11 @@ Geo accession viewer.
   sativa l.) cultivars which differ in salinity tolerance.
 \newblock {\em Plant Physiology and Biochemistry 144\/} (2019), 427--435.
 
+\bibitem{uniprot2018uniprot}
+{\sc Consortium, U., et~al.}
+\newblock Uniprot: the universal protein knowledgebase.
+\newblock {\em Nucleic acids research 46}, 5 (2018), 2699.
+
 \bibitem{desboulets2018review}
 {\sc Desboulets, L. D.~D.}
 \newblock A review on variable selection in regression analysis.
@@ -101,6 +106,12 @@ Geo accession viewer.
   spermine in three varieties of indica rice differing in their level of salt
   tolerance.
 \newblock {\em Journal of plant physiology 168}, 4 (2011), 317--328.
+
+\bibitem{saelens2018comprehensive}
+{\sc Saelens, W., Cannoodt, R., and Saeys, Y.}
+\newblock A comprehensive evaluation of module detection methods for gene
+  expression data.
+\newblock {\em Nature communications 9}, 1 (2018), 1--12.
 
 \bibitem{shrivastava2015soil}
 {\sc Shrivastava, P., and Kumar, R.}
