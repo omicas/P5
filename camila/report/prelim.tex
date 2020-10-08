@@ -1,0 +1,102 @@
+\section{Preliminaries}
+\label{sec.prelim}
+
+This section presents preliminaries on networks, hierarchical link
+clustering and the LASSO linear regression technique.
+
+\subsection{Co-expression network}
+
+A network is an undirected graph $G=(V,E)$ where
+${V=\{v_1,v_2,\ldots,v_{n}\}}$ is a set of \textit{vertices} or
+\textit{nodes} and ${E=\{e_1,e_2,\ldots,e_q\}}$ is a set of
+\textit{edges} or \textit{links} that connect vertices. In a gene
+co-expression network, each node corresponds to a gene. A pair of
+genes is connected if they show similar expression
+patterns. A simple and unweighted network can be represented by an
+adjacency matrix $A \in \{0,1\}^{n \times n}$ that is symmetric with a
+positive one in the positions $(v_i,v_j)$ and $(v_j,v_i)$ whenever
+there is an edge connecting vertices $v_i$ and $v_j$, and zeros
+elsewhere. Co-expression networks are of biological interest because
+the co-expressed genes are usually controlled by the same
+transcriptional regulatory pathway, functionally related or members of
+the same pathway or metabolic complex.
+
+
+\subsection{Hierarchical Link Clustering}
+
+The Hierarchical Link Clustering (HLC) algorithm was proposed by Ahn
+et al.~\cite{ahn2010link}. The HLC approach represents communities as
+groups of links (rather than nodes), and each node inherits all
+memberships of its links and can thus belong to multiple, overlapping
+communities. It maps links to nodes and connects them if a pair of
+links shares a node. The similarity between two links $e_{ik}$ and
+$e_{jk}$ is computed using the Jaccard index
+%
+\begin{equation}\label{eq:jaccard}
+  S(e_{ik},e_{jk}) = \frac{\vert n(i) \cap n(j) \vert}{\vert n(i) \cup n(j) \vert},
+\end{equation}
+%
+where $n(i)$ denotes the set containing exactly node $i$ and its
+neighbors. The algorithm uses single-linkage hierarchical clustering
+to build a dendrogram in which each leaf is a link from the original
+network and branches represent link communities. Hierarchical
+clustering algorithms repeatedly merge groups until all elements are
+members of a single cluster. For the purpose of finding meaningful
+communities, it is crucial to know where to partition the
+dendrogram. In this case, the most relevant communities are
+established at the maximal partition density $D$, a function based on
+link density inside communities measuring the quality of a link
+partition. The partition density $D$ has a single global maximum along
+the dendrogram in almost all cases, because its value is the average
+density at the top of the dendrogram (a single giant community with
+every link and node) and it is very small at the bottom of the
+dendrogram (most communities consists of a single link). In
+particular, it is the case that $D = 1$ when every community is a
+fully connected clique and $D = 0$ when each community is a tree. If a
+community is less dense than a tree (i.e. when the community subgraph
+has disconnected components), then such a community contribute
+negatively to $D$, which can take negative values. The minimum density
+inside a community is $-2/3$, given by one community of two
+disconnected edges. Since $D$ is the average of the intra-community
+density, there is a lower bound of $-2/3$ for $D$. Computing $D$ at
+each level of the link dendrogram can help the purpose of picking the
+best level to cut, although meaningful structure could exist above or
+below the threshold. The output of cutting is a set of node clusters,
+where each node can participate in multiple communities.
+
+\subsection{Least Absolute Shrinkage Selector Operator}
+
+The Least Absolute Shrinkage Selector Operator (LASSO) is a
+regularized linear regression technique. It combines a regression
+model with a procedure of contraction of some parameters towards zero
+and selection of variables, imposing a restriction or a penalty on the
+regression coefficients. In other words, LASSO solves the least
+squares problem with restriction on the $ L_1$-norm of the coefficient
+vector. It can be especially useful to solve problems where the number
+of variables (e.g., genes) $ n $ is much greater than the number of
+samples $ m $ (i.e., $ n \gg m $).
+
+Consider a dataset consisting of $m$ samples, each of which consists
+of $n$ covariates and a single outcome. Let $y_i$ be the outcome and
+$x_i := (x_1,...,x_n)$ be the covariate vector for the $i$-th
+sample. The objective of LASSO is to solve
+%
+\begin{equation}
+\min \left\lbrace\sum_{i=1}^{m}{\left( y_i-\sum_{j=1}^n{\beta_j
+    x_{ij}}\right)^2} \right\rbrace \quad , \quad \textrm{subject to}
+\quad \sum_{j=1}^n\abs{\beta_j}\leq s.
+\end{equation}
+
+Equivalently, in the Lagrangian form, it minimizes
+
+\begin{equation}
+  \sum_{i=1}^{p}{\left( y_i-\sum_{j=1}^n{\beta_j x_{ij}}\right)^2} +
+  \lambda \sum_{j=1}^n\abs{\beta_j}
+\end{equation}
+%
+where $s$ is the regularization penalty and $\lambda \geq 0$ is the
+corresponding Lagrange multiplier. Since the $\lambda$ value
+determines the degree of penalty, the accuracy of the model depends on
+its choice. Cross-validation is often used to select the
+regularization parameter, choosing the one that minimizes the
+mean-squared error.
