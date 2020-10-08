@@ -1,0 +1,131 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{GEOAcces90:online}
+Geo accession viewer.
+  \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE98455}, (Accessed
+  on 10/16/2019)
+
+\bibitem{ahn2010link}
+Ahn, Y.Y., Bagrow, J.P., Lehmann, S.: Link communities reveal multiscale
+  complexity in networks. nature  \textbf{466}(7307),  761--764 (2010)
+
+\bibitem{aoki2007approaches}
+Aoki, K., Ogata, Y., Shibata, D.: Approaches for extracting practical
+  information from gene co-expression networks in plant biology. Plant and Cell
+  Physiology  \textbf{48}(3),  381--390 (2007)
+
+\bibitem{binns2009quickgo}
+Binns, D., Dimmer, E., Huntley, R., Barrell, D., O'donovan, C., Apweiler, R.:
+  Quickgo: a web-based tool for gene ontology searching. Bioinformatics
+  \textbf{25}(22),  3045--3046 (2009)
+
+\bibitem{campbell2017allelic}
+Campbell, M.T., Bandillo, N., Al~Shiblawi, F.R.A., Sharma, S., Liu, K., Du, Q.,
+  Schmitz, A.J., Zhang, C., V{\'e}ry, A.A., Lorenz, A.J., et~al.: Allelic
+  variants of oshkt1; 1 underlie the divergence between indica and japonica
+  subspecies of rice (oryza sativa) for root sodium content. PLoS genetics
+  \textbf{13}(6),  e1006823 (2017)
+
+\bibitem{chang2019morphological}
+Chang, J., Cheong, B.E., Natera, S., Roessner, U.: Morphological and metabolic
+  responses to salt stress of rice (oryza sativa l.) cultivars which differ in
+  salinity tolerance. Plant Physiology and Biochemistry  \textbf{144},
+  427--435 (2019)
+
+\bibitem{uniprot2018uniprot}
+Consortium, U., et~al.: Uniprot: the universal protein knowledgebase. Nucleic
+  acids research  \textbf{46}(5), ~2699 (2018)
+
+\bibitem{desboulets2018review}
+Desboulets, L.D.D.: A review on variable selection in regression analysis.
+  Econometrics  \textbf{6}(4), ~45 (2018)
+
+\bibitem{du2019network}
+Du, Q., Campbell, M., Yu, H., Liu, K., Walia, H., Zhang, Q., Zhang, C.:
+  Network-based feature selection reveals substructures of gene modules
+  responding to salt stress in rice. Plant direct  \textbf{3}(8),  e00154
+  (2019)
+
+\bibitem{gaiteri2014beyond}
+Gaiteri, C., Ding, Y., French, B., Tseng, G.C., Sibille, E.: Beyond modules and
+  hubs: the potential of gene coexpression networks for investigating molecular
+  mechanisms of complex brain disorders. Genes, brain and behavior
+  \textbf{13}(1),  13--24 (2014)
+
+\bibitem{gupta2013plant}
+Gupta, K., Dey, A., Gupta, B.: Plant polyamines in abiotic stress responses.
+  Acta physiologiae plantarum  \textbf{35}(7),  2015--2036 (2013)
+
+\bibitem{hou2015persimmon}
+Hou, Y., Meng, K., Han, Y., Ban, Q., Wang, B., Suo, J., Lv, J., Rao, J.: The
+  persimmon 9-lipoxygenase gene dklox3 plays positive roles in both promoting
+  senescence and enhancing tolerance to abiotic stress. Frontiers in plant
+  science  \textbf{6}, ~1073 (2015)
+
+\bibitem{langfelder2008wgcna}
+Langfelder, P., Horvath, S.: Wgcna: an r package for weighted correlation
+  network analysis. BMC bioinformatics  \textbf{9}(1), ~559 (2008)
+
+\bibitem{love2014moderated}
+Love, M.I., Huber, W., Anders, S.: Moderated estimation of fold change and
+  dispersion for rna-seq data with deseq2. Genome biology  \textbf{15}(12),
+  ~550 (2014)
+
+\bibitem{mittova2002salt}
+Mittova, V., Tal, M., Volokita, M., Guy, M.: Salt stress induces up-regulation
+  of an efficient chloroplast antioxidant system in the salt-tolerant wild
+  tomato species lycopersicon pennellii but not in the cultivated species.
+  Physiologia Plantarum  \textbf{115}(3),  393--400 (2002)
+
+\bibitem{palla2005uncovering}
+Palla, G., Der{\'e}nyi, I., Farkas, I., Vicsek, T.: Uncovering the overlapping
+  community structure of complex networks in nature and society. nature
+  \textbf{435}(7043),  814--818 (2005)
+
+\bibitem{peng2019novel}
+Peng, H., Meyer, R.S., Yang, T., Whitaker, B.D., Trouth, F., Shangguan, L.,
+  Huang, J., Litt, A., Little, D.P., Ke, H., et~al.: A novel hydroxycinnamoyl
+  transferase for synthesis of hydroxycinnamoyl spermine conjugates in plants.
+  BMC plant biology  \textbf{19}(1),  1--13 (2019)
+
+\bibitem{reddy2017salt}
+Reddy, I.N.B.L., Kim, B.K., Yoon, I.S., Kim, K.H., Kwon, T.R.: Salt tolerance
+  in rice: focus on mechanisms and approaches. Rice Science  \textbf{24}(3),
+  123--144 (2017)
+
+\bibitem{roychoudhury2011amelioration}
+Roychoudhury, A., Basu, S., Sengupta, D.N.: Amelioration of salinity stress by
+  exogenously applied spermidine or spermine in three varieties of indica rice
+  differing in their level of salt tolerance. Journal of plant physiology
+  \textbf{168}(4),  317--328 (2011)
+
+\bibitem{saelens2018comprehensive}
+Saelens, W., Cannoodt, R., Saeys, Y.: A comprehensive evaluation of module
+  detection methods for gene expression data. Nature communications
+  \textbf{9}(1),  1--12 (2018)
+
+\bibitem{shrivastava2015soil}
+Shrivastava, P., Kumar, R.: Soil salinity: a serious environmental issue and
+  plant growth promoting bacteria as one of the tools for its alleviation.
+  Saudi journal of biological sciences  \textbf{22}(2),  123--131 (2015)
+
+\bibitem{szklarczyk2016string}
+Szklarczyk, D., Morris, J.H., Cook, H., Kuhn, M., Wyder, S., Simonovic, M.,
+  Santos, A., Doncheva, N.T., Roth, A., Bork, P., et~al.: The string database
+  in 2017: quality-controlled protein--protein association networks, made
+  broadly accessible. Nucleic acids research p. gkw937 (2016)
+
+\bibitem{tian2018identifying}
+Tian, H., Guan, D., Li, J.: Identifying osteosarcoma metastasis associated
+  genes by weighted gene co-expression network analysis (wgcna). Medicine
+  \textbf{97}(24) (2018)
+
+\bibitem{tibshirani1996regression}
+Tibshirani, R.: Regression shrinkage and selection via the lasso. Journal of
+  the Royal Statistical Society: Series B (Methodological)  \textbf{58}(1),
+  267--288 (1996)
+
+\end{thebibliography}

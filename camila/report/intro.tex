@@ -1,0 +1,98 @@
+\section{Introduction}
+\label{sec.intro}
+
+Abiotic stresses are key factors that can negatively influence plant
+development and productivity. They are a main cause of extensive
+agricultural production losses worldwide~\cite{todo}. Soil salinity is
+one of the most devastating abiotic stresses, causing reduction in the
+cultivable land, crop quality, and productivity. It has been estimated
+that 20\% of total cultivated and 33\% of irrigated agricultural lands
+worldwide are already affected by high salinity. Moreover, due to the
+human activities and natural causes, salinized areas are gradually
+increasing every year and are expected to reach 50\% by the end of
+year 2050~\cite{shrivastava2015soil}. Salinity tolerance and
+susceptibility in plants is known to be the result of elaborated
+interactions between morphological, physiological, and biochemical
+processes that are regulated, in the end, by multiple genes in
+different parts of a genome~\cite{reddy2017salt}. Therefore,
+identifying groups of stress responsive genes may lead to crop
+improvement in terms of salinity tolerance and, ultimately, contribute
+solutions to the general problem of food sustainability in the years
+to come.
+
+This paper proposes a workflow to identify stress responsive genes in
+organisms, which is known to be a complex quantitative trait. It takes
+as input RNA sequencing read counts measured for genotypes under
+control and treatment conditions (and representing gene expression
+profiles of the target organism), and biological replicates.  In order
+to discover key genes and their interaction with phenotypes related to
+treatment tolerance, the approach requires a collection of phenotypic
+traits (under control and under treatment), measured for the given
+genotypes. The output of the workflow is a collection of characterized
+genes, potentially relevant to treatment, yielding insight on the
+possible behavior of specific genes and the role they may play in
+functional pathways in response to the studied treatment of the
+organism of interest. The proposed workflow can thus take advantage of
+transcriptomic data for different organisms and conditions, based on
+the current availability of high-throughput technologies that include
+microarrays and RNA sequencing, to study the reaction of organisms
+under different environmental stimuli, such as salt stress.
+
+
+Technically, the proposed approach is both a generalization and an
+extension of Weighted Gene Co-expression Network Analysis
+(WGCNA)~\cite{todo2}, a widely applied workflow that has been
+successfully used for identifying target genes related to diseases and
+cancer in several organisms~\cite{tian2018identifying}. The general
+idea behind each approach is to identify specific modules in a network
+of genes after a sequence of normalization and filtering steps. The
+proposed approach is considered a \textit{generalization} of WGCNA
+because module detection can now recognize overlapping communities,
+which may have more biological meaning given the overlapping
+regulatory domains of systems that generate
+co-expression~\cite{gaiteri2014beyond}. This is achieved by using
+Hierarchical Link Clustering (HLC)~\cite{ahn2010link}. It is also an
+\textit{extension} of WGCNA because additional steps and information
+are added to the workflow: namely, some networks in the intermediate
+steps are forced to be scale-free~\cite{todo3} and LASSO
+regression~\cite{tibshirani1996regression} is employed to select the
+most significant modules of phenotypical responses to stress.  The
+advantage of using HLC as clustering method is its ability to detect
+overlapping modules, since biological components are involved in
+multiple functions and therefore biological communities tend to be
+highly overlapping. On the other hand, LASSO is a regularized
+regression technique widely used in variable selection, thanks to its
+ability to obtain zero regression coefficients for the less relevant
+variables~\cite{desboulets2018review}. Moreover, LASSO is especially
+useful in problems where the number of variables is much larger than
+the number of samples, which may be the case more often than desired.
+The proposed workflow is also modular, since other module detection
+and selection techniques could be used, instead HLC and LASSO,
+respectively.
+
+
+The proposed workflow is showcased with a systematic study on rice
+(\textit{Oryza sativa}), a major food source that is known to be
+highly sensitive to salt stress~\cite{chang2019morphological}. RNA-seq
+data was accessed from the GEO database~\cite{GEOAcces90:online}
+(accession number GSE98455). It corresponds to $57845$ gene expression
+profiles of shoot tissues measured for both control and salt condition
+in $92$ accessions of the Rice Diversity Panel 1. As output, 6 modules
+are detected as relevant in the response to salt stress in rice: 3
+modules of 3 genes each, all associated with shoot K content, 2
+modules of 3 genes associated with shoot biomass, and 1 module of 4
+genes associated with root biomass. These genes may act as potential
+targets for the improvement of salinity tolerance in rice
+cultivars. From the 19 genes, all but 3 genes (associated with $K$
+content), were also identified as deferentially expressed for at least
+one of the 92 accessions, suggesting that those genes are strong
+candidates as stress responsive genes. Only 2 of the 16 diferentially
+expressed genes, both from the module related with shoot biomass, are
+named and have an associated protein product: Spermidine
+hydroxycinnamoyltransferase 2 (SHT2) and Lipoxygenase. In other words,
+further studies are needed to elucidate the detailed biological
+function of the remaining 14 genes that have not been named so far,
+which may have a potential relevance in stress responsive mechanisms
+to salt conditions in rice. The goal is that the results reported in
+this paper may allow biologist to develop new rice cultivars with
+higher resistance to salinity.
