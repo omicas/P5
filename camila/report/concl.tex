@@ -6,6 +6,7 @@ methodology for the discovery of key genes responding to
 a specific treatment in an organism. It links transcriptomic with
 phenotypic data, and identifies overlaping gene modules.
 
+
 The proposed methodology is inspired by the workflow suggested in the
 WGCNA methodology~\cite{langfelder2008wgcna}. The main steps are the
 preprocessing of the gene expression data, the construction of a
@@ -15,6 +16,7 @@ and the enrichment of the identified key genes with additional information.
 The WGCNA methodology and therefore the proposal as well, are structured
 in a modular way, which allows modifying and  exploring different techniques
 in each step of the process.
+
 
 The proposed approach is designed to integrate expression data
 measured under two different conditions (namely, control and treatment),
@@ -26,6 +28,7 @@ matrix using the log fold change measure. Thus, the input to construct
 the co-expression network is not the expression data, but instead the changes
 in the expression levels from one condition to the other, making room for capturing
 the signal of changes caused by the treatment.
+
 
 Another important feature in the proposed methodology is the module
 detection technique. The co-expression network is computed as in
@@ -40,6 +43,7 @@ decomposition methods. It is well known that communities in real
 networks are overlapping~\cite{palla2005uncovering}. Thus, the approach
 presented in this work can be seen as a generalization of the previous 
 approaches such as WGCNA.
+
 
 The proposed methodology was applied in a case study with rice under salt
 stress. The results show a group of 14 genes in which $2$ of them are

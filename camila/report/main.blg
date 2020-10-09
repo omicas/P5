@@ -3,49 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: splncs04.bst
 Database file #1: biblio.bib
-Warning--I didn't find a database entry for "todo"
-Warning--I didn't find a database entry for "todo2"
 Warning--I didn't find a database entry for "todo3"
 Warning--to sort, need author or key in GEOAcces90:online
-You've used 24 entries,
+You've used 25 entries,
             2850 wiz_defined-function locations,
-            762 strings with 9996 characters,
-and the built_in function-call counts, 16015 in all, are:
-= -- 1291
-> -- 572
-< -- 44
-+ -- 239
-- -- 210
-* -- 1079
-:= -- 1967
-add.period$ -- 24
-call.type$ -- 24
-change.case$ -- 174
+            766 strings with 10148 characters,
+and the built_in function-call counts, 16624 in all, are:
+= -- 1340
+> -- 589
+< -- 46
++ -- 246
+- -- 216
+* -- 1118
+:= -- 2040
+add.period$ -- 25
+call.type$ -- 25
+change.case$ -- 180
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 1414
-empty$ -- 1310
-format.name$ -- 231
-if$ -- 3470
+cite$ -- 26
+duplicate$ -- 1472
+empty$ -- 1363
+format.name$ -- 238
+if$ -- 3605
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 292
-newline$ -- 78
-num.names$ -- 46
-pop$ -- 484
+int.to.str$ -- 25
+missing$ -- 303
+newline$ -- 81
+num.names$ -- 48
+pop$ -- 502
 preamble$ -- 1
-purify$ -- 149
+purify$ -- 154
 quote$ -- 0
-skip$ -- 477
+skip$ -- 497
 stack$ -- 0
-substring$ -- 903
-swap$ -- 951
-text.length$ -- 44
+substring$ -- 936
+swap$ -- 990
+text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 100
 warning$ -- 1
-while$ -- 126
-width$ -- 26
-write$ -- 243
-(There were 4 warnings)
+while$ -- 131
+width$ -- 27
+write$ -- 253
+(There were 2 warnings)
