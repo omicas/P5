@@ -125,7 +125,7 @@ end{abstract}
 
 \begin_layout Abstract
 Network analyses for predicting unmapped protein-protein interactions (PPI)
- suggest that the higher the number of paths of length~3 (L3) between two
+ suggest that the higher the number of paths of length 3 (L3) between two
  proteins, the more likely they are to interact.
  This paper extends previous work based on the L3 principle by taking into
  account the representation learning of node features of the PPI network.
@@ -344,24 +344,23 @@ Based on the outcome of numerous Y2H experiments PPI networks can be constructed
 , in which known interactions for each protein are represented.
  Several algorithms are proposed over these networks in order to predict
  yet unknown interactions.
- This paper evaluates predictions based on three measures: Common Neighbors
- (
-\series bold
-CN
-\series default
-), based on the count of paths of length 2; the raw count of paths of length
- 3 (
-\series bold
-A3
-\series default
-); and the degree-normalized count of paths of length 3 (
-\series bold
-L3
-\series default
-).
- Furthermore, the Machine Learning (ML) process is assessed for each metric
- as the only feature, for the features obtained by the Node2Vec algorithm
- and for a combination of the Node2Vec and 
+ The focus of this study is to evaluate different methods for predicting
+ PPIs using the existing knowledge of the network of interactions, which
+ is represented as an undirected graph.
+ The traditional way of approaching the problem is usually based on social
+ networks analysis, more specifically on the triadic closure principle (TCP),
+ that states that the more common shared friends that two people have, the
+ more likely that they know each other.
+ As shown by previous studies, the mentioned approach fails because it does
+ not consider the structural and chemical properties of the proteins 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kovacs2019"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -385,26 +384,6 @@ JF: Not sure we should use L3 above since it is being redefined as a normalized
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-The focus of this paper is to evaluate different methods for predicting
- PPIs using the existing knowledge of the network of interactions, which
- is represented as an undirected graph.
- The traditional way of approaching the problem is usually based on social
- networks analysis, more specifically on the triadic closure principle (TCP),
- that states that the more common shared friends that two people have, the
- more likely that they know each other.
- As shown by previous studies, the mentioned approach fails because it does
- not consider the structural and chemical properties of the proteins 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kovacs2019"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -675,7 +654,11 @@ Length-3
 \begin_inset space ~
 \end_inset
 
-Paths
+Path
+\begin_inset space ~
+\end_inset
+
+Counts
 \begin_inset space ~
 \end_inset
 
@@ -1022,7 +1005,7 @@ Result Validation
 
 \begin_layout Standard
 As mentioned before, 80% of the final dataset was randomly selected and
- used for training, while the remaining 20% was used for validation.
+ used for training, while the remaining information was used for validation.
  The whole training-validation procedure was applied 10 times.
 \end_layout
 
@@ -1703,12 +1686,11 @@ Node2Vec
 \end_layout
 
 \begin_layout Plain Layout
-\noindent
-\align right
+\align center
 \begin_inset Graphics
 	filename ML_Metric/Imp.A2.All.png
 	lyxscale 10
-	width 80col%
+	width 70col%
 
 \end_inset
 
@@ -1716,12 +1698,11 @@ Node2Vec
 \end_layout
 
 \begin_layout Plain Layout
-\noindent
-\align right
+\align center
 \begin_inset Graphics
 	filename ML_Metric/Imp.A3.All.png
 	lyxscale 10
-	width 80col%
+	width 70col%
 
 \end_inset
 
@@ -1729,12 +1710,11 @@ Node2Vec
 \end_layout
 
 \begin_layout Plain Layout
-\noindent
-\align right
+\align center
 \begin_inset Graphics
 	filename ML_Metric/Imp.L3.All.png
 	lyxscale 10
-	width 80col%
+	width 70col%
 
 \end_inset
 
@@ -1761,20 +1741,10 @@ HI-II-14
 \emph on
 HI-TESTED
 \emph default
-) is shown in Figures 
+) is shown in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HI1"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:HI2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1817,49 +1787,8 @@ name "fig:HI1"
 Methods Comparison for 
 \emph on
 HI-II-14
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename hi-ii-14.txt.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:HI2"
-
-\end_inset
-
-Methods Comparison for 
+\emph default
+ and 
 \emph on
 HI-TESTED
 \end_layout
@@ -1873,9 +1802,17 @@ HI-TESTED
 \noindent
 \align center
 \begin_inset Graphics
+	filename hi-ii-14.txt.png
+	lyxscale 50
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
 	filename hi-tested.txt.png
 	lyxscale 50
-	width 100col%
+	width 48col%
 
 \end_inset
 
@@ -1915,7 +1852,7 @@ HI-II-14
  with Node2Vec and each metric are presented in Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "F2-1"
+reference "HI1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1925,7 +1862,7 @@ noprefix "false"
 , 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "F3-1"
+reference "HI2"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1935,7 +1872,7 @@ noprefix "false"
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "F4-1"
+reference "HI3"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1961,7 +1898,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "F2-1"
+name "HI1"
 
 \end_inset
 
@@ -2022,7 +1959,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "F3-1"
+name "HI2"
 
 \end_inset
 
@@ -2083,7 +2020,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "F4-1"
+name "HI3"
 
 \end_inset
 
@@ -2134,9 +2071,339 @@ It can be seen that for
 \emph on
 HI-II-14
 \emph default
-, L3 performs marginally better than CN, especially when comparing precision
- ( vs ) and recall ( vs ), but all of them have good values for area under
- the ROC curve of 0.99.
+, CN performs marginally better than L3 when comparing precision (
+\begin_inset Formula $0.9978$
+\end_inset
+
+ vs 
+\begin_inset Formula $0.9977$
+\end_inset
+
+) but worse in terms of recall (
+\begin_inset Formula $0.9346$
+\end_inset
+
+ vs 
+\begin_inset Formula $0.9598$
+\end_inset
+
+), although all metrics have a good values for area under the ROC curve
+ of 0.99.
+\end_layout
+
+\begin_layout Standard
+On the other hand, the interactome 
+\emph on
+HI-TESTED
+\emph default
+ was assessed with the same methodology as 
+\emph on
+HI-II-14
+\emph default
+ and results are shown in Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI2-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI3-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ It can be seen that in terms of false positives, CN performs better than
+ A3 and L3, but in terms of false negatives, A3 actually performs better
+ that CN and L3.
+ In terms of AUC, metrics results are indistinguishable.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI1-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with CN feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A2.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A2.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI2-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with A3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI3-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with L3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.L3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.L3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An interesting point from this human datasets can be observed when looking
+ at the importance plots, that show a very biased influence of the handcrafted
+ features.
+ Figure X shows this behavior for the 
+\emph on
+HI-II-14
+\emph default
+ dataset, which is very similar to 
+\emph on
+HI-TESTED
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F8-importance-1"
+
+\end_inset
+
+Importance gain plots for 
+\emph on
+HI-II-14
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.A2.1.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.A3.1.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.L3.1.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2161,6 +2428,51 @@ literal "false"
  results, boosting that information with the vector embedding, which calculates
  vector representations of the network structure improves the overall performanc
 e of each method on its own.
+\end_layout
+
+\begin_layout Standard
+It was found that applying 
+\family typewriter
+XGBoost
+\family default
+ to the rice PPI prediction obtained very good results when only using the
+ node embedding technique (AUC=0.93) and when only using the handcrafted
+ features based on protein neighborhood (AUC ~0.88).
+ Even better results were achieved when the handcrafted features and the
+ vector representation information were combined (AUC ~0.98).
+ It is important to consider that the importance gain of the handcrafted
+ feature in each model was high, although importance values for the A3 method
+ stand out less from the node embedding information than in CN and L3.
+\end_layout
+
+\begin_layout Standard
+On the human interactome, the results show that on both interactomes (
+\emph on
+HI-II-14
+\emph default
+ and 
+\emph on
+HI-TESTED
+\emph default
+) all metrics yield very good results for the link prediction problem, and
+ therefore this study extends previous work by other authors that only consider
+ the predictive power of the metrics alone.
+\end_layout
+
+\begin_layout Standard
+It is important to note the difference in feature importance from rice and
+ human interactomes.
+ In the former, features have a more balanced importance distribution than
+ in the latter dataset, whose model shows a very strong dependence on the
+ handcrafted feature.
+\end_layout
+
+\begin_layout Standard
+With this study, a framework for link prediction on protein-protein interactions
+ is presented and validated against the available information on rice and
+ human interactomes, but can be easily extended to other organisms or even
+ to other graphs not necessarily related to biology.
+ 
 \end_layout
 
 \begin_layout Standard

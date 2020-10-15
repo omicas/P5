@@ -24,11 +24,11 @@
 \begin{abstract}
 
 Network analyses for predicting unmapped protein-protein interactions
-(PPI) suggest that the higher the number of paths of length\textasciitilde 3
-(L3) between two proteins, the more likely they are to interact. This
-paper extends previous work based on the L3 principle by taking into
-account the representation learning of node features of the PPI network.
-In particular, we train an \texttt{XGBoost} model using L3 and handcrafted
+(PPI) suggest that the higher the number of paths of length 3 (L3)
+between two proteins, the more likely they are to interact. This paper
+extends previous work based on the L3 principle by taking into account
+the representation learning of node features of the PPI network. In
+particular, we train an \texttt{XGBoost} model using L3 and handcrafted
 features, as well as embeddings from \texttt{Node2Vec}. Our main result
 shows that while L3 is an important feature for predicting links,
 best performance is achieved when combined with edge embeddings. The
@@ -94,13 +94,15 @@ JF: Good idea
 Based on the outcome of numerous Y2H experiments PPI networks can
 be constructed, in which known interactions for each protein are represented.
 Several algorithms are proposed over these networks in order to predict
-yet unknown interactions. This paper evaluates predictions based on
-three measures: Common Neighbors (\textbf{CN}), based on the count
-of paths of length 2; the raw count of paths of length 3 (\textbf{A3});
-and the degree-normalized count of paths of length 3 (\textbf{L3}).
-Furthermore, the Machine Learning (ML) process is assessed for each
-metric as the only feature, for the features obtained by the Node2Vec
-algorithm and for a combination of the Node2Vec and 
+yet unknown interactions. The focus of this study is to evaluate different
+methods for predicting PPIs using the existing knowledge of the network
+of interactions, which is represented as an undirected graph. The
+traditional way of approaching the problem is usually based on social
+networks analysis, more specifically on the triadic closure principle
+(TCP), that states that the more common shared friends that two people
+have, the more likely that they know each other. As shown by previous
+studies, the mentioned approach fails because it does not consider
+the structural and chemical properties of the proteins \cite{Kovacs2019}.
 
 \begin{comment}
 JF: Yet you do more than evaluating this three measures so this has
@@ -111,16 +113,6 @@ NL: Done!
 JF: Not sure we should use L3 above since it is being redefined as
 a normalized measure here!
 \end{comment}
-
-The focus of this paper is to evaluate different methods for predicting
-PPIs using the existing knowledge of the network of interactions,
-which is represented as an undirected graph. The traditional way of
-approaching the problem is usually based on social networks analysis,
-more specifically on the triadic closure principle (TCP), that states
-that the more common shared friends that two people have, the more
-likely that they know each other. As shown by previous studies, the
-mentioned approach fails because it does not consider the structural
-and chemical properties of the proteins \cite{Kovacs2019}.
 
 For achieving the described results, human and rice PPI networks are
 used and compared using state-of-the-art methods, as well as the proposed
@@ -191,8 +183,8 @@ Principle: ``the more common friends two individuals have, the more
 likely that they know each other''. For the implementation of this
 method, $A{{}^2}$ matrix is calculated, being $A$ the adjacency
 matrix of the network.
-\item [{Length-3~Paths~(A3)}] This is the simplest implementation of
-the proposed insight of ``if my friends and your friends interact,
+\item [{Length-3~Path~Counts~(A3)}] This is the simplest implementation
+of the proposed insight of ``if my friends and your friends interact,
 then we might interact too''. The calculating is carried on with
 $A{{}^3}$, i.e, the third power of the adjacency matrix.
 \item [{Degree-normalized~L-3~Score~(L3)}] The previous approach might
@@ -296,8 +288,9 @@ The selected parameters for the model were:\texttt{ max\_depth=3},
 \subsection{Result Validation}
 
 As mentioned before, 80\% of the final dataset was randomly selected
-and used for training, while the remaining 20\% was used for validation.
-The whole training-validation procedure was applied 10 times.
+and used for training, while the remaining information was used for
+validation. The whole training-validation procedure was applied 10
+times.
 
 The chosen metric for validation was the Area under the Curve (\textbf{AUC})
 of the Receiver Operating Characteristic (\textbf{ROC}). This curve
@@ -421,13 +414,13 @@ not wide as for A2 or L3.
 \caption{\label{F8-importance}Importance gain plots for \texttt{Node2Vec}
 with each feature}
 \par\end{centering}
-\noindent \begin{raggedleft}
-\includegraphics[width=0.8\columnwidth]{ML_Metric/Imp\lyxdot A2\lyxdot All}
-\par\end{raggedleft}
-\noindent \begin{raggedleft}
-\includegraphics[width=0.8\columnwidth]{ML_Metric/Imp\lyxdot A3\lyxdot All}
-\par\end{raggedleft}
-\noindent \raggedleft{}\includegraphics[width=0.8\columnwidth]{ML_Metric/Imp\lyxdot L3\lyxdot All}
+\begin{centering}
+\includegraphics[width=0.7\columnwidth]{ML_Metric/Imp\lyxdot A2\lyxdot All}
+\par\end{centering}
+\begin{centering}
+\includegraphics[width=0.7\columnwidth]{ML_Metric/Imp\lyxdot A3\lyxdot All}
+\par\end{centering}
+\centering{}\includegraphics[width=0.7\columnwidth]{ML_Metric/Imp\lyxdot L3\lyxdot All}
 \end{figure}
 
 
@@ -436,21 +429,15 @@ with each feature}
 As the first step in the evaluation of CN, A3 and L3 methods for edge
 prediction, the full calculation and ranking of all predictions was
 carried out. The results for the analyzed human interactomes (\emph{HI-II-14}
-and \emph{HI-TESTED}) is shown in Figures \ref{fig:HI1} and \ref{fig:HI2},
-in which the x axis represents a rank position $k$ and the y axis
-displays the precision for the top $k$ predictions of each method,
-when assuming interactome \emph{HI-III} as the validation set. 
+and \emph{HI-TESTED}) is shown in Figure \ref{fig:HI1}, in which
+the x axis represents a rank position $k$ and the y axis displays
+the precision for the top $k$ predictions of each method, when assuming
+interactome \emph{HI-III} as the validation set. 
 
 \begin{figure}[h]
-\caption{\label{fig:HI1}Methods Comparison for \emph{HI-II-14}}
+\caption{\label{fig:HI1}Methods Comparison for \emph{HI-II-14} and \emph{HI-TESTED}}
 
-\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-ii-14\lyxdot txt}
-\end{figure}
-
-\begin{figure}[h]
-\caption{\label{fig:HI2}Methods Comparison for \emph{HI-TESTED}}
-
-\noindent \centering{}\includegraphics[width=1\columnwidth]{hi-tested\lyxdot txt}
+\noindent \centering{}\includegraphics[width=0.48\columnwidth]{hi-ii-14\lyxdot txt}\includegraphics[width=0.48\columnwidth]{hi-tested\lyxdot txt}
 \end{figure}
 
 As it can be inferred from the plots, L3-based predictions outperform
@@ -464,11 +451,11 @@ a fraction of edges from the network in order to predict and validate,
 now the prediction network and the validation networks are given beforehand.
 The rest of the procedure is carried out as mentioned before. Results
 for the Interactome \emph{HI-II-14} with Node2Vec and each metric
-are presented in Figures \ref{F2-1}, \ref{F3-1} and \ref{F4-1}. 
+are presented in Figures \ref{HI1}, \ref{HI2} and \ref{HI3}. 
 
 \begin{figure}[H]
 \noindent \begin{centering}
-\caption{\label{F2-1}\emph{HI-II-14} results for \texttt{Node2Vec} with CN
+\caption{\label{HI1}\emph{HI-II-14} results for \texttt{Node2Vec} with CN
 feature}
 \par\end{centering}
 \noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot A2}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot A2}
@@ -476,7 +463,7 @@ feature}
 
 \begin{figure}[H]
 \noindent \begin{centering}
-\caption{\label{F3-1}\emph{HI-II-14} results for \texttt{Node2Vec} with A3
+\caption{\label{HI2}\emph{HI-II-14} results for \texttt{Node2Vec} with A3
 feature}
 \par\end{centering}
 \noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot A3}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot A3}
@@ -484,16 +471,66 @@ feature}
 
 \begin{figure}[H]
 \noindent \begin{centering}
-\caption{\label{F4-1}\emph{HI-II-14} results for \texttt{Node2Vec} with L3
+\caption{\label{HI3}\emph{HI-II-14} results for \texttt{Node2Vec} with L3
 feature}
 \par\end{centering}
 \noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot L3}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot L3}
 \end{figure}
 
-It can be seen that for \emph{HI-II-14}, L3 performs marginally better
-than CN, especially when comparing precision ( vs ) and recall ( vs
-), but all of them have good values for area under the ROC curve of
-0.99.
+It can be seen that for \emph{HI-II-14}, CN performs marginally better
+than L3 when comparing precision ($0.9978$ vs $0.9977$) but worse
+in terms of recall ($0.9346$ vs $0.9598$), although all metrics
+have a good values for area under the ROC curve of 0.99.
+
+On the other hand, the interactome \emph{HI-TESTED} was assessed with
+the same methodology as \emph{HI-II-14} and results are shown in Figures
+\ref{HI1-1}, \ref{HI2-1} and \ref{HI3-1}. It can be seen that in
+terms of false positives, CN performs better than A3 and L3, but in
+terms of false negatives, A3 actually performs better that CN and
+L3. In terms of AUC, metrics results are indistinguishable. 
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\caption{\label{HI1-1}\emph{HI-TESTED} results for \texttt{Node2Vec} with
+CN feature}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot A2\lyxdot 2}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot A2\lyxdot 2}
+\end{figure}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\caption{\label{HI2-1}\emph{HI-TESTED} results for \texttt{Node2Vec} with
+A3 feature}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot A3\lyxdot 2}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot A3\lyxdot 2}
+\end{figure}
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\caption{\label{HI3-1}\emph{HI-TESTED} results for \texttt{Node2Vec} with
+L3 feature}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{Human/ROC\lyxdot L3\lyxdot 2}\includegraphics[width=0.48\columnwidth]{Human/CM\lyxdot L3\lyxdot 2}
+\end{figure}
+
+An interesting point from this human datasets can be observed when
+looking at the importance plots, that show a very biased influence
+of the handcrafted features. Figure X shows this behavior for the
+\emph{HI-II-14} dataset, which is very similar to \emph{HI-TESTED}.
+
+\begin{figure}[H]
+\noindent \begin{centering}
+\caption{\label{F8-importance-1}Importance gain plots for \emph{HI-II-14}}
+\par\end{centering}
+\begin{centering}
+\includegraphics[width=0.7\columnwidth]{Human/Imp\lyxdot A2\lyxdot 1}
+\par\end{centering}
+\begin{centering}
+\includegraphics[width=0.7\columnwidth]{Human/Imp\lyxdot A3\lyxdot 1}
+\par\end{centering}
+\centering{}\includegraphics[width=0.7\columnwidth]{Human/Imp\lyxdot L3\lyxdot 1}
+\end{figure}
+
 
 \section{Conclusions}
 
@@ -506,6 +543,33 @@ embedding technique. Even if the baseline of the handcrafted features
 (CN, A3, L3) yields good results, boosting that information with the
 vector embedding, which calculates vector representations of the network
 structure improves the overall performance of each method on its own.
+
+It was found that applying \texttt{XGBoost} to the rice PPI prediction
+obtained very good results when only using the node embedding technique
+(AUC=0.93) and when only using the handcrafted features based on protein
+neighborhood (AUC \textasciitilde 0.88). Even better results were
+achieved when the handcrafted features and the vector representation
+information were combined (AUC \textasciitilde 0.98). It is important
+to consider that the importance gain of the handcrafted feature in
+each model was high, although importance values for the A3 method
+stand out less from the node embedding information than in CN and
+L3.
+
+On the human interactome, the results show that on both interactomes
+(\emph{HI-II-14} and \emph{HI-TESTED}) all metrics yield very good
+results for the link prediction problem, and therefore this study
+extends previous work by other authors that only consider the predictive
+power of the metrics alone.
+
+It is important to note the difference in feature importance from
+rice and human interactomes. In the former, features have a more balanced
+importance distribution than in the latter dataset, whose model shows
+a very strong dependence on the handcrafted feature.
+
+With this study, a framework for link prediction on protein-protein
+interactions is presented and validated against the available information
+on rice and human interactomes, but can be easily extended to other
+organisms or even to other graphs not necessarily related to biology. 
 
 \bibliographystyle{plain}
 \bibliography{refs}
