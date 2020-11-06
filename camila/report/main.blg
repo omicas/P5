@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: splncs04.bst
+Database file #1: biblio.bib
+Warning--I didn't find a database entry for "todo3"
+Warning--to sort, need author or key in GEOAcces90:online
+You've used 25 entries,
+            2850 wiz_defined-function locations,
+            766 strings with 10148 characters,
+and the built_in function-call counts, 16624 in all, are:
+= -- 1340
+> -- 589
+< -- 46
++ -- 246
+- -- 216
+* -- 1118
+:= -- 2040
+add.period$ -- 25
+call.type$ -- 25
+change.case$ -- 180
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 1472
+empty$ -- 1363
+format.name$ -- 238
+if$ -- 3605
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 303
+newline$ -- 81
+num.names$ -- 48
+pop$ -- 502
+preamble$ -- 1
+purify$ -- 154
+quote$ -- 0
+skip$ -- 497
+stack$ -- 0
+substring$ -- 936
+swap$ -- 990
+text.length$ -- 46
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 1
+while$ -- 131
+width$ -- 27
+write$ -- 253
+(There were 2 warnings)
