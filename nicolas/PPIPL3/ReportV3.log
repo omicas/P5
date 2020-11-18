@@ -1,0 +1,334 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.9.7)  9 OCT 2020 09:32
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.tex
+(/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.tex
+LaTeX2e <2018-12-01>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+ (/usr/share/texlive/texmf-dist/tex/latex/base/latin9.def
+File: latin9.def 2018/08/11 v1.3c Input encoding file
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks16
+\verbatim@line=\toks17
+\verbatim@in@stream=\read1
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/07/19 3.33 The Babel package
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/07/19 3.33 Babel switching mechanism
+) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/07/19 3.33 Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen105
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count90
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.aux)
+\openout1 = `ReportV3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen106
+\scratchbox=\box29
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen107
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+))) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)))) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 23.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 23.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+
+LaTeX Warning: Citation `Lin2017' on page 1 undefined on input line 52.
+
+
+LaTeX Warning: Citation `Zhang_2010_PPI' on page 1 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Kovacs2019' on page 1 undefined on input line 68.
+
+[1
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+<Y2H.png, id=15, 943.525pt x 719.68875pt>
+File: Y2H.png Graphic file (type png)
+<use Y2H.png>
+Package pdftex.def Info: Y2H.png  used on input line 88.
+(pdftex.def)             Requested size: 345.0pt x 263.15092pt.
+
+
+LaTeX Warning: Citation `Kovacs2019' on page 2 undefined on input line 138.
+
+[2 </home/finke/Workspaces/P5/nicolas/PPIPL3/Y2H.png>]
+
+LaTeX Warning: Citation `Szklarczyk2019' on page 3 undefined on input line 148.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 154.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 154.
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 219.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 219.
+ [4]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 243.
+
+Overfull \hbox (28.49826pt too wide) in paragraph at lines 250--252
+[]\T1/cmr/m/n/10 Use a mod-est num-ber of di-men-sions and threads for cal-cu-la-tion (\T1/cmtt/m/n/10 dimensions=16,
+ []
+
+[5]
+Overfull \hbox (36.10504pt too wide) in paragraph at lines 293--295
+[]\T1/cmr/m/n/10 The se-lected pa-ram-e-ters for the model were: \T1/cmtt/m/n/10 max_depth=3\T1/cmr/m/n/10 , \T1/cmtt/m/n/10 colsample_bytree=0.6
+ []
+
+
+LaTeX Warning: Reference `F1' on page 6 undefined on input line 317.
+
+<Only_ML/ROConlyML_SUMMARY.png, id=38, 433.62pt x 289.08pt>
+File: Only_ML/ROConlyML_SUMMARY.png Graphic file (type png)
+<use Only_ML/ROConlyML_SUMMARY.png>
+Package pdftex.def Info: Only_ML/ROConlyML_SUMMARY.png  used on input line 331.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+<Only_ML/CMonlyML_SUMMARY.png, id=40, 433.62pt x 289.08pt>
+File: Only_ML/CMonlyML_SUMMARY.png Graphic file (type png)
+<use Only_ML/CMonlyML_SUMMARY.png>
+Package pdftex.def Info: Only_ML/CMonlyML_SUMMARY.png  used on input line 331.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+[6]
+
+LaTeX Warning: Reference `F2' on page 7 undefined on input line 337.
+
+
+LaTeX Warning: Reference `F3' on page 7 undefined on input line 346.
+
+
+LaTeX Warning: Reference `F4' on page 7 undefined on input line 346.
+
+<ML_Metric/ROCA2_SUMMARY.png, id=44, 433.62pt x 289.08pt>
+File: ML_Metric/ROCA2_SUMMARY.png Graphic file (type png)
+<use ML_Metric/ROCA2_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/ROCA2_SUMMARY.png  used on input line 353.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+<ML_Metric/CMA2_SUMMARY.png, id=45, 433.62pt x 289.08pt>
+File: ML_Metric/CMA2_SUMMARY.png Graphic file (type png)
+<use ML_Metric/CMA2_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/CMA2_SUMMARY.png  used on input line 353.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+<ML_Metric/ROCA3_SUMMARY.png, id=46, 433.62pt x 289.08pt>
+File: ML_Metric/ROCA3_SUMMARY.png Graphic file (type png)
+<use ML_Metric/ROCA3_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/ROCA3_SUMMARY.png  used on input line 360.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+<ML_Metric/CMA3_SUMMARY.png, id=47, 433.62pt x 289.08pt>
+File: ML_Metric/CMA3_SUMMARY.png Graphic file (type png)
+<use ML_Metric/CMA3_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/CMA3_SUMMARY.png  used on input line 360.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+[7 </home/finke/Workspaces/P5/nicolas/PPIPL3/Only_ML/ROConlyML_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/Only_ML/CMonlyML_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/ROCA2_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/CMA2_SUMMARY.png>]
+<ML_Metric/ROCL3_SUMMARY.png, id=56, 433.62pt x 289.08pt>
+File: ML_Metric/ROCL3_SUMMARY.png Graphic file (type png)
+<use ML_Metric/ROCL3_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/ROCL3_SUMMARY.png  used on input line 367.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+<ML_Metric/CML3_SUMMARY.png, id=57, 433.62pt x 289.08pt>
+File: ML_Metric/CML3_SUMMARY.png Graphic file (type png)
+<use ML_Metric/CML3_SUMMARY.png>
+Package pdftex.def Info: ML_Metric/CML3_SUMMARY.png  used on input line 367.
+(pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
+
+
+LaTeX Warning: Reference `F5-importance' on page 8 undefined on input line 383.
+
+<ML_Metric/Imp.A2.1.png, id=58, 433.62pt x 289.08pt>
+File: ML_Metric/Imp.A2.1.png Graphic file (type png)
+<use ML_Metric/Imp.A2.1.png>
+Package pdftex.def Info: ML_Metric/Imp.A2.1.png  used on input line 396.
+(pdftex.def)             Requested size: 276.00105pt x 184.00926pt.
+<ML_Metric/Imp.A3.1.png, id=59, 433.62pt x 289.08pt>
+File: ML_Metric/Imp.A3.1.png Graphic file (type png)
+<use ML_Metric/Imp.A3.1.png>
+Package pdftex.def Info: ML_Metric/Imp.A3.1.png  used on input line 399.
+(pdftex.def)             Requested size: 276.00105pt x 184.00926pt.
+<ML_Metric/Imp.L3.1.png, id=60, 433.62pt x 289.08pt>
+File: ML_Metric/Imp.L3.1.png Graphic file (type png)
+<use ML_Metric/Imp.L3.1.png>
+Package pdftex.def Info: ML_Metric/Imp.L3.1.png  used on input line 401.
+(pdftex.def)             Requested size: 276.00105pt x 184.00926pt.
+[8 </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/ROCA3_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/CMA3_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/ROCL3_SUMMARY.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/CML3_SUMMARY.png>]
+Overfull \vbox (28.97176pt too high) has occurred while \output is active []
+
+ [9 </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/Imp.A2.1.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/Imp.A3.1.png> </home/finke/Workspaces/P5/nicolas/PPIPL3/ML_Metric/Imp.L3.1.png>]
+
+/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.tex:412: LaTeX Error: File `hi-ii-14.txt' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.412 ...width=1\columnwidth]{hi-ii-14\lyxdot txt}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.tex:418: LaTeX Error: File `hi-tested.txt' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.418 ...idth=1\columnwidth]{hi-tested\lyxdot txt}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+No file ReportV3.bbl.
+[10] (/home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2452 strings out of 492671
+ 34635 string characters out of 6134271
+ 106190 words of memory out of 5000000
+ 6289 multiletter control sequences out of 15000+600000
+ 14932 words of font info for 36 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 41i,6n,25p,316b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on /home/finke/Workspaces/P5/nicolas/PPIPL3/ReportV3.pdf (10 pages, 2129645 bytes).
+PDF statistics:
+ 135 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+
