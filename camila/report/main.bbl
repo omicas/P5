@@ -17,6 +17,10 @@ Aoki, K., Ogata, Y., Shibata, D.: Approaches for extracting practical
   information from gene co-expression networks in plant biology. Plant and Cell
   Physiology  \textbf{48}(3),  381--390 (2007)
 
+\bibitem{barabasi2003scale}
+Barab{\'a}si, A.L., Bonabeau, E.: Scale-free networks. Scientific american
+  \textbf{288}(5),  60--69 (2003)
+
 \bibitem{binns2009quickgo}
 Binns, D., Dimmer, E., Huntley, R., Barrell, D., O'donovan, C., Apweiler, R.:
   Quickgo: a web-based tool for gene ontology searching. Bioinformatics

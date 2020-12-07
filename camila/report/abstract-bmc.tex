@@ -1,0 +1,43 @@
+\begin{abstract} % abstract
+\parttitle{Background} %if any
+This paper proposes a workflow to identify which genes respond to
+  specific treatments in plants.
+  The workflow takes as
+  input the RNA sequencing read counts and phenotypical data of different genotypes,
+  measured under  control and treatment conditions.
+  It outputs a reduced group of genes marked as relevant for
+  treatment response. Technically, the proposed approach is both a
+  generalization and an extension of 
+%  Weighted Gene Co-expression Network Analysis (WGCNA).
+  WGCNA.
+  It aims to 
+  identify specific modules of overlapping communities underlying the co-expression network of genes.
+  Module detection is
+  achieved by using Hierarchical Link Clustering.
+  Identifying such modules enables us to take into account
+  the overlapping nature of the regulatory domains of the systems that generate
+  co-expression. LASSO regression is employed to analyze
+  phenotypic responses of modules to treatment.
+
+\parttitle{Results} %if any
+  The workflow is applied to rice
+  (\textit{Oryza sativa}), a major food source known to be
+  highly sensitive to salt stress.
+  The workflow identifies 19 rice genes that seem
+  relevant in the response to salt stress.
+  They are
+  distributed across 6 modules: 
+  3 modules, each grouping together 3 genes, are associated to shoot K content;
+  2 modules of 3 genes, are associated to shoot biomass;
+  and 1 module of 4 genes is associated to root biomass.
+  These genes represent target genes for the improvement of
+  salinity tolerance in rice.
+   
+  
+\parttitle{Conclusions}
+A more effective framework to reduce the
+  search-space for target genes that respond to a specific treatment is introduced.
+  It facilitates experimental validation by restraining efforts to
+  a smaller subset of genes of high potential relevance.
+  
+\end{abstract}

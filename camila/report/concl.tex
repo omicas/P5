@@ -1,59 +1,72 @@
-\section{Concluding Remarks}
+\section*{Concluding Remarks}
 \label{sec.concl}
 
-This manuscript provides a detailed description of a network-based analysis
-methodology for the discovery of key genes responding to
-a specific treatment in an organism. It links transcriptomic with
-phenotypic data, and identifies overlaping gene modules.
+This manuscript provides a detailed description of a network-based
+analysis workflow for the discovery of key genes responding to a
+specific treatment in an organism. It links transcriptomic with
+phenotypic data and identifies overlapping gene modules.
+\vspace{0.5cm}
 
+The proposed approach is inspired by the workflow suggested in the
+WGCNA~\cite{langfelder2008wgcna}. Its main steps are the preprocessing
+of the gene expression data, the construction of a co-expression
+network, the detection of modules within the network, the relation of
+modules with external information (e.g., phenotypic data), and the
+enrichment of the identified key genes with additional information.
+Both approaches are structured in a modular way, which allows
+modifying and exploring different techniques in each step of the
+workflow.
+\vspace{0.5cm}
 
-The proposed methodology is inspired by the workflow suggested in the
-WGCNA methodology~\cite{langfelder2008wgcna}. The main steps are the
-preprocessing of the gene expression data, the construction of a
-co-expression network, the detection of modules within the network,
-the relation of modules with external information (e.g. phenotypic data)
-and the enrichment of the identified key genes with additional information.
-The WGCNA methodology and therefore the proposal as well, are structured
-in a modular way, which allows modifying and  exploring different techniques
-in each step of the process.
+The proposed workflow is designed to integrate expression data
+measured under two different conditions (namely, control and
+treatment), unlike the usually co-expression-based approaches which
+work with both conditions independently or consider only a single
+condition. For this purpose, an approach similar to that proposed
+in~\cite{du2019network} is used, where the control and treatment data
+are compiled in a single matrix using the Log Fold Change
+measure. Thus, the input to construct the co-expression network is not
+the expression data, but instead the changes in the expression levels
+from one condition to the other, making room for capturing the signal
+of changes caused by the treatment.
+\vspace{0.5cm}
 
-
-The proposed approach is designed to integrate expression data
-measured under two different conditions (namely, control and treatment),
-unlike the usually co-expression-based approaches which work with both
-conditions independently or consider only a single condition. For this
-purpose, an approach similar to that proposed in~\cite{du2019network}
-is used, where the control and treatment data are compiled in a single
-matrix using the log fold change measure. Thus, the input to construct
-the co-expression network is not the expression data, but instead the changes
-in the expression levels from one condition to the other, making room for capturing
-the signal of changes caused by the treatment.
-
-
-Another important feature in the proposed methodology is the module
-detection technique. The co-expression network is computed as in
-WGCNA until a scale-free network is obtained. This network is then
-used to apply the HLC algorithm, a clustering technique capable of
-detecting overlapping communities. Several approaches of module
-detection from gene expression have been proposed and were evaluated
-in~\cite{saelens2018comprehensive}. Most of them focuses only on
-disjoint (non-overlapping) communities, and the described techniques
-dealing with overlaps are not clustering but biclustering and
+An important feature in the proposed workflow is the module
+detection technique. The co-expression network is computed, as in
+WGCNA, until a scale-free network is obtained. In the proposed
+approach, this network is then used to apply the HLC algorithm, a
+clustering technique capable of detecting overlapping
+communities. Several approaches of module detection from gene
+expression have been proposed and were evaluated
+in~\cite{saelens2018comprehensive}. Most of them focus mainly on
+disjoint (non-overlapping) communities; the techniques described
+dealing with overlaps are not clustering, but bi-clustering and
 decomposition methods. It is well known that communities in real
-networks are overlapping~\cite{palla2005uncovering}. Thus, the approach
-presented in this work can be seen as a generalization of the previous 
-approaches such as WGCNA.
+networks, including biological ones, are likely
+overlap~\cite{palla2005uncovering}. Thus, the approach presented
+in this work can be seen as a generalization of the previous
+approaches, such as WGCNA, with the potential to deal with genes
+associated to multiple biological processes.
+\vspace{0.5cm}
 
+The approach was applied in a case study with rice under salt
+stress. The results show a group of 14 genes, of which only $2$ of
+them have been previously related to saline stress response in other
+studies. As future work, other overlapping module detection and
+selection techniques should be used instead HLC and LASSO,
+respectively. The combination of these techniques would allow finding
+target genes for future biological studies that evaluate their
+potential as genes that respond to salt stress in rice, and other
+crops and stresses. In-vivo laboratory experimentation needs to be
+conducted to validate the findings of this paper in relation to
+salinity stress.
+\vspace{0.5cm}
 
-The proposed methodology was applied in a case study with rice under salt
-stress. The results show a group of 14 genes in which $2$ of them are
-related to the response to saline stress according to previous
-studies, validating the ability of the method to detect this kind of
-key genes. As future work, other overlapping module detection and selection
-techniques should be used instead HLC and LASSO, respectively. The
-combination of these techniques would allow finding target genes for
-future biological studies that evaluate their potential as genes that
-respond to salt stress in rice. Also, laboratory experimentation needs to be
-conducted on via to verify the findings of this paper in relation to salinity 
-stress. Finally, this study can be extended to other stresses and even to other 
-crops.
+Finally, the workflow is presented as a protocol capable of
+considerably reducing the number of genes detected as relevant in the
+response to stress of choice. Other traditionally used methods for
+this purpose tend to generate a large list of candidate genes, thus
+limiting subsequent efforts in experimental validation. In this sense,
+the proposed workflow can help in reducing such efforts in time and
+money invested by researchers in the experimental validation of
+stress-responsive genes.
