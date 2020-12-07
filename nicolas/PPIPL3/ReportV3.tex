@@ -19,20 +19,19 @@
 \usepackage{babel}
 \begin{document}
 \title{Prediction of Protein-Protein Interactions on the Human and Rice Interactome }
-\author{Nicolás Antonio López Rozo}
+\author{Nicolï¿½s Antonio Lï¿½pez Rozo}
 \maketitle
 \begin{abstract}
 
-Network analyses for predicting unmapped protein-protein interactions
-(PPI) suggest that the higher the number of paths of length\textasciitilde 3
+Past work on applying network analyses to predict unmapped protein-protein interactions
+(PPI) suggests that the higher the number of paths of length\textasciitilde 3
 (L3) between two proteins, the more likely they are to interact. This
-paper extends previous work based on the L3 principle by taking into
+paper extends previous results based on the L3 principle by taking into
 account the representation learning of node features of the PPI network.
-In particular, we train an \texttt{XGBoost} model using L3 and handcrafted
-features, as well as embeddings from \texttt{Node2Vec}. Our main result
+In particular, the proposed \texttt{XGBoost} model uses L3 and other handcrafted
+features, as well learned features from \texttt{Node2Vec} embeddings. Our main result
 shows that while L3 is an important feature for predicting links,
-best performance is achieved when combined with edge embeddings. The
-proposed approach is evaluated for the human and rice interactomes.
+better performance is achieved when the measure is combined with edge embeddings. Our approach is evaluated for the human and rice interactomes.
 \end{abstract}
 \begin{comment}
 need include a feature that compares the dimension of the embedding
@@ -47,36 +46,34 @@ is useful for prediction with L3 to show that they independent measures
 Need to add other relevant references
 \end{comment}
 
-Proteins are the key actors of biological processes inside cells.
-As they carry out a variety of tasks, proteins do not work as single
-agents but rather as a part of dynamic networks of protein-protein
-interactions (PPI) \cite{Lin2017}. PPI networks play a key role in
-a variety of interdependent mechanisms, including signal transduction,
+Proteins are key actors of biological processes inside cells.
+They function as are part of dynamic networks of protein-protein
+interactions (PPI) rather than carrying out a variety of tasks as isolated
+agents~\cite{Lin2017}. At the cellular level, PPI networks play a key role in
+a number of interdependent mechanisms, including signal transduction,
 homeostasis control, stress responses, plant defense and organ formation.
-At the molecular level, PPIs play an essential role in many physiological
+At the molecular level, PPI networks also play an essential role in physiological
 and developmental processes, including protein phosphorylation, transcriptional
-co-factor recruitment and transporter activation \cite{Zhang_2010_PPI}.
+co-factor recruitment and transporter activation~\cite{Zhang_2010_PPI}.
 
-Prediction of potentially relevant yet unexplored PPIs is a current
-research topic on bioinformatics. Several authors have proposed different
-methods for extrapolating information from the existing PPI networks.
-Kovacs et al. (2019) introduces an approach which relies on counting
+%Prediction of potentially relevant yet unexplored PPIs is a current research topic on bioinformatics. 
+Several authors have introduced different
+methods for extrapolating information from PPI networks.
+Kovacs et al. (2019) proposes an approach which relies on counting
 paths of length 3 (L3) to predict interactions among proteins for
-a variety of model organisms. The proposed approach outperform previous
-methods in different PPI networks of yeast (\emph{S. cerevisiae}),
+a variety of model organisms. The proposed approach outperforms previous
+methods for PPI networks of yeast (\emph{S. cerevisiae}),
 Arabidopsis (\emph{A. thaliana}), worm (\emph{C. elegans}), fly (\emph{D.
 melanogaster}), fission yeast (\emph{S. pombe}) and mouse (\emph{M.
 musculus}), as well as for the human interactome \cite{Kovacs2019}.
 
-A common way to uncover (or validate) PPIs is the \emph{Yeast-Two-Hybrid}
-technique (also known as \emph{two-hybrid screening} or \emph{Y2H}),
-which is based on the expression of a specific reporter gene that
-activates by the binding of a DNA-binding Domain (DB) and an Activation
-Domain (AD) of a Transcription Factor that binds to an Upstream Activation
-Sequence (UAS). For the Y2H technique, a protein is fused to the DB
-domain (known as \emph{bait}) and another one to the AD (known as
-\emph{prey}). If the proteins do not interact, then the reporter gene
-is not expressed. Otherwise, the reporter gene expression is activated
+A common way to uncover (or validate) PPIs is the \emph{yeast-two-hybrid} or \emph{Y2H}
+technique (also known as \emph{two-hybrid screening}). Y2H is based on the expression of a so called reporter gene that is
+activated by the binding of a DNA-binding domain and an activation
+domain of a transcription factor. This transcription factor then binds to an upstream activation
+sequence. For the Y2H technique, a protein is fused to the DNA-binding domain (known as \emph{bait}) and another protein to the activation domain (known as
+\emph{prey}). Only when the proteins interact, the reporter gene
+is expressed. Otherwise, the reporter gene expression is activated
 by the activation domain.
 
 \begin{comment}
@@ -91,14 +88,12 @@ JF: Good idea
 \noindent \centering{}\includegraphics[width=1\columnwidth]{Y2H}
 \end{figure}
 
-Based on the outcome of numerous Y2H experiments PPI networks can
-be constructed, in which known interactions for each protein are represented.
+PPI networks are constructed based on the outcome of numerous Y2H experiments in which known interactions for each protein are represented. 
 Several algorithms are proposed over these networks in order to predict
-yet unknown interactions. This paper evaluates predictions based on
-three measures: Common Neighbors (\textbf{CN}), based on the count
-of paths of length 2; the raw count of paths of length 3 (\textbf{A3});
-and the degree-normalized count of paths of length 3 (\textbf{L3}).
-Furthermore
+hidden interactions. This paper evaluates PPI predictions based on
+three measures: the count of paths of length 2 or Common Neighbors (\textbf{CN}); the raw count of paths of length 3 (\textbf{A3}); and the degree-normalized count of paths of length 3 (\textbf{L3}).
+
+%Furthermore
 
 \begin{comment}
 JF: Yet you do more than evaluating this three measures so this has
@@ -108,24 +103,28 @@ JF: Not sure we should use L3 above since it is being redefined as
 a normalized measure here!
 \end{comment}
 
-The focus of this paper is to evaluate different methods for predicting
+Our focus is to evaluate different methods for predicting
 PPIs using the existing knowledge of the network of interactions,
-which is represented as an undirected graph. The traditional way of
-approaching the problem is usually based on social networks analysis,
-more specifically on the triadic closure principle (TCP), that states
-that the more common shared friends that two people have, the more
-likely that they know each other. As shown by previous studies, the
-mentioned approach fails because it does not consider the structural
-and chemical properties of the proteins \cite{Kovacs2019}.
+which is represented as an undirected graph. 
+\begin{comment}
+    not sure we can call the TCP approach the traditional approach
+\end{comment}
 
-For achieving the described results, human and rice PPI networks are
-used and compared using state-of-the-art methods, as well as the proposed
-ones (CN, A3, L3). In the case of the human network, human interactome
-(\emph{HI-II-14}), as well as a curated version of it (\emph{HI-TESTED})
-were used. A massive experimental assay was carried on and its results
-were consolidated and used to build a validation network (\emph{HI-III}). 
+% The traditional way of approaching the problem is usually based on social networks analysis,
+% more specifically on the triadic closure principle (TCP), that states
+% that the more common shared friends that two people have, the more
+% likely that they know each other. As shown by previous studies, the
+% mentioned approach fails because it does not consider the structural
+% and chemical properties of the proteins \cite{Kovacs2019}.
+
+Human and rice PPI networks are used to compare state-of-the-art methods
+%what are these state of the art methods?
+, as well as the proposed approach (CN, A3, L3). In the case of the human network, the human interactome dataset denoted by \emph{HI-II-14} and its curated version (\emph{HI-TESTED})
+were used for evaluation. Results on experimental assays are consolidated to build a validation network denoted by \emph{HI-III}. 
 
 \begin{comment}
+JF: need to comment on rice as well  (in the same section). Or move the discussion above to Material and Methods
+
 JF: read throughout the document but edited up here. I prefer to read
 the results before editing the materials and methods section. 
 \end{comment}
@@ -137,22 +136,29 @@ the results before editing the materials and methods section.
 
 Human interactome data and base source code were downloaded from the
 repository of the length-3 degree normalized paths methodology \cite{Kovacs2019}:
-the dataset \emph{HI-II-14} and \emph{HI-TESTED} are used for prediction
+the datasets \emph{HI-II-14} and \emph{HI-TESTED} are used for prediction
 and the dataset \emph{HI-III} is used for validation.
+
+\begin{comment}
+    JF: I thought you were generating \emph{HI-III} based on your results - this is confusing
+    
+    \end{comment}
 
 Rice interactome information was downloaded from the STRING database
 \cite{Szklarczyk2019}, corresponding to the \emph{Oryza sativa} subspecies.
-The downloaded file was \emph{4530.protein.links.detailed.v11.0.txt}.
-and contains more than 8 million PPIs from several resources. For
-the purpose of this study and based on previous work, only PPIs with
-evidence from curated databases were used (i.e. rows where the column
-\emph{databases} has a value greater than zero), resulting in a network
-with $5025$ nodes and $164420$ edges.
+The file labelled \emph{4530.protein.links.detailed.v11.0.txt}.
+contains more than 8 million PPIs from several sources. For
+the purpose of this study, only PPIs with
+evidence from curated databases are considered (i.e. rows where the column
+\emph{databases} has a value greater than zero). The resulting network consists of
+$5025$ nodes and $164420$ edges.
 
 \subsection{Code Implementation}
 
 Previous code implementation was adapted from \texttt{C++} to \texttt{Python}
-(V3.6), in order to unify the algorithms into one single script. For
+(V3.6), in order to unify the algorithms into one single script. 
+% from the perspective of the reader what other code was in Python?
+For
 the purpose of algorithmic validation, the three methods were implemented
 from scratch with basic functionalities and data structures of the
 \texttt{Python} language.
@@ -334,7 +340,7 @@ among them and perform significantly better than the baseline, with
 an area under the ROC curve of $0.90$, with small standard deviation.
 When looking at the confusion matrix for this model, turns out that
 most of the guesses are true positives and true negatives, resulting
-in a precision of $0.9285$ and a recall of $0.7420$. Same analyses
+in a precision of $0.93$ and a recall of $0.74$. Same analyses
 are done with the count of paths of length 3 (\textbf{A3}) and with
 the degree-normalized length-3 score (\textbf{L3}) and results are
 presented in figures \ref{F3} and \ref{F4}, respectively, resulting
@@ -361,12 +367,12 @@ also in area under the curve of 0.9 for both cases.
 \noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{ML_Metric/ROCL3_SUMMARY}\includegraphics[width=0.48\columnwidth]{ML_Metric/CML3_SUMMARY}
 \end{figure}
 
-The precision when using the count of paths of length 3 (A3) is $0.8587$
-while the recall is $0.7685$. It is interesting to observe that precision
+The precision when using the count of paths of length 3 (A3) is $0.86$
+while the recall is $0.77$. It is interesting to observe that precision
 decreased $7.5\%$ when compared to the previous case, but recall
 increased $3.6\%$. A similar situation is obtained for the model
-with the normalized score (L3), whose precision decreased to $0.8936$
-($-3.8\%$) and recall increased to $0.7610$ ($+2.6\%$). It can
+with the normalized score (L3), whose precision decreased to $0.89$
+($-3.8\%$) and recall increased to $0.76$ ($+2.6\%$). It can
 be seen also that the ROC curve rapidly achieves higher values of
 true positive rate in the A2-featured model when compared to the other
 models.
@@ -418,8 +424,10 @@ $A^{3}$predictions follow a very similar trend.
 
 \section{Conclusions}
 
-Taking into account the different results validated in this report,
-one can conclude that length-3 path methodologies might work better
+Taking into account the different results validated in this paper,
+one can conclude that length-3 path methodologies 
+% what are the L3 methodologies, in the introduction only one is mentioned
+might work better
 on protein-protein interactions than its traditional length-2 (TCP
 based) counterparts. On the other hand, it can be seen that degree-normalization
 has little effect on the predictions, i.e., non-normalized $A{{}^3}$
