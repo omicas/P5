@@ -1,0 +1,967 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{27}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{mesterhazy2020losses}
+\begin{barticle}
+\bauthor{\bsnm{Mesterh{\'a}zy}, \binits{{\'A}.}},
+\bauthor{\bsnm{Ol{\'a}h}, \binits{J.}},
+\bauthor{\bsnm{Popp}, \binits{J.}}:
+\batitle{Losses in the grain supply chain: Causes and solutions}.
+\bjtitle{Sustainability}
+\bvolume{12}(\bissue{6}),
+\bfpage{2342}
+(\byear{2020})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{shrivastava2015soil}
+\begin{barticle}
+\bauthor{\bsnm{Shrivastava}, \binits{P.}},
+\bauthor{\bsnm{Kumar}, \binits{R.}}:
+\batitle{Soil salinity: a serious environmental issue and plant growth
+  promoting bacteria as one of the tools for its alleviation}.
+\bjtitle{Saudi Journal of Biological Sciences}
+\bvolume{22}(\bissue{2}),
+\bfpage{123}--\blpage{131}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{reddy2017salt}
+\begin{barticle}
+\bauthor{\bsnm{Reddy}, \binits{I.N.B.L.}},
+\bauthor{\bsnm{Kim}, \binits{B.-K.}},
+\bauthor{\bsnm{Yoon}, \binits{I.-S.}},
+\bauthor{\bsnm{Kim}, \binits{K.-H.}},
+\bauthor{\bsnm{Kwon}, \binits{T.-R.}}:
+\batitle{Salt tolerance in rice: focus on mechanisms and approaches}.
+\bjtitle{Rice Science}
+\bvolume{24}(\bissue{3}),
+\bfpage{123}--\blpage{144}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{langfelder2008wgcna}
+\begin{barticle}
+\bauthor{\bsnm{Langfelder}, \binits{P.}},
+\bauthor{\bsnm{Horvath}, \binits{S.}}:
+\batitle{{WGCNA}: an {R} package for weighted correlation network analysis}.
+\bjtitle{BMC Bioinformatics}
+\bvolume{9}(\bissue{1}),
+\bfpage{559}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{tian2018identifying}
+\begin{botherref}
+\oauthor{\bsnm{Tian}, \binits{H.}},
+\oauthor{\bsnm{Guan}, \binits{D.}},
+\oauthor{\bsnm{Li}, \binits{J.}}:
+Identifying osteosarcoma metastasis associated genes by weighted gene
+  co-expression network analysis ({WGCNA}).
+Medicine
+\textbf{97}(24)
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 6
+\bibitem{gaiteri2014beyond}
+\begin{barticle}
+\bauthor{\bsnm{Gaiteri}, \binits{C.}},
+\bauthor{\bsnm{Ding}, \binits{Y.}},
+\bauthor{\bsnm{French}, \binits{B.}},
+\bauthor{\bsnm{Tseng}, \binits{G.C.}},
+\bauthor{\bsnm{Sibille}, \binits{E.}}:
+\batitle{Beyond modules and hubs: the potential of gene coexpression networks
+  for investigating molecular mechanisms of complex brain disorders}.
+\bjtitle{Genes, Brain and Behavior}
+\bvolume{13}(\bissue{1}),
+\bfpage{13}--\blpage{24}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{ahn2010link}
+\begin{barticle}
+\bauthor{\bsnm{Ahn}, \binits{Y.-Y.}},
+\bauthor{\bsnm{Bagrow}, \binits{J.P.}},
+\bauthor{\bsnm{Lehmann}, \binits{S.}}:
+\batitle{Link communities reveal multiscale complexity in networks}.
+\bjtitle{Nature}
+\bvolume{466}(\bissue{7307}),
+\bfpage{761}--\blpage{764}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{barabasi2003scale}
+\begin{barticle}
+\bauthor{\bsnm{Barab{\'a}si}, \binits{A.-L.}},
+\bauthor{\bsnm{Bonabeau}, \binits{E.}}:
+\batitle{Scale-free networks}.
+\bjtitle{Scientific American}
+\bvolume{288}(\bissue{5}),
+\bfpage{60}--\blpage{69}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{tibshirani1996regression}
+\begin{barticle}
+\bauthor{\bsnm{Tibshirani}, \binits{R.}}:
+\batitle{Regression shrinkage and selection via the {LASSO}}.
+\bjtitle{Journal of the Royal Statistical Society: Series B (Methodological)}
+\bvolume{58}(\bissue{1}),
+\bfpage{267}--\blpage{288}
+(\byear{1996})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{desboulets2018review}
+\begin{barticle}
+\bauthor{\bsnm{Desboulets}, \binits{L.D.D.}}:
+\batitle{A review on variable selection in regression analysis}.
+\bjtitle{Econometrics}
+\bvolume{6}(\bissue{4}),
+\bfpage{45}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{chang2019morphological}
+\begin{barticle}
+\bauthor{\bsnm{Chang}, \binits{J.}},
+\bauthor{\bsnm{Cheong}, \binits{B.E.}},
+\bauthor{\bsnm{Natera}, \binits{S.}},
+\bauthor{\bsnm{Roessner}, \binits{U.}}:
+\batitle{Morphological and metabolic responses to salt stress of rice
+  (\textit{{O}ryza sativa {L}.}) cultivars which differ in salinity tolerance}.
+\bjtitle{Plant Physiology and Biochemistry}
+\bvolume{144},
+\bfpage{427}--\blpage{435}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{clough2016gene}
+\begin{bchapter}
+\bauthor{\bsnm{Clough}, \binits{E.}},
+\bauthor{\bsnm{Barrett}, \binits{T.}}:
+\bctitle{The gene expression omnibus database}.
+In: \bbtitle{Statistical Genomics}.
+\bsertitle{Methods in Molecular Biology},
+vol. \bseriesno{1418},
+pp. \bfpage{93}--\blpage{110}.
+\bpublisher{Humana Press},
+\blocation{New York, NY}
+(\byear{2016})
+\end{bchapter}
+\endbibitem
+
+%%% 13
+\bibitem{eizenga2014registration}
+\begin{barticle}
+\bauthor{\bsnm{Eizenga}, \binits{G.C.}},
+\bauthor{\bsnm{Ali}, \binits{M.L.}},
+\bauthor{\bsnm{Bryant}, \binits{R.J.}},
+\bauthor{\bsnm{Yeater}, \binits{K.M.}},
+\bauthor{\bsnm{McClung}, \binits{A.M.}},
+\bauthor{\bsnm{McCouch}, \binits{S.R.}}:
+\batitle{Registration of the rice diversity panel 1 for genomewide association
+  studies}.
+\bjtitle{Journal of Plant Registrations}
+\bvolume{8}(\bissue{1}),
+\bfpage{109}--\blpage{116}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{love2014moderated}
+\begin{barticle}
+\bauthor{\bsnm{Love}, \binits{M.I.}},
+\bauthor{\bsnm{Huber}, \binits{W.}},
+\bauthor{\bsnm{Anders}, \binits{S.}}:
+\batitle{Moderated estimation of fold change and dispersion for {RNA}-seq data
+  with {DES}eq2}.
+\bjtitle{Genome Biology}
+\bvolume{15}(\bissue{12}),
+\bfpage{550}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{aoki2007approaches}
+\begin{barticle}
+\bauthor{\bsnm{Aoki}, \binits{K.}},
+\bauthor{\bsnm{Ogata}, \binits{Y.}},
+\bauthor{\bsnm{Shibata}, \binits{D.}}:
+\batitle{Approaches for extracting practical information from gene
+  co-expression networks in plant biology}.
+\bjtitle{Plant and Cell Physiology}
+\bvolume{48}(\bissue{3}),
+\bfpage{381}--\blpage{390}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{binns2009quickgo}
+\begin{barticle}
+\bauthor{\bsnm{Binns}, \binits{D.}},
+\bauthor{\bsnm{Dimmer}, \binits{E.}},
+\bauthor{\bsnm{Huntley}, \binits{R.}},
+\bauthor{\bsnm{Barrell}, \binits{D.}},
+\bauthor{\bsnm{O'donovan}, \binits{C.}},
+\bauthor{\bsnm{Apweiler}, \binits{R.}}:
+\batitle{Quick{GO}: a web-based tool for {G}ene {O}ntology searching}.
+\bjtitle{Bioinformatics}
+\bvolume{25}(\bissue{22}),
+\bfpage{3045}--\blpage{3046}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{szklarczyk2016string}
+\begin{botherref}
+\oauthor{\bsnm{Szklarczyk}, \binits{D.}},
+\oauthor{\bsnm{Morris}, \binits{J.H.}},
+\oauthor{\bsnm{Cook}, \binits{H.}},
+\oauthor{\bsnm{Kuhn}, \binits{M.}},
+\oauthor{\bsnm{Wyder}, \binits{S.}},
+\oauthor{\bsnm{Simonovic}, \binits{M.}},
+\oauthor{\bsnm{Santos}, \binits{A.}},
+\oauthor{\bsnm{Doncheva}, \binits{N.T.}},
+\oauthor{\bsnm{Roth}, \binits{A.}},
+\oauthor{\bsnm{Bork}, \binits{P.}}, et al.:
+The {STRING} database in 2017: quality-controlled protein--protein association
+  networks, made broadly accessible.
+Nucleic Acids Research,
+937
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem{campbell2017allelic}
+\begin{barticle}
+\bauthor{\bsnm{Campbell}, \binits{M.T.}},
+\bauthor{\bsnm{Bandillo}, \binits{N.}},
+\bauthor{\bsnm{Al~Shiblawi}, \binits{F.R.A.}},
+\bauthor{\bsnm{Sharma}, \binits{S.}},
+\bauthor{\bsnm{Liu}, \binits{K.}},
+\bauthor{\bsnm{Du}, \binits{Q.}},
+\bauthor{\bsnm{Schmitz}, \binits{A.J.}},
+\bauthor{\bsnm{Zhang}, \binits{C.}},
+\bauthor{\bsnm{V{\'e}ry}, \binits{A.-A.}},
+\bauthor{\bsnm{Lorenz}, \binits{A.J.}}, \betal:
+\batitle{Allelic variants of {O}s{HKT}1; 1 underlie the divergence between
+  indica and japonica subspecies of rice (\textit{{O}ryza sativa}) for root
+  sodium content}.
+\bjtitle{PLoS Genetics}
+\bvolume{13}(\bissue{6}),
+\bfpage{1006823}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{uniprot2018uniprot}
+\begin{barticle}
+\bauthor{\bsnm{Consortium}, \binits{U.}}, \betal:
+\batitle{Uni{P}rot: the universal protein knowledgebase}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{46}(\bissue{5}),
+\bfpage{2699}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{gupta2013plant}
+\begin{barticle}
+\bauthor{\bsnm{Gupta}, \binits{K.}},
+\bauthor{\bsnm{Dey}, \binits{A.}},
+\bauthor{\bsnm{Gupta}, \binits{B.}}:
+\batitle{Plant polyamines in abiotic stress responses}.
+\bjtitle{Acta Physiologiae Plantarum}
+\bvolume{35}(\bissue{7}),
+\bfpage{2015}--\blpage{2036}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{hou2015persimmon}
+\begin{barticle}
+\bauthor{\bsnm{Hou}, \binits{Y.}},
+\bauthor{\bsnm{Meng}, \binits{K.}},
+\bauthor{\bsnm{Han}, \binits{Y.}},
+\bauthor{\bsnm{Ban}, \binits{Q.}},
+\bauthor{\bsnm{Wang}, \binits{B.}},
+\bauthor{\bsnm{Suo}, \binits{J.}},
+\bauthor{\bsnm{Lv}, \binits{J.}},
+\bauthor{\bsnm{Rao}, \binits{J.}}:
+\batitle{The persimmon 9-lipoxygenase gene {D}k{LOX}3 plays positive roles in
+  both promoting senescence and enhancing tolerance to abiotic stress}.
+\bjtitle{Frontiers in Plant Science}
+\bvolume{6},
+\bfpage{1073}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem{mittova2002salt}
+\begin{barticle}
+\bauthor{\bsnm{Mittova}, \binits{V.}},
+\bauthor{\bsnm{Tal}, \binits{M.}},
+\bauthor{\bsnm{Volokita}, \binits{M.}},
+\bauthor{\bsnm{Guy}, \binits{M.}}:
+\batitle{Salt stress induces up-regulation of an efficient chloroplast
+  antioxidant system in the salt-tolerant wild tomato species
+  \textit{{L}ycopersicon pennellii} but not in the cultivated species}.
+\bjtitle{Physiologia Plantarum}
+\bvolume{115}(\bissue{3}),
+\bfpage{393}--\blpage{400}
+(\byear{2002})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{peng2019novel}
+\begin{barticle}
+\bauthor{\bsnm{Peng}, \binits{H.}},
+\bauthor{\bsnm{Meyer}, \binits{R.S.}},
+\bauthor{\bsnm{Yang}, \binits{T.}},
+\bauthor{\bsnm{Whitaker}, \binits{B.D.}},
+\bauthor{\bsnm{Trouth}, \binits{F.}},
+\bauthor{\bsnm{Shangguan}, \binits{L.}},
+\bauthor{\bsnm{Huang}, \binits{J.}},
+\bauthor{\bsnm{Litt}, \binits{A.}},
+\bauthor{\bsnm{Little}, \binits{D.P.}},
+\bauthor{\bsnm{Ke}, \binits{H.}}, \betal:
+\batitle{A novel hydroxycinnamoyl transferase for synthesis of hydroxycinnamoyl
+  spermine conjugates in plants}.
+\bjtitle{BMC Plant Biology}
+\bvolume{19}(\bissue{1}),
+\bfpage{1}--\blpage{13}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{roychoudhury2011amelioration}
+\begin{barticle}
+\bauthor{\bsnm{Roychoudhury}, \binits{A.}},
+\bauthor{\bsnm{Basu}, \binits{S.}},
+\bauthor{\bsnm{Sengupta}, \binits{D.N.}}:
+\batitle{Amelioration of salinity stress by exogenously applied spermidine or
+  spermine in three varieties of indica rice differing in their level of salt
+  tolerance}.
+\bjtitle{Journal of Plant Physiology}
+\bvolume{168}(\bissue{4}),
+\bfpage{317}--\blpage{328}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{du2019network}
+\begin{barticle}
+\bauthor{\bsnm{Du}, \binits{Q.}},
+\bauthor{\bsnm{Campbell}, \binits{M.}},
+\bauthor{\bsnm{Yu}, \binits{H.}},
+\bauthor{\bsnm{Liu}, \binits{K.}},
+\bauthor{\bsnm{Walia}, \binits{H.}},
+\bauthor{\bsnm{Zhang}, \binits{Q.}},
+\bauthor{\bsnm{Zhang}, \binits{C.}}:
+\batitle{Network-based feature selection reveals substructures of gene modules
+  responding to salt stress in rice}.
+\bjtitle{Plant Direct}
+\bvolume{3}(\bissue{8}),
+\bfpage{00154}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{saelens2018comprehensive}
+\begin{barticle}
+\bauthor{\bsnm{Saelens}, \binits{W.}},
+\bauthor{\bsnm{Cannoodt}, \binits{R.}},
+\bauthor{\bsnm{Saeys}, \binits{Y.}}:
+\batitle{A comprehensive evaluation of module detection methods for gene
+  expression data}.
+\bjtitle{Nature Communications}
+\bvolume{9}(\bissue{1}),
+\bfpage{1}--\blpage{12}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{palla2005uncovering}
+\begin{barticle}
+\bauthor{\bsnm{Palla}, \binits{G.}},
+\bauthor{\bsnm{Der{\'e}nyi}, \binits{I.}},
+\bauthor{\bsnm{Farkas}, \binits{I.}},
+\bauthor{\bsnm{Vicsek}, \binits{T.}}:
+\batitle{Uncovering the overlapping community structure of complex networks in
+  nature and society}.
+\bjtitle{Nature}
+\bvolume{435}(\bissue{7043}),
+\bfpage{814}--\blpage{818}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Losses in the grain supply chain: Causes and solutions</p></title>
+  <aug>
+    <au><snm>Mesterh{\'a}zy</snm><fnm>{\'A}</fnm></au>
+    <au><snm>Ol{\'a}h</snm><fnm>J</fnm></au>
+    <au><snm>Popp</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Sustainability</source>
+  <publisher>Multidisciplinary Digital Publishing Institute</publisher>
+  <pubdate>2020</pubdate>
+  <volume>12</volume>
+  <issue>6</issue>
+  <fpage>2342</fpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Soil salinity: a serious environmental issue and plant growth
+  promoting bacteria as one of the tools for its alleviation</p></title>
+  <aug>
+    <au><snm>Shrivastava</snm><fnm>P</fnm></au>
+    <au><snm>Kumar</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Saudi Journal of Biological Sciences</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2015</pubdate>
+  <volume>22</volume>
+  <issue>2</issue>
+  <fpage>123</fpage>
+  <lpage>-131</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>Salt tolerance in rice: focus on mechanisms and
+  approaches</p></title>
+  <aug>
+    <au><snm>Reddy</snm><fnm>INBL</fnm></au>
+    <au><snm>Kim</snm><fnm>BK</fnm></au>
+    <au><snm>Yoon</snm><fnm>IS</fnm></au>
+    <au><snm>Kim</snm><fnm>KH</fnm></au>
+    <au><snm>Kwon</snm><fnm>TR</fnm></au>
+  </aug>
+  <source>Rice Science</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2017</pubdate>
+  <volume>24</volume>
+  <issue>3</issue>
+  <fpage>123</fpage>
+  <lpage>-144</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>{WGCNA}: an {R} package for weighted correlation network
+  analysis</p></title>
+  <aug>
+    <au><snm>Langfelder</snm><fnm>P</fnm></au>
+    <au><snm>Horvath</snm><fnm>S</fnm></au>
+  </aug>
+  <source>BMC Bioinformatics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2008</pubdate>
+  <volume>9</volume>
+  <issue>1</issue>
+  <fpage>559</fpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Identifying osteosarcoma metastasis associated genes by weighted
+  gene co-expression network analysis ({WGCNA})</p></title>
+  <aug>
+    <au><snm>Tian</snm><fnm>H</fnm></au>
+    <au><snm>Guan</snm><fnm>D</fnm></au>
+    <au><snm>Li</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Medicine</source>
+  <publisher>Wolters Kluwer Health</publisher>
+  <pubdate>2018</pubdate>
+  <volume>97</volume>
+  <issue>24</issue>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Beyond modules and hubs: the potential of gene coexpression
+  networks for investigating molecular mechanisms of complex brain
+  disorders</p></title>
+  <aug>
+    <au><snm>Gaiteri</snm><fnm>C</fnm></au>
+    <au><snm>Ding</snm><fnm>Y</fnm></au>
+    <au><snm>French</snm><fnm>B</fnm></au>
+    <au><snm>Tseng</snm><fnm>GC</fnm></au>
+    <au><snm>Sibille</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Genes, Brain and Behavior</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2014</pubdate>
+  <volume>13</volume>
+  <issue>1</issue>
+  <fpage>13</fpage>
+  <lpage>-24</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Link communities reveal multiscale complexity in
+  networks</p></title>
+  <aug>
+    <au><snm>Ahn</snm><fnm>YY</fnm></au>
+    <au><snm>Bagrow</snm><fnm>JP</fnm></au>
+    <au><snm>Lehmann</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Nature</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2010</pubdate>
+  <volume>466</volume>
+  <issue>7307</issue>
+  <fpage>761</fpage>
+  <lpage>-764</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Scale-free networks</p></title>
+  <aug>
+    <au><snm>Barab{\'a}si</snm><fnm>AL</fnm></au>
+    <au><snm>Bonabeau</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Scientific American</source>
+  <publisher>JSTOR</publisher>
+  <pubdate>2003</pubdate>
+  <volume>288</volume>
+  <issue>5</issue>
+  <fpage>60</fpage>
+  <lpage>-69</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Regression shrinkage and selection via the {LASSO}</p></title>
+  <aug>
+    <au><snm>Tibshirani</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Journal of the Royal Statistical Society: Series B
+  (Methodological)</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>1996</pubdate>
+  <volume>58</volume>
+  <issue>1</issue>
+  <fpage>267</fpage>
+  <lpage>-288</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>A review on variable selection in regression analysis</p></title>
+  <aug>
+    <au><snm>Desboulets</snm><fnm>LDD</fnm></au>
+  </aug>
+  <source>Econometrics</source>
+  <publisher>Multidisciplinary Digital Publishing Institute</publisher>
+  <pubdate>2018</pubdate>
+  <volume>6</volume>
+  <issue>4</issue>
+  <fpage>45</fpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Morphological and metabolic responses to salt stress of rice
+  (\textit{{O}ryza sativa {L}.}) cultivars which differ in salinity
+  tolerance</p></title>
+  <aug>
+    <au><snm>Chang</snm><fnm>J</fnm></au>
+    <au><snm>Cheong</snm><fnm>BE</fnm></au>
+    <au><snm>Natera</snm><fnm>S</fnm></au>
+    <au><snm>Roessner</snm><fnm>U</fnm></au>
+  </aug>
+  <source>Plant Physiology and Biochemistry</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2019</pubdate>
+  <volume>144</volume>
+  <fpage>427</fpage>
+  <lpage>-435</lpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>The gene expression omnibus database</p></title>
+  <aug>
+    <au><snm>Clough</snm><fnm>E</fnm></au>
+    <au><snm>Barrett</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Statistical Genomics</source>
+  <publisher>New York, NY: Humana Press</publisher>
+  <series><title><p>Methods in Molecular Biology</p></title></series>
+  <pubdate>2016</pubdate>
+  <volume>1418</volume>
+  <fpage>93</fpage>
+  <lpage>-110</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Registration of the rice diversity panel 1 for genomewide
+  association studies</p></title>
+  <aug>
+    <au><snm>Eizenga</snm><fnm>GC</fnm></au>
+    <au><snm>Ali</snm><fnm>ML</fnm></au>
+    <au><snm>Bryant</snm><fnm>RJ</fnm></au>
+    <au><snm>Yeater</snm><fnm>KM</fnm></au>
+    <au><snm>McClung</snm><fnm>AM</fnm></au>
+    <au><snm>McCouch</snm><fnm>SR</fnm></au>
+  </aug>
+  <source>Journal of Plant Registrations</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2014</pubdate>
+  <volume>8</volume>
+  <issue>1</issue>
+  <fpage>109</fpage>
+  <lpage>-116</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Moderated estimation of fold change and dispersion for {RNA}-seq
+  data with {DES}eq2</p></title>
+  <aug>
+    <au><snm>Love</snm><fnm>MI</fnm></au>
+    <au><snm>Huber</snm><fnm>W</fnm></au>
+    <au><snm>Anders</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Genome Biology</source>
+  <publisher>Springer</publisher>
+  <pubdate>2014</pubdate>
+  <volume>15</volume>
+  <issue>12</issue>
+  <fpage>550</fpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Approaches for extracting practical information from gene
+  co-expression networks in plant biology</p></title>
+  <aug>
+    <au><snm>Aoki</snm><fnm>K</fnm></au>
+    <au><snm>Ogata</snm><fnm>Y</fnm></au>
+    <au><snm>Shibata</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Plant and Cell Physiology</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2007</pubdate>
+  <volume>48</volume>
+  <issue>3</issue>
+  <fpage>381</fpage>
+  <lpage>-390</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Quick{GO}: a web-based tool for {G}ene {O}ntology
+  searching</p></title>
+  <aug>
+    <au><snm>Binns</snm><fnm>D</fnm></au>
+    <au><snm>Dimmer</snm><fnm>E</fnm></au>
+    <au><snm>Huntley</snm><fnm>R</fnm></au>
+    <au><snm>Barrell</snm><fnm>D</fnm></au>
+    <au><snm>O'donovan</snm><fnm>C</fnm></au>
+    <au><snm>Apweiler</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2009</pubdate>
+  <volume>25</volume>
+  <issue>22</issue>
+  <fpage>3045</fpage>
+  <lpage>-3046</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>The {STRING} database in 2017: quality-controlled protein--protein
+  association networks, made broadly accessible</p></title>
+  <aug>
+    <au><snm>Szklarczyk</snm><fnm>D</fnm></au>
+    <au><snm>Morris</snm><fnm>JH</fnm></au>
+    <au><snm>Cook</snm><fnm>H</fnm></au>
+    <au><snm>Kuhn</snm><fnm>M</fnm></au>
+    <au><snm>Wyder</snm><fnm>S</fnm></au>
+    <au><snm>Simonovic</snm><fnm>M</fnm></au>
+    <au><snm>Santos</snm><fnm>A</fnm></au>
+    <au><snm>Doncheva</snm><fnm>NT</fnm></au>
+    <au><snm>Roth</snm><fnm>A</fnm></au>
+    <au><snm>Bork</snm><fnm>P</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2016</pubdate>
+  <fpage>gkw937</fpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Allelic variants of {O}s{HKT}1; 1 underlie the divergence between
+  indica and japonica subspecies of rice (\textit{{O}ryza sativa}) for root
+  sodium content</p></title>
+  <aug>
+    <au><snm>Campbell</snm><fnm>MT</fnm></au>
+    <au><snm>Bandillo</snm><fnm>N</fnm></au>
+    <au><snm>Al Shiblawi</snm><fnm>FRA</fnm></au>
+    <au><snm>Sharma</snm><fnm>S</fnm></au>
+    <au><snm>Liu</snm><fnm>K</fnm></au>
+    <au><snm>Du</snm><fnm>Q</fnm></au>
+    <au><snm>Schmitz</snm><fnm>AJ</fnm></au>
+    <au><snm>Zhang</snm><fnm>C</fnm></au>
+    <au><snm>V{\'e}ry</snm><fnm>AA</fnm></au>
+    <au><snm>Lorenz</snm><fnm>AJ</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>PLoS Genetics</source>
+  <publisher>Public Library of Science</publisher>
+  <pubdate>2017</pubdate>
+  <volume>13</volume>
+  <issue>6</issue>
+  <fpage>e1006823</fpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Uni{P}rot: the universal protein knowledgebase</p></title>
+  <aug>
+    <au><snm>Consortium</snm><fnm>U</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2018</pubdate>
+  <volume>46</volume>
+  <issue>5</issue>
+  <fpage>2699</fpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Plant polyamines in abiotic stress responses</p></title>
+  <aug>
+    <au><snm>Gupta</snm><fnm>K</fnm></au>
+    <au><snm>Dey</snm><fnm>A</fnm></au>
+    <au><snm>Gupta</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Acta Physiologiae Plantarum</source>
+  <publisher>Springer</publisher>
+  <pubdate>2013</pubdate>
+  <volume>35</volume>
+  <issue>7</issue>
+  <fpage>2015</fpage>
+  <lpage>-2036</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>The persimmon 9-lipoxygenase gene {D}k{LOX}3 plays positive roles
+  in both promoting senescence and enhancing tolerance to abiotic
+  stress</p></title>
+  <aug>
+    <au><snm>Hou</snm><fnm>Y</fnm></au>
+    <au><snm>Meng</snm><fnm>K</fnm></au>
+    <au><snm>Han</snm><fnm>Y</fnm></au>
+    <au><snm>Ban</snm><fnm>Q</fnm></au>
+    <au><snm>Wang</snm><fnm>B</fnm></au>
+    <au><snm>Suo</snm><fnm>J</fnm></au>
+    <au><snm>Lv</snm><fnm>J</fnm></au>
+    <au><snm>Rao</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Frontiers in Plant Science</source>
+  <publisher>Frontiers</publisher>
+  <pubdate>2015</pubdate>
+  <volume>6</volume>
+  <fpage>1073</fpage>
+</bibl>
+
+<bibl id="B22">
+  <title><p>Salt stress induces up-regulation of an efficient chloroplast
+  antioxidant system in the salt-tolerant wild tomato species
+  \textit{{L}ycopersicon pennellii} but not in the cultivated
+  species</p></title>
+  <aug>
+    <au><snm>Mittova</snm><fnm>V</fnm></au>
+    <au><snm>Tal</snm><fnm>M</fnm></au>
+    <au><snm>Volokita</snm><fnm>M</fnm></au>
+    <au><snm>Guy</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Physiologia Plantarum</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2002</pubdate>
+  <volume>115</volume>
+  <issue>3</issue>
+  <fpage>393</fpage>
+  <lpage>-400</lpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>A novel hydroxycinnamoyl transferase for synthesis of
+  hydroxycinnamoyl spermine conjugates in plants</p></title>
+  <aug>
+    <au><snm>Peng</snm><fnm>H</fnm></au>
+    <au><snm>Meyer</snm><fnm>RS</fnm></au>
+    <au><snm>Yang</snm><fnm>T</fnm></au>
+    <au><snm>Whitaker</snm><fnm>BD</fnm></au>
+    <au><snm>Trouth</snm><fnm>F</fnm></au>
+    <au><snm>Shangguan</snm><fnm>L</fnm></au>
+    <au><snm>Huang</snm><fnm>J</fnm></au>
+    <au><snm>Litt</snm><fnm>A</fnm></au>
+    <au><snm>Little</snm><fnm>DP</fnm></au>
+    <au><snm>Ke</snm><fnm>H</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>BMC Plant Biology</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2019</pubdate>
+  <volume>19</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-13</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Amelioration of salinity stress by exogenously applied spermidine
+  or spermine in three varieties of indica rice differing in their level of
+  salt tolerance</p></title>
+  <aug>
+    <au><snm>Roychoudhury</snm><fnm>A</fnm></au>
+    <au><snm>Basu</snm><fnm>S</fnm></au>
+    <au><snm>Sengupta</snm><fnm>DN</fnm></au>
+  </aug>
+  <source>Journal of Plant Physiology</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2011</pubdate>
+  <volume>168</volume>
+  <issue>4</issue>
+  <fpage>317</fpage>
+  <lpage>-328</lpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Network-based feature selection reveals substructures of gene
+  modules responding to salt stress in rice</p></title>
+  <aug>
+    <au><snm>Du</snm><fnm>Q</fnm></au>
+    <au><snm>Campbell</snm><fnm>M</fnm></au>
+    <au><snm>Yu</snm><fnm>H</fnm></au>
+    <au><snm>Liu</snm><fnm>K</fnm></au>
+    <au><snm>Walia</snm><fnm>H</fnm></au>
+    <au><snm>Zhang</snm><fnm>Q</fnm></au>
+    <au><snm>Zhang</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Plant Direct</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2019</pubdate>
+  <volume>3</volume>
+  <issue>8</issue>
+  <fpage>e00154</fpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>A comprehensive evaluation of module detection methods for gene
+  expression data</p></title>
+  <aug>
+    <au><snm>Saelens</snm><fnm>W</fnm></au>
+    <au><snm>Cannoodt</snm><fnm>R</fnm></au>
+    <au><snm>Saeys</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>Nature Communications</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2018</pubdate>
+  <volume>9</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-12</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Uncovering the overlapping community structure of complex networks
+  in nature and society</p></title>
+  <aug>
+    <au><snm>Palla</snm><fnm>G</fnm></au>
+    <au><snm>Der{\'e}nyi</snm><fnm>I</fnm></au>
+    <au><snm>Farkas</snm><fnm>I</fnm></au>
+    <au><snm>Vicsek</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Nature</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2005</pubdate>
+  <volume>435</volume>
+  <issue>7043</issue>
+  <fpage>814</fpage>
+  <lpage>-818</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

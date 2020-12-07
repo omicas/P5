@@ -1,0 +1,95 @@
+%% \documentclass[runningheads]{llncs}
+\documentclass{bmcart}
+
+\input{packages}
+\input{macros}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\begin{fmbox}
+\dochead{METHODOLOGY}
+
+
+%Enter the title of your article here
+\title{An Analysis of Overlapping Communities for
+  Identifying Stress Responsive Genes}
+
+% Authors
+\author[
+  addressref={aff1},                        % id's of addresses, e.g. {aff1,aff2}
+  corref={aff1},                            % id of corresponding address, if any
+% noteref={n1},                             % id's of article notes, if any
+  email={camila.riccio@javerianacali.edu.co}   % email address
+]{\inits{C.R.}\fnm{Camila} \snm{Riccio}}
+\author[
+  addressref={aff2},
+  email={jfinke@javerianacali.edu.co}
+]{\inits{J.F.}\fnm{Jorge} \snm{Finke}}
+\author[
+  addressref={aff2},
+  email={camilo.rocha@javerianacali.edu.co}
+%]{\inits{C.R.}\fnm{Camilo} \snm{Rocha}}
+]{\inits{H.C.R.}\fnm{Camilo} \snm{Rocha}}
+
+% Authors' addresses
+\address[id=aff1]{%                                         % unique id
+  \orgdiv{Department of Natural Sciences and Mathematics},  % department, if any
+  \orgname{Pontificia Universidad Javeriana},               % university, etc
+  \city{Cali},                                              % city
+  \cny{Colombia}                                            % country
+}
+
+\address[id=aff2]{%                                         % unique id
+  \orgdiv{Department of Electronics and Computer Science},  % department, if any
+  \orgname{Pontificia Universidad Javeriana},               % university, etc
+  \city{Cali},                                              % city
+  \cny{Colombia}                                            % country
+}
+
+
+\end{fmbox}% comment this for two column layout
+
+\begin{abstractbox}
+
+\input{abstract-bmc}
+
+% keywords
+% Put each keyword in separate \kwd{}
+\begin{keyword}
+\kwd{Stress-responsive genes}
+\kwd{co-expression network}
+\kwd{overlapping communities}
+\kwd{phenotypic traits}
+\kwd{LASSO}
+\kwd{salinity}
+\kwd{rice}
+\kwd{\textit{Oryza sativa}}
+\end{keyword}
+
+\end{abstractbox}
+
+\end{frontmatter}
+
+
+\input{intro}
+
+\input{prelim}
+
+\input{framework}
+
+\input{case}
+
+\input{concl}
+
+\begin{backmatter}
+\input{declarations}
+\end{backmatter}
+
+%\bibliographystyle{splncs04}
+\bibliographystyle{bmc-mathphys}
+\bibliography{biblio}
+
+\end{document}
+
