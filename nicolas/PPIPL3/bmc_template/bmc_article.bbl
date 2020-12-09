@@ -1,0 +1,746 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{18}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{Lin2017}
+\begin{bchapter}
+\bauthor{\bsnm{Lin}, \binits{J.-S.}},
+\bauthor{\bsnm{Lai}, \binits{E.-M.}}:
+\bctitle{Protein--protein interactions: Co-immunoprecipitation}.
+In: \beditor{\bsnm{Journet}, \binits{L.}},
+\beditor{\bsnm{Cascales}, \binits{E.}} (eds.)
+\bbtitle{Bacterial Protein Secretion Systems: Methods and Protocols},
+pp. \bfpage{211}--\blpage{219}.
+\bpublisher{Springer},
+\blocation{New York, NY}
+(\byear{2017})
+\end{bchapter}
+\endbibitem
+
+%%% 2
+\bibitem{Zhang2010PPI}
+\begin{barticle}
+\bauthor{\bsnm{Zhang}, \binits{Y.}},
+\bauthor{\bsnm{Gao}, \binits{P.}},
+\bauthor{\bsnm{Yuan}, \binits{J.}}:
+\batitle{Plant protein-protein interaction network and interactome}.
+\bjtitle{Current Genomics}
+\bvolume{11}(\bissue{1}),
+\bfpage{40}--\blpage{46}
+(\byear{2010}).
+doi:\doiurl{10.2174/138920210790218016}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{Laraia2015PPI}
+\begin{barticle}
+\bauthor{\bsnm{Laraia}, \binits{L.}},
+\bauthor{\bsnm{McKenzie}, \binits{G.}},
+\bauthor{\bsnm{Spring}, \binits{D.R.}},
+\bauthor{\bsnm{Venkitaraman}, \binits{A.R.}},
+\bauthor{\bsnm{Huggins}, \binits{D.J.}}:
+\batitle{Overcoming chemical, biological, and computational challenges in the
+  development of inhibitors targeting protein-protein interactions}.
+\bjtitle{Chemistry & biology}
+\bvolume{22},
+\bfpage{689}--\blpage{703}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{Macalino2018PPI}
+\begin{botherref}
+\oauthor{\bsnm{Macalino}, \binits{S.J.Y.}},
+\oauthor{\bsnm{Basith}, \binits{S.}},
+\oauthor{\bsnm{Clavio}, \binits{N.A.B.}},
+\oauthor{\bsnm{Chang}, \binits{H.}},
+\oauthor{\bsnm{Kang}, \binits{S.}},
+\oauthor{\bsnm{Choi}, \binits{S.}}:
+{Evolution of In Silico Strategies for Protein-Protein Interaction Drug
+  Discovery}.
+Molecules (Basel, Switzerland)
+\textbf{23}
+(2018)
+\end{botherref}
+\endbibitem
+
+%%% 5
+\bibitem{Goldberg2003SmallWorld}
+\begin{barticle}
+\bauthor{\bsnm{Goldberg}, \binits{D.S.}},
+\bauthor{\bsnm{Roth}, \binits{F.P.}}:
+\batitle{Assessing experimentally derived interactions in a small world.}
+\bjtitle{Proceedings of the National Academy of Sciences of the United States
+  of America}
+\bvolume{100},
+\bfpage{4372}--\blpage{6}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{Cannistraci2013Networks}
+\begin{barticle}
+\bauthor{\bsnm{Cannistraci}, \binits{C.V.}},
+\bauthor{\bsnm{Alanis-Lobato}, \binits{G.}},
+\bauthor{\bsnm{Ravasi}, \binits{T.}}:
+\batitle{From link-prediction in brain connectomes and protein interactomes to
+  the local-community-paradigm in complex networks.}
+\bjtitle{Scientific reports}
+\bvolume{3},
+\bfpage{1613}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{Kovacs2019}
+\begin{botherref}
+\oauthor{\bsnm{Kov{\'{a}}cs}, \binits{I.A.}},
+\oauthor{\bsnm{Luck}, \binits{K.}},
+\oauthor{\bsnm{Spirohn}, \binits{K.}},
+\oauthor{\bsnm{Wang}, \binits{Y.}},
+\oauthor{\bsnm{Pollis}, \binits{C.}},
+\oauthor{\bsnm{Schlabach}, \binits{S.}},
+\oauthor{\bsnm{Bian}, \binits{W.}},
+\oauthor{\bsnm{Kim}, \binits{D.-K.}},
+\oauthor{\bsnm{Kishore}, \binits{N.}},
+\oauthor{\bsnm{Hao}, \binits{T.}},
+\oauthor{\bsnm{Calderwood}, \binits{M.A.}},
+\oauthor{\bsnm{Vidal}, \binits{M.}},
+\oauthor{\bsnm{Barab{\'{a}}si}, \binits{A.-L.}}:
+Network-based prediction of protein interactions.
+Nature Communications
+\textbf{10}(1)
+(2019).
+doi:\doiurl{10.1038/s41467-019-09177-y}.
+\arxivurl{https://doi.org/10.1038/s41467-019-09177-y}
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem{Chang2016PPI}
+\begin{botherref}
+\oauthor{\bsnm{Chang}, \binits{J.-W.}},
+\oauthor{\bsnm{Zhou}, \binits{Y.-Q.}},
+\oauthor{\bsnm{Ul~Qamar}, \binits{M.T.}},
+\oauthor{\bsnm{Chen}, \binits{L.-L.}},
+\oauthor{\bsnm{Ding}, \binits{Y.-D.}}:
+Prediction of protein-protein interactions by evidence combining methods.
+International journal of molecular sciences
+\textbf{17}
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 9
+\bibitem{Chen2019PPI}
+\begin{barticle}
+\bauthor{\bsnm{Chen}, \binits{K.-H.}},
+\bauthor{\bsnm{Wang}, \binits{T.-F.}},
+\bauthor{\bsnm{Hu}, \binits{Y.-J.}}:
+\batitle{Protein-protein interaction prediction using a hybrid feature
+  representation and a stacked generalization scheme.}
+\bjtitle{BMC bioinformatics}
+\bvolume{20},
+\bfpage{308}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{Kotlyar2015PPI}
+\begin{barticle}
+\bauthor{\bsnm{Kotlyar}, \binits{M.}},
+\bauthor{\bsnm{Pastrello}, \binits{C.}},
+\bauthor{\bsnm{Pivetta}, \binits{F.}},
+\bauthor{\bsnm{Lo~Sardo}, \binits{A.}},
+\bauthor{\bsnm{Cumbaa}, \binits{C.}},
+\bauthor{\bsnm{Li}, \binits{H.}},
+\bauthor{\bsnm{Naranian}, \binits{T.}},
+\bauthor{\bsnm{Niu}, \binits{Y.}},
+\bauthor{\bsnm{Ding}, \binits{Z.}},
+\bauthor{\bsnm{Vafaee}, \binits{F.}},
+\bauthor{\bsnm{Broackes-Carter}, \binits{F.}},
+\bauthor{\bsnm{Petschnigg}, \binits{J.}},
+\bauthor{\bsnm{Mills}, \binits{G.B.}},
+\bauthor{\bsnm{Jurisicova}, \binits{A.}},
+\bauthor{\bsnm{Stagljar}, \binits{I.}},
+\bauthor{\bsnm{Maestro}, \binits{R.}},
+\bauthor{\bsnm{Jurisica}, \binits{I.}}:
+\batitle{In silico prediction of physical protein interactions and
+  characterization of interactome orphans}.
+\bjtitle{Nature Methods}
+\bvolume{12}(\bissue{1}),
+\bfpage{79}--\blpage{84}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{Grover_2016}
+\begin{bchapter}
+\bauthor{\bsnm{Grover}, \binits{A.}},
+\bauthor{\bsnm{Leskovec}, \binits{J.}}:
+\bctitle{node2vec: Scalable feature learning for networks}.
+In: \bbtitle{Proceedings of the 22nd {ACM} {SIGKDD} International Conference on
+  Knowledge Discovery and Data Mining}.
+\bpublisher{{ACM}}, \blocation{???}
+(\byear{2016}).
+doi:\doiurl{10.1145/2939672.2939754}
+\end{bchapter}
+\endbibitem
+
+%%% 12
+\bibitem{Rolland2014Human}
+\begin{barticle}
+\bauthor{\bsnm{Rolland}, \binits{T.}},
+\bauthor{\bsnm{Tasan}, \binits{M.}},
+\bauthor{\bsnm{Charloteaux}, \binits{B.}},
+\bauthor{\bsnm{Pevzner}, \binits{S.J.}},
+\bauthor{\bsnm{Zhong}, \binits{Q.}},
+\bauthor{\bsnm{Sahni}, \binits{N.}},
+\bauthor{\bsnm{Yi}, \binits{S.}},
+\bauthor{\bsnm{Lemmens}, \binits{I.}},
+\bauthor{\bsnm{Fontanillo}, \binits{C.}},
+\bauthor{\bsnm{Mosca}, \binits{R.}},
+\bauthor{\bsnm{Kamburov}, \binits{A.}},
+\bauthor{\bsnm{Ghiassian}, \binits{S.D.}},
+\bauthor{\bsnm{Yang}, \binits{X.}},
+\bauthor{\bsnm{Ghamsari}, \binits{L.}},
+\bauthor{\bsnm{Balcha}, \binits{D.}},
+\bauthor{\bsnm{Begg}, \binits{B.E.}},
+\bauthor{\bsnm{Braun}, \binits{P.}},
+\bauthor{\bsnm{Brehme}, \binits{M.}},
+\bauthor{\bsnm{Broly}, \binits{M.P.}},
+\bauthor{\bsnm{Carvunis}, \binits{A.-R.}},
+\bauthor{\bsnm{Convery-Zupan}, \binits{D.}},
+\bauthor{\bsnm{Corominas}, \binits{R.}},
+\bauthor{\bsnm{Coulombe-Huntington}, \binits{J.}},
+\bauthor{\bsnm{Dann}, \binits{E.}},
+\bauthor{\bsnm{Dreze}, \binits{M.}},
+\bauthor{\bsnm{Dricot}, \binits{A.}},
+\bauthor{\bsnm{Fan}, \binits{C.}},
+\bauthor{\bsnm{Franzosa}, \binits{E.}},
+\bauthor{\bsnm{Gebreab}, \binits{F.}},
+\bauthor{\bsnm{Gutierrez}, \binits{B.J.}},
+\bauthor{\bsnm{Hardy}, \binits{M.F.}},
+\bauthor{\bsnm{Jin}, \binits{M.}},
+\bauthor{\bsnm{Kang}, \binits{S.}},
+\bauthor{\bsnm{Kiros}, \binits{R.}},
+\bauthor{\bsnm{Lin}, \binits{G.N.}},
+\bauthor{\bsnm{Luck}, \binits{K.}},
+\bauthor{\bsnm{MacWilliams}, \binits{A.}},
+\bauthor{\bsnm{Menche}, \binits{J.}},
+\bauthor{\bsnm{Murray}, \binits{R.R.}},
+\bauthor{\bsnm{Palagi}, \binits{A.}},
+\bauthor{\bsnm{Poulin}, \binits{M.M.}},
+\bauthor{\bsnm{Rambout}, \binits{X.}},
+\bauthor{\bsnm{Rasla}, \binits{J.}},
+\bauthor{\bsnm{Reichert}, \binits{P.}},
+\bauthor{\bsnm{Romero}, \binits{V.}},
+\bauthor{\bsnm{Ruyssinck}, \binits{E.}},
+\bauthor{\bsnm{Sahalie}, \binits{J.M.}},
+\bauthor{\bsnm{Scholz}, \binits{A.}},
+\bauthor{\bsnm{Shah}, \binits{A.A.}},
+\bauthor{\bsnm{Sharma}, \binits{A.}},
+\bauthor{\bsnm{Shen}, \binits{Y.}},
+\bauthor{\bsnm{Spirohn}, \binits{K.}},
+\bauthor{\bsnm{Tam}, \binits{S.}},
+\bauthor{\bsnm{Tejeda}, \binits{A.O.}},
+\bauthor{\bsnm{Trigg}, \binits{S.A.}},
+\bauthor{\bsnm{Twizere}, \binits{J.-C.}},
+\bauthor{\bsnm{Vega}, \binits{K.}},
+\bauthor{\bsnm{Walsh}, \binits{J.}},
+\bauthor{\bsnm{Cusick}, \binits{M.E.}},
+\bauthor{\bsnm{Xia}, \binits{Y.}},
+\bauthor{\bsnm{Barabasi}, \binits{A.-L.}},
+\bauthor{\bsnm{Iakoucheva}, \binits{L.M.}},
+\bauthor{\bsnm{Aloy}, \binits{P.}},
+\bauthor{\bsnm{De~Las~Rivas}, \binits{J.}},
+\bauthor{\bsnm{Tavernier}, \binits{J.}},
+\bauthor{\bsnm{Calderwood}, \binits{M.A.}},
+\bauthor{\bsnm{Hill}, \binits{D.E.}},
+\bauthor{\bsnm{Hao}, \binits{T.}},
+\bauthor{\bsnm{Roth}, \binits{F.P.}},
+\bauthor{\bsnm{Vidal}, \binits{M.}}:
+\batitle{A proteome-scale map of the human interactome network.}
+\bjtitle{Cell}
+\bvolume{159},
+\bfpage{1212}--\blpage{1226}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{koon}
+\begin{barticle}
+\bauthor{\bsnm{Koonin}, \binits{E.V.}},
+\bauthor{\bsnm{Altschul}, \binits{S.F.}},
+\bauthor{\bsnm{Bork}, \binits{P.}}:
+\batitle{Brca1 protein products: functional motifs}.
+\bjtitle{Nat. Genet.}
+\bvolume{13},
+\bfpage{266}--\blpage{267}
+(\byear{1996})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{xjon}
+\begin{bchapter}
+\bauthor{\bsnm{Jones}, \binits{X.}}:
+\bctitle{Zeolites and synthetic mechanisms}.
+In: \beditor{\bsnm{Smith}, \binits{Y.}} (ed.)
+\bbtitle{Proceedings of the First National Conference on Porous Sieves: 27-30
+  June 1996; Baltimore},
+pp. \bfpage{16}--\blpage{27}
+(\byear{1996})
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem{marg}
+\begin{bbook}
+\bauthor{\bsnm{Margulis}, \binits{L.}}:
+\bbtitle{Origin of Eukaryotic Cells}.
+\bpublisher{Yale University Press},
+\blocation{New Haven}
+(\byear{1970})
+\end{bbook}
+\endbibitem
+
+%%% 16
+\bibitem{schn}
+\begin{bchapter}
+\bauthor{\bsnm{Schnepf}, \binits{E.}}:
+\bctitle{From prey via endosymbiont to plastids: comparative studies in
+  dinoflagellates}.
+In: \beditor{\bsnm{Lewin}, \binits{R.A.}} (ed.)
+\bbtitle{Origins of Plastids},
+\bedition{2nd} edn.,
+pp. \bfpage{53}--\blpage{76}.
+\bpublisher{Chapman and Hall},
+\blocation{New York}
+(\byear{1993})
+\end{bchapter}
+\endbibitem
+
+%%% 17
+\bibitem{koha}
+\begin{botherref}
+\oauthor{\bsnm{Kohavi}, \binits{R.}}:
+Wrappers for performance enhancement and obvious decision graphs.
+PhD thesis,
+Stanford University, Computer Science Department
+(1995)
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem{issnic}
+\begin{botherref}
+\oauthor{\bsnm{{ISSN International Centre}}}:
+The ISSN register
+(2006).
+\url{http://www.issn.org}
+Accessed Accessed 20 Feb 2007
+\end{botherref}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Protein--Protein Interactions: Co-Immunoprecipitation</p></title>
+  <aug>
+    <au><snm>Lin</snm><fnm>JS</fnm></au>
+    <au><snm>Lai</snm><fnm>EM</fnm></au>
+  </aug>
+  <source>Bacterial Protein Secretion Systems: Methods and Protocols</source>
+  <publisher>New York, NY: Springer New York</publisher>
+  <editor>Journet, Laure and Cascales, Eric</editor>
+  <pubdate>2017</pubdate>
+  <fpage>211</fpage>
+  <lpage>-219</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Plant Protein-Protein Interaction Network and
+  Interactome</p></title>
+  <aug>
+    <au><snm>Zhang</snm><fnm>Y</fnm></au>
+    <au><snm>Gao</snm><fnm>P</fnm></au>
+    <au><snm>Yuan</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Current Genomics</source>
+  <publisher>Bentham Science Publishers Ltd.</publisher>
+  <pubdate>2010</pubdate>
+  <volume>11</volume>
+  <issue>1</issue>
+  <fpage>40</fpage>
+  <lpage>-46</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>Overcoming Chemical, Biological, and Computational Challenges in
+  the Development of Inhibitors Targeting Protein-Protein
+  Interactions</p></title>
+  <aug>
+    <au><snm>Laraia</snm><fnm>L</fnm></au>
+    <au><snm>McKenzie</snm><fnm>G</fnm></au>
+    <au><snm>Spring</snm><fnm>DR</fnm></au>
+    <au><snm>Venkitaraman</snm><fnm>AR</fnm></au>
+    <au><snm>Huggins</snm><fnm>DJ</fnm></au>
+  </aug>
+  <source>Chemistry & biology</source>
+  <pubdate>2015</pubdate>
+  <volume>22</volume>
+  <fpage>689</fpage>
+  <lpage>703</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>{Evolution of In Silico Strategies for Protein-Protein Interaction
+  Drug Discovery}</p></title>
+  <aug>
+    <au><snm>Macalino</snm><fnm>SJY</fnm></au>
+    <au><snm>Basith</snm><fnm>S</fnm></au>
+    <au><snm>Clavio</snm><fnm>NAB</fnm></au>
+    <au><snm>Chang</snm><fnm>H</fnm></au>
+    <au><snm>Kang</snm><fnm>S</fnm></au>
+    <au><snm>Choi</snm><fnm>S</fnm></au>
+  </aug>
+  <source>Molecules (Basel, Switzerland)</source>
+  <pubdate>2018</pubdate>
+  <volume>23</volume>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Assessing experimentally derived interactions in a small
+  world.</p></title>
+  <aug>
+    <au><snm>Goldberg</snm><fnm>DS</fnm></au>
+    <au><snm>Roth</snm><fnm>FP</fnm></au>
+  </aug>
+  <source>Proceedings of the National Academy of Sciences of the United States
+  of America</source>
+  <pubdate>2003</pubdate>
+  <volume>100</volume>
+  <fpage>4372</fpage>
+  <lpage>6</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>From link-prediction in brain connectomes and protein interactomes
+  to the local-community-paradigm in complex networks.</p></title>
+  <aug>
+    <au><snm>Cannistraci</snm><fnm>CV</fnm></au>
+    <au><snm>Alanis Lobato</snm><fnm>G</fnm></au>
+    <au><snm>Ravasi</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Scientific reports</source>
+  <pubdate>2013</pubdate>
+  <volume>3</volume>
+  <fpage>1613</fpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Network-based prediction of protein interactions</p></title>
+  <aug>
+    <au><snm>Kov{\'{a}}cs</snm><fnm>IA</fnm></au>
+    <au><snm>Luck</snm><fnm>K</fnm></au>
+    <au><snm>Spirohn</snm><fnm>K</fnm></au>
+    <au><snm>Wang</snm><fnm>Y</fnm></au>
+    <au><snm>Pollis</snm><fnm>C</fnm></au>
+    <au><snm>Schlabach</snm><fnm>S</fnm></au>
+    <au><snm>Bian</snm><fnm>W</fnm></au>
+    <au><snm>Kim</snm><fnm>DK</fnm></au>
+    <au><snm>Kishore</snm><fnm>N</fnm></au>
+    <au><snm>Hao</snm><fnm>T</fnm></au>
+    <au><snm>Calderwood</snm><fnm>MA</fnm></au>
+    <au><snm>Vidal</snm><fnm>M</fnm></au>
+    <au><snm>Barab{\'{a}}si</snm><fnm>AL</fnm></au>
+  </aug>
+  <source>Nature Communications</source>
+  <publisher>Springer Science and Business Media {LLC}</publisher>
+  <pubdate>2019</pubdate>
+  <volume>10</volume>
+  <issue>1</issue>
+  <url>https://doi.org/10.1038/s41467-019-09177-y</url>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Prediction of Protein-Protein Interactions by Evidence Combining
+  Methods.</p></title>
+  <aug>
+    <au><snm>Chang</snm><fnm>JW</fnm></au>
+    <au><snm>Zhou</snm><fnm>YQ</fnm></au>
+    <au><snm>Ul Qamar</snm><fnm>MT</fnm></au>
+    <au><snm>Chen</snm><fnm>LL</fnm></au>
+    <au><snm>Ding</snm><fnm>YD</fnm></au>
+  </aug>
+  <source>International journal of molecular sciences</source>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Protein-protein interaction prediction using a hybrid feature
+  representation and a stacked generalization scheme.</p></title>
+  <aug>
+    <au><snm>Chen</snm><fnm>KH</fnm></au>
+    <au><snm>Wang</snm><fnm>TF</fnm></au>
+    <au><snm>Hu</snm><fnm>YJ</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <pubdate>2019</pubdate>
+  <volume>20</volume>
+  <fpage>308</fpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>In silico prediction of physical protein interactions and
+  characterization of interactome orphans</p></title>
+  <aug>
+    <au><snm>Kotlyar</snm><fnm>M</fnm></au>
+    <au><snm>Pastrello</snm><fnm>C</fnm></au>
+    <au><snm>Pivetta</snm><fnm>F</fnm></au>
+    <au><snm>Lo Sardo</snm><fnm>A</fnm></au>
+    <au><snm>Cumbaa</snm><fnm>C</fnm></au>
+    <au><snm>Li</snm><fnm>H</fnm></au>
+    <au><snm>Naranian</snm><fnm>T</fnm></au>
+    <au><snm>Niu</snm><fnm>Y</fnm></au>
+    <au><snm>Ding</snm><fnm>Z</fnm></au>
+    <au><snm>Vafaee</snm><fnm>F</fnm></au>
+    <au><snm>Broackes Carter</snm><fnm>F</fnm></au>
+    <au><snm>Petschnigg</snm><fnm>J</fnm></au>
+    <au><snm>Mills</snm><fnm>GB</fnm></au>
+    <au><snm>Jurisicova</snm><fnm>A</fnm></au>
+    <au><snm>Stagljar</snm><fnm>I</fnm></au>
+    <au><snm>Maestro</snm><fnm>R</fnm></au>
+    <au><snm>Jurisica</snm><fnm>I</fnm></au>
+  </aug>
+  <source>Nature Methods</source>
+  <pubdate>2015</pubdate>
+  <volume>12</volume>
+  <issue>1</issue>
+  <fpage>79</fpage>
+  <lpage>-84</lpage>
+  <url>https://doi.org/10.1038/nmeth.3178</url>
+</bibl>
+
+<bibl id="B11">
+  <title><p>node2vec: Scalable Feature Learning for Networks</p></title>
+  <aug>
+    <au><snm>Grover</snm><fnm>A</fnm></au>
+    <au><snm>Leskovec</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Proceedings of the 22nd {ACM} {SIGKDD} International Conference on
+  Knowledge Discovery and Data Mining</source>
+  <publisher>{ACM}</publisher>
+  <pubdate>2016</pubdate>
+</bibl>
+
+<bibl id="B12">
+  <title><p>A proteome-scale map of the human interactome network.</p></title>
+  <aug>
+    <au><snm>Rolland</snm><fnm>T</fnm></au>
+    <au><snm>Tasan</snm><fnm>M</fnm></au>
+    <au><snm>Charloteaux</snm><fnm>B</fnm></au>
+    <au><snm>Pevzner</snm><fnm>SJ</fnm></au>
+    <au><snm>Zhong</snm><fnm>Q</fnm></au>
+    <au><snm>Sahni</snm><fnm>N</fnm></au>
+    <au><snm>Yi</snm><fnm>S</fnm></au>
+    <au><snm>Lemmens</snm><fnm>I</fnm></au>
+    <au><snm>Fontanillo</snm><fnm>C</fnm></au>
+    <au><snm>Mosca</snm><fnm>R</fnm></au>
+    <au><snm>Kamburov</snm><fnm>A</fnm></au>
+    <au><snm>Ghiassian</snm><fnm>SD</fnm></au>
+    <au><snm>Yang</snm><fnm>X</fnm></au>
+    <au><snm>Ghamsari</snm><fnm>L</fnm></au>
+    <au><snm>Balcha</snm><fnm>D</fnm></au>
+    <au><snm>Begg</snm><fnm>BE</fnm></au>
+    <au><snm>Braun</snm><fnm>P</fnm></au>
+    <au><snm>Brehme</snm><fnm>M</fnm></au>
+    <au><snm>Broly</snm><fnm>MP</fnm></au>
+    <au><snm>Carvunis</snm><fnm>AR</fnm></au>
+    <au><snm>Convery Zupan</snm><fnm>D</fnm></au>
+    <au><snm>Corominas</snm><fnm>R</fnm></au>
+    <au><snm>Coulombe Huntington</snm><fnm>J</fnm></au>
+    <au><snm>Dann</snm><fnm>E</fnm></au>
+    <au><snm>Dreze</snm><fnm>M</fnm></au>
+    <au><snm>Dricot</snm><fnm>A</fnm></au>
+    <au><snm>Fan</snm><fnm>C</fnm></au>
+    <au><snm>Franzosa</snm><fnm>E</fnm></au>
+    <au><snm>Gebreab</snm><fnm>F</fnm></au>
+    <au><snm>Gutierrez</snm><fnm>BJ</fnm></au>
+    <au><snm>Hardy</snm><fnm>MF</fnm></au>
+    <au><snm>Jin</snm><fnm>M</fnm></au>
+    <au><snm>Kang</snm><fnm>S</fnm></au>
+    <au><snm>Kiros</snm><fnm>R</fnm></au>
+    <au><snm>Lin</snm><fnm>GN</fnm></au>
+    <au><snm>Luck</snm><fnm>K</fnm></au>
+    <au><snm>MacWilliams</snm><fnm>A</fnm></au>
+    <au><snm>Menche</snm><fnm>J</fnm></au>
+    <au><snm>Murray</snm><fnm>RR</fnm></au>
+    <au><snm>Palagi</snm><fnm>A</fnm></au>
+    <au><snm>Poulin</snm><fnm>MM</fnm></au>
+    <au><snm>Rambout</snm><fnm>X</fnm></au>
+    <au><snm>Rasla</snm><fnm>J</fnm></au>
+    <au><snm>Reichert</snm><fnm>P</fnm></au>
+    <au><snm>Romero</snm><fnm>V</fnm></au>
+    <au><snm>Ruyssinck</snm><fnm>E</fnm></au>
+    <au><snm>Sahalie</snm><fnm>JM</fnm></au>
+    <au><snm>Scholz</snm><fnm>A</fnm></au>
+    <au><snm>Shah</snm><fnm>AA</fnm></au>
+    <au><snm>Sharma</snm><fnm>A</fnm></au>
+    <au><snm>Shen</snm><fnm>Y</fnm></au>
+    <au><snm>Spirohn</snm><fnm>K</fnm></au>
+    <au><snm>Tam</snm><fnm>S</fnm></au>
+    <au><snm>Tejeda</snm><fnm>AO</fnm></au>
+    <au><snm>Trigg</snm><fnm>SA</fnm></au>
+    <au><snm>Twizere</snm><fnm>JC</fnm></au>
+    <au><snm>Vega</snm><fnm>K</fnm></au>
+    <au><snm>Walsh</snm><fnm>J</fnm></au>
+    <au><snm>Cusick</snm><fnm>ME</fnm></au>
+    <au><snm>Xia</snm><fnm>Y</fnm></au>
+    <au><snm>Barabasi</snm><fnm>AL</fnm></au>
+    <au><snm>Iakoucheva</snm><fnm>LM</fnm></au>
+    <au><snm>Aloy</snm><fnm>P</fnm></au>
+    <au><snm>De Las Rivas</snm><fnm>J</fnm></au>
+    <au><snm>Tavernier</snm><fnm>J</fnm></au>
+    <au><snm>Calderwood</snm><fnm>MA</fnm></au>
+    <au><snm>Hill</snm><fnm>DE</fnm></au>
+    <au><snm>Hao</snm><fnm>T</fnm></au>
+    <au><snm>Roth</snm><fnm>FP</fnm></au>
+    <au><snm>Vidal</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Cell</source>
+  <pubdate>2014</pubdate>
+  <volume>159</volume>
+  <fpage>1212</fpage>
+  <lpage>1226</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>BRCA1 protein products: functional motifs</p></title>
+  <aug>
+    <au><snm>Koonin</snm><fnm>E V</fnm></au>
+    <au><snm>Altschul</snm><fnm>S F</fnm></au>
+    <au><snm>Bork</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Nat. Genet.</source>
+  <pubdate>1996</pubdate>
+  <volume>13</volume>
+  <fpage>266</fpage>
+  <lpage>267</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Zeolites and synthetic mechanisms</p></title>
+  <aug>
+    <au><snm>Jones</snm><fnm>X</fnm></au>
+  </aug>
+  <source>Proceedings of the First National Conference on Porous Sieves: 27-30
+  June 1996; Baltimore</source>
+  <editor>Y Smith</editor>
+  <pubdate>1996</pubdate>
+  <fpage>16</fpage>
+  <lpage>27</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Origin of Eukaryotic Cells</p></title>
+  <aug>
+    <au><snm>Margulis</snm><fnm>L</fnm></au>
+  </aug>
+  <publisher>New Haven: Yale University Press</publisher>
+  <pubdate>1970</pubdate>
+</bibl>
+
+<bibl id="B16">
+  <title><p>From prey via endosymbiont to plastids: comparative studies in
+  dinoflagellates</p></title>
+  <aug>
+    <au><snm>Schnepf</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Origins of Plastids</source>
+  <publisher>New York: Chapman and Hall</publisher>
+  <editor>R A Lewin</editor>
+  <edition>2</edition>
+  <pubdate>1993</pubdate>
+  <fpage>53</fpage>
+  <lpage>76</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Wrappers for performance enhancement and obvious decision
+  graphs</p></title>
+  <aug>
+    <au><snm>Kohavi</snm><fnm>R</fnm></au>
+  </aug>
+  <source>PhD thesis</source>
+  <publisher>Stanford University, Computer Science Department</publisher>
+  <pubdate>1995</pubdate>
+</bibl>
+
+<bibl id="B18">
+  <title><p>The ISSN register</p></title>
+  <aug>
+    <au><cnm>{ISSN International Centre}</cnm></au>
+  </aug>
+  <pubdate>2006</pubdate>
+  <url>http://www.issn.org</url>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
