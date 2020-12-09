@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  9 DEC 2020 10:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  9 DEC 2020 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,62 +150,7 @@ File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
 \g__pdf_backend_link_int=\count193
 \g__pdf_backend_link_sf_int=\count194
 )
-(./bmc_article.aux
-
-LaTeX Warning: Label `Lin2017' multiply defined.
-
-
-LaTeX Warning: Label `Zhang2010PPI' multiply defined.
-
-
-LaTeX Warning: Label `Laraia2015PPI' multiply defined.
-
-
-LaTeX Warning: Label `Macalino2018PPI' multiply defined.
-
-
-LaTeX Warning: Label `Goldberg2003SmallWorld' multiply defined.
-
-
-LaTeX Warning: Label `Cannistraci2013Networks' multiply defined.
-
-
-LaTeX Warning: Label `Kovacs2019' multiply defined.
-
-
-LaTeX Warning: Label `Chang2016PPI' multiply defined.
-
-
-LaTeX Warning: Label `Chen2019PPI' multiply defined.
-
-
-LaTeX Warning: Label `Kotlyar2015PPI' multiply defined.
-
-
-LaTeX Warning: Label `Grover_2016' multiply defined.
-
-
-LaTeX Warning: Label `Rolland2014Human' multiply defined.
-
-
-LaTeX Warning: Label `koon' multiply defined.
-
-
-LaTeX Warning: Label `xjon' multiply defined.
-
-
-LaTeX Warning: Label `marg' multiply defined.
-
-
-LaTeX Warning: Label `schn' multiply defined.
-
-
-LaTeX Warning: Label `koha' multiply defined.
-
-
-LaTeX Warning: Label `issnic' multiply defined.
-
-)
+(./bmc_article.aux)
 \openout1 = `bmc_article.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -248,43 +193,33 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 116.
 
 \address@aff1=\toks30
-(./abstract.tex)
+(./abstract.tex) (./introduction.tex
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 257.
-
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 23.
  [1
 
-] (./bmc_article.bbl
-! Misplaced alignment tab character &.
-<argument> Chemistry &
-                       biology
-l.86 \bjtitle{Chemistry & biology}
-                                  
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+]) [2] [3] (./bmc_article.bbl)
 
-[2]) 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4] 
 AED: lastpage setting LastPage
-[3] (./bmc_article.aux)
+[5] (./bmc_article.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 2339 strings out of 481240
- 30195 string characters out of 5920404
- 280287 words of memory out of 5000000
- 17624 multiletter control sequences out of 15000+600000
- 540655 words of font info for 53 fonts, out of 8000000 for 9000
+ 2350 strings out of 481240
+ 30345 string characters out of 5920404
+ 284793 words of memory out of 5000000
+ 17630 multiletter control sequences out of 15000+600000
+ 541158 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,13n,41p,687b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,13n,41p,687b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bmc_article.dvi (3 pages, 14928 bytes).
+Output written on bmc_article.dvi (5 pages, 22336 bytes).
