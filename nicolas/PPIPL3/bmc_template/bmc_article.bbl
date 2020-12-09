@@ -83,7 +83,7 @@ doi:\doiurl{10.2174/138920210790218016}
 \bauthor{\bsnm{Huggins}, \binits{D.J.}}:
 \batitle{Overcoming chemical, biological, and computational challenges in the
   development of inhibitors targeting protein-protein interactions}.
-\bjtitle{Chemistry & biology}
+\bjtitle{Chemistry and biology}
 \bvolume{22},
 \bfpage{689}--\blpage{703}
 (\byear{2015})
@@ -441,7 +441,7 @@ Accessed Accessed 20 Feb 2007
     <au><snm>Venkitaraman</snm><fnm>AR</fnm></au>
     <au><snm>Huggins</snm><fnm>DJ</fnm></au>
   </aug>
-  <source>Chemistry & biology</source>
+  <source>Chemistry and biology</source>
   <pubdate>2015</pubdate>
   <volume>22</volume>
   <fpage>689</fpage>
