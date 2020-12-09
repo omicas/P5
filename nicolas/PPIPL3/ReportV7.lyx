@@ -1,0 +1,2859 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{multirow}
+%\usepackage{table}
+%\usepackage{tabular}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style biblatex
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Prediction of Protein-Protein Interactions on the Human and Rice Interactomes
+\end_layout
+
+\begin_layout Author
+Nicolás López-Rozo
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pontificia Universidad Javeriana Cali, ORCID: 0000-0002-8060-6891
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Phantom HPhantom
+status open
+
+\begin_layout Plain Layout
+ema.
+\end_layout
+
+\end_inset
+
+email: nicolaslopez@javerianacali.edu.co
+\end_layout
+
+\end_inset
+
+, Jorge Finke
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pontificia Universidad Javeriana Cali, ORCID: 0000-0003-2393-6066
+\end_layout
+
+\end_inset
+
+, Camilo Rocha
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pontificia Universidad Javeriana Cali, ORCID: 0000-0003-4356-7704
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Old abstract
+\end_layout
+
+\begin_layout Abstract
+Previous Network-based efforts to predict unmapped protein-protein interactions
+ (PPI's) suggest that proteins with multiple paths of length 3 (L3) are
+ more likely to be connected.
+ This paper extends this so-called L3 principle by taking into account feature
+ extraction and using 
+\family typewriter
+XGBoost
+\family default
+ techniques for prediction.
+ In particular, we train the model using handcrafted features as well as
+ features learned from embeddings using 
+\family typewriter
+Node2Vec
+\family default
+.
+ Our main result shows that while L3 remains an important principle for
+ predicting links, the approach is outperform by using embedded features.
+ The mentioned approaches are compared using the human and the rice interactomes.
+ 
+\backslash
+end{abstract}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+A recent study in network-based prediction of protein-protein interactions
+ (PPIs) reveals that two proteins are more likely to interact, the higher
+ the number of paths of length 3 between them (normalized by the geometric
+ average of their interactions).
+ This paper extends previous work on mapping binary interactions by taking
+ into account the learning of features (embeddings) of the PPI network.
+ In particular, we implement a gradient boosted decision tree model (
+\family typewriter
+XGBoost
+\family default
+) using handcrafted features (including the normalized measure) and embeddings
+ from an algorithm that generates a low-dimensional representation of nodes
+ (
+\family typewriter
+Node2Vec
+\family default
+).
+ Our main result shows that while the measure remains an important feature
+ for predicting interactions, better performance is achieved when in addition
+ embedding features are considered.
+ The proposed approach is validated for the human and rice interactomes.
+ For both cases, the combination of both types of features yield higher
+ AUC values.
+ The developed framework can also be applied to interactomes of other organisms
+ for which PPI networks have recently become available.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Proteins are key actors of biological processes inside cells.
+ Rather than carrying out tasks as single agents, they are part of dynamic
+ networks of protein-protein interactions (PPI) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lin2017"
+literal "false"
+
+\end_inset
+
+.
+ Such networks underlie a variety of interdependent mechanisms, including
+ signal transduction, homeostasis control and stress responses.
+ Furthermore, PPI networks play an important role in physiological and developme
+ntal processes such as protein phosphorylation, transcriptional co-factor
+ recruitment and transporter activation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhang_2010_PPI"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A common way to create PPI networks (or validate particular protein-protein
+ interactions) is the 
+\emph on
+Yeast-Two-Hybrid
+\emph default
+ technique (also known as 
+\emph on
+two-hybrid screening
+\emph default
+ or 
+\emph on
+Y2H
+\emph default
+).
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Y2H"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+A illustrates the biological basis of Y2H: the expression of a specific
+ reporter gene is activated by the binding of a DNA-binding Domain (DB)
+ and an Activation Domain (AD) of a Transcription Factor, which in turn
+ binds to an Upstream Activation Sequence (UAS).
+ To evaluate an interaction between two proteins, the Y2H approach fuses
+ one protein to the DB domain (known as 
+\emph on
+bait
+\emph default
+) and another protein to the AD (known as 
+\emph on
+prey
+\emph default
+).
+ If the proteins interact, the reporter gene expression is activated by
+ the AD (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Y2H"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+B).
+ Otherwise, if proteins fail to interact, the reporter gene is not expressed
+ (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Y2H"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+C).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Y2H"
+
+\end_inset
+
+The Yeast-2-Hybrid technique offers an experimental approach for constructing
+ PPI networks.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Y2H.eps
+	lyxscale 50
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Based on the outcome of numerous Y2H experiments, undirected networks of
+ interactions between proteins can be constructed.
+ However, relying only on experimental validation of PPIs is detrimental
+ to research due to its hindrance in costs, accuracy, required manpower
+ and time 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Laraia2015PPI,Macalino2018PPI"
+literal "false"
+
+\end_inset
+
+.
+ Besides, the number of missing interactions for pairs of proteins on many
+ organisms leverage the usage of computational methods for prediction of
+ such interactions.
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+The focus of this study is to evaluate different methods for predicting
+ PPIs using the network of known interactions.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A common way of predicting interactions is usually based on social networks
+ analysis, more specifically on the triadic closure principle (TCP).
+ TCP states that the higher the number of common neighboring nodes between
+ two nodes, the higher the probability that they interact 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Goldberg2003SmallWorld"
+literal "false"
+
+\end_inset
+
+.
+ TCP can be addressed mathematically by counting the number of shared neighbors
+ of a pair of nodes, also known as the Common Neighbors algorithm.
+ By raising the adjacency matrix (A) of the network to the second power
+ (A²), TCP can be considered for further analyses.
+ However, previous studies show that the mentioned approach usually fails
+ because it does not consider the structural and chemical properties of
+ the proteins 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cannistraci2013Networks,Kovacs2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A variety of methods for predicting interactions in PPI networks have been
+ proposed in recent years 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chang2016PPI,Chen2019PPI,Kotlyar2015PPI"
+literal "false"
+
+\end_inset
+
+.
+ Kovacs et al (2019) introduce a network-based approach which predicts the
+ interaction between two proteins based on the number of paths of length
+ 3, normalized by the geometric average of their interactions.
+ The simplest mathematical representation of this principle consists on
+ the third power of the adjacency matrix (A³).
+ Furthermore, Kovacs et al present a degree-normalized scaling for this
+ metric, which reduces bias caused by intermediate hubs within the paths
+ of length 3.
+ This handcrafted measure, denoted L3, enables the proposed approach to
+ outperform previous methods for predicting binary protein interactions
+ in yeast (
+\emph on
+S.
+ cerevisiae
+\emph default
+), Arabidopsis (
+\emph on
+A.
+ thaliana
+\emph default
+), worm (
+\emph on
+C.
+ elegans
+\emph default
+), fly (
+\emph on
+D.
+ melanogaster
+\emph default
+), fission yeast (
+\emph on
+S.
+ pombe
+\emph default
+), mouse (
+\emph on
+M.
+ musculus
+\emph default
+) and humans 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kovacs2019"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+JF: Yet you do more than evaluating this three measures so this has to be
+ updated.
+\end_layout
+
+\begin_layout Plain Layout
+NL: Done!
+\end_layout
+
+\begin_layout Plain Layout
+JF: Not sure we should use L3 above since it is being redefined as a normalized
+ measure here!
+\end_layout
+
+\begin_layout Plain Layout
+JF*: state what the results are: 
+\begin_inset Quotes eld
+\end_inset
+
+The contributions of this paper are...
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Which article predicts PPI based on TCP? add refs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The focus of this study is to evaluate different methods for predicting
+ PPIs using the network of known interactions.
+ To achieve this, human and rice PPI networks are compared using the proposed
+ methods (A2, A3, L3), as well as a low-dimensional representation of nodes
+ (
+\family typewriter
+Node2Vec
+\family default
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Grover_2016"
+literal "false"
+
+\end_inset
+
+.
+ After that, combinations of the two types of methods are tested.
+ In the case of the human network, two different versions of the human interacto
+me 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rolland2014Human"
+literal "false"
+
+\end_inset
+
+ are used for training and another interactome version is used for validation
+ (
+\emph on
+HI-III
+\emph default
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kovacs2019"
+literal "false"
+
+\end_inset
+
+.
+ For the rice interactome, a portion of the known interactions removed and
+ then predicted with different techniques based on the known interactions.
+ The main contributions of this paper are i) a general framework for link
+ prediction in non-directed networks and ii) two applications of this framework
+ to biological networks with a structural insight.
+\end_layout
+
+\begin_layout Standard
+The remainder of this paper is organized as follows.
+ Section 2 describes the methodological steps and key milestones in the
+ preparation of the networks, model parameters and experimental configurations.
+ Section 3 presents the main results of the models for the human and rice
+ interactomes.
+ Section 4 presents the main conclusions of this study.
+ Finally, Appendix presents supplementary information and figures which
+ complement the results described in this paper.
+\end_layout
+
+\begin_layout Section
+Materials and Methods
+\end_layout
+
+\begin_layout Subsection
+Data Availability
+\end_layout
+
+\begin_layout Standard
+The human interactome data was downloaded from the repository of the length-3
+ degree normalized paths methodology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kovacs2019"
+literal "false"
+
+\end_inset
+
+: the dataset 
+\emph on
+HI-II-14
+\emph default
+ and 
+\emph on
+HI-TESTED
+\emph default
+ are used for prediction.
+ The dataset 
+\emph on
+HI-III
+\emph default
+ is available in the same repository and is used for validation.
+\end_layout
+
+\begin_layout Standard
+The rice interactome information was downloaded from the STRING database
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Szklarczyk2019"
+literal "false"
+
+\end_inset
+
+, corresponding to the subspecies 
+\emph on
+Oryza sativa
+\emph default
+.
+ The file contains more than 8 million PPIs from several sources.
+ For the purpose of this study, only PPIs with evidence from curated databases
+ are used.
+ The resulting network contains 
+\begin_inset Formula $5025$
+\end_inset
+
+ nodes and 
+\begin_inset Formula $164420$
+\end_inset
+
+ edges.
+\end_layout
+
+\begin_layout Subsection
+Code Implementation
+\end_layout
+
+\begin_layout Standard
+The original code implementation in 
+\family typewriter
+C++
+\family default
+ from Kovacs et al (2019) was adapted to 
+\family typewriter
+Python
+\family default
+ (V3.6).
+ For the purpose of algorithmic validation, the three methods were implemented
+ from scratch with basic functionalities and data structures of the 
+\family typewriter
+Python
+\family default
+ language.
+ The code is publicly available under the repository github.com/ocinlr/PPIPL3.
+\end_layout
+
+\begin_layout Subsection
+Data Preprocessing
+\end_layout
+
+\begin_layout Standard
+Information for the human interactome was used as-is, which corresponds
+ to networks of 
+\begin_inset Formula $4298$
+\end_inset
+
+, 
+\begin_inset Formula $3727$
+\end_inset
+
+ and 
+\begin_inset Formula $5604$
+\end_inset
+
+ proteins and 
+\begin_inset Formula $13868$
+\end_inset
+
+, 
+\begin_inset Formula $9433$
+\end_inset
+
+ and 
+\begin_inset Formula $23322$
+\end_inset
+
+ interactions, respectively.
+\end_layout
+
+\begin_layout Standard
+For the rice interactome, an additional preprocessing was performed.
+ The filtered network for rice consists of 
+\begin_inset Formula $5025$
+\end_inset
+
+ proteins (nodes) and 
+\begin_inset Formula $164420$
+\end_inset
+
+ interactions (edges) distributed among 
+\begin_inset Formula $178$
+\end_inset
+
+ connected components.
+ The connected component with the greatest number of edges was selected.
+ The extracted connected component consists of 
+\begin_inset Formula $n=4390$
+\end_inset
+
+ nodes and 
+\begin_inset Formula $m=163319$
+\end_inset
+
+ edges, which corresponds to 
+\begin_inset Formula $99.33$
+\end_inset
+
+% of edges.
+\end_layout
+
+\begin_layout Subsection
+Edge Prediction
+\end_layout
+
+\begin_layout Standard
+For predicting interactions for each network, the algorithms described below
+ were used.
+ It is important to keep in mind how the PPI network 
+\begin_inset Formula $G=(V,E)$
+\end_inset
+
+ is conceptualized: each node (
+\begin_inset Formula $v_{i}\in V$
+\end_inset
+
+) represents a protein and each undirected edge (
+\begin_inset Formula $e_{b}=\{v_{i},v_{j}\},\,e_{b}\in E$
+\end_inset
+
+) represents an interaction among proteins 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Common
+\begin_inset space ~
+\end_inset
+
+Neighbors
+\begin_inset space ~
+\end_inset
+
+(
+\series bold
+A2
+\series default
+) This method is based on the Triadic Closure Principle which states that
+ the more common friends two individuals have, the more likely that they
+ know each other.
+ For implementing this measure, 
+\begin_inset Formula $A²$
+\end_inset
+
+ matrix is calculated, where 
+\begin_inset Formula $A$
+\end_inset
+
+ is the adjacency matrix of the network.
+\end_layout
+
+\begin_layout Description
+Length-3
+\begin_inset space ~
+\end_inset
+
+Path
+\begin_inset space ~
+\end_inset
+
+Counts
+\begin_inset space ~
+\end_inset
+
+(A3) This is a simple implementation of the notion of 
+\begin_inset Quotes eld
+\end_inset
+
+if my friends and your friends interact, then we might interact too
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For implementing this measure, 
+\begin_inset Formula $A³$
+\end_inset
+
+ is calculated.
+\end_layout
+
+\begin_layout Description
+Degree-normalized
+\begin_inset space ~
+\end_inset
+
+L-3
+\begin_inset space ~
+\end_inset
+
+Score
+\begin_inset space ~
+\end_inset
+
+(L3) The previous approach might overestimate the importance of some edges
+ due to intermediate hubs which add many shortcuts in the graph.
+ To address that issue, a degree normalization for the path 
+\begin_inset Formula $v_{i}\rightarrow v_{m}\rightarrow v_{n}\rightarrow v_{j}$
+\end_inset
+
+ is applied by considering the degree of the intermediate nodes 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $k_{m}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ and 
+\begin_inset Formula $k_{n}$
+\end_inset
+
+, as follows.
+\begin_inset Formula 
+\[
+p_{i,j}=\sum_{m,n\in|V|}\frac{A_{i,m}\cdot A_{m,n}\cdot A_{n,j}}{\sqrt{k_{m}\cdot k_{n}}}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+where 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+ represents the value of the adjacency matrix for nodes 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Sampling Procedure
+\end_layout
+
+\begin_layout Standard
+For each PPI network, the following procedure was performed 10 times to
+ address the stochastic nature of the process:
+\end_layout
+
+\begin_layout Enumerate
+A percentage of interactions is removed at random from the network (20%).
+\end_layout
+
+\begin_layout Enumerate
+The same amount of removed interactions are then predicted using the main
+ methods for prediction mentioned by Kovacs et al (2019): Common Neighbors
+ (
+\series bold
+A2
+\series default
+), raw path count of paths of length 3 (
+\series bold
+A3
+\series default
+) and the Length-3 degree-normalized score (
+\series bold
+L3
+\series default
+).
+\end_layout
+
+\begin_layout Enumerate
+A test dataset is created as follows: all removed edges are included (as
+ observed positives for the ML algorithm) and from the predicted edges of
+ 
+\series bold
+A2
+\series default
+, 
+\series bold
+A3
+\series default
+ and 
+\series bold
+L3
+\series default
+ that don't lie in the previous classification (observed negatives), a random
+ subset is chosen such that the dataset is balanced, that is, the amount
+ of observed positive labels is equal to the observed negative labels.
+\end_layout
+
+\begin_layout Enumerate
+Once the dataset is ready, it is randomly partitioned: 80% is used for 
+\family typewriter
+XGBoost
+\family default
+ model training and 20% is used for validation.
+ It is important to have in mind that balanced distribution of the positive
+ and negative labels in the datasets was satisfied in training, but validation
+ is performed using the remaining unbalanced data.
+\end_layout
+
+\begin_layout Standard
+It is worth mentioning that some exploration experiments were carried out
+ with interactions removal percentages of 2, 5, 10 and 20%, as well as train-tes
+t partitions of 15-85, 80-20 and 75-25, and the explained parameter set
+ was selected because it either represented a marginal gain (results not
+ shown) or because it was a common parameter selection in related literature.
+\end_layout
+
+\begin_layout Subsection
+Feature Extraction with 
+\family typewriter
+Node2Vec
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+Node2Vec
+\family default
+ module was used for extracting features of the interactomes.
+ The considerations for the model were:
+\end_layout
+
+\begin_layout Itemize
+All paths in the random walks are equally likely.
+\end_layout
+
+\begin_layout Itemize
+Use a modest number of dimensions and threads for calculation.
+\end_layout
+
+\begin_layout Itemize
+Since length-3 paths are the defining property in this study, there is no
+ necessity for longer walks.
+ However, it is important to try out many possible redundant routes and
+ to consider a window of at least 4.
+\end_layout
+
+\begin_layout Itemize
+Other standard parameters were left with default values.
+\end_layout
+
+\begin_layout Itemize
+Edge embeddings were calculated using a geometric ratio of the node embeddings.
+\end_layout
+
+\begin_layout Subsection
+Handcrafted Features
+\end_layout
+
+\begin_layout Standard
+Due to the poor results of the 
+\emph on
+raw
+\emph default
+ Length-3 counting (
+\series bold
+A3
+\series default
+), a different approach for this information was carried out: As it still
+ gives a lot of information that might be useful for a predictive routine,
+ this counting was normalized (dividing by the greatest counting in the
+ 
+\series bold
+A3
+\series default
+ top predictions) and then used as a feature for the Machine Learning algorithm.
+ For completeness, 
+\series bold
+A2
+\series default
+ and 
+\series bold
+L3
+\series default
+ measures were used as a input features.
+ Finally, the case were no handcrafted feature was also considered, that
+ is, only the features extracted from the structure of the network were
+ considered.
+\end_layout
+
+\begin_layout Subsection
+Feature to Predict: Existence
+\end_layout
+
+\begin_layout Standard
+The feature to predict corresponds to the possible existence (
+\emph on
+True/False
+\emph default
+) of a link based on the existing information of the network.
+ This is evaluated by taking out a fraction of the edges and then trying
+ to predict for a given set of possible edges if they have a high probability
+ to belong to the original network.
+\end_layout
+
+\begin_layout Subsection
+Machine Learning Algorithm
+\end_layout
+
+\begin_layout Standard
+The Extreme Gradient Boosting implementation of gradient boosted trees is
+ applied to evaluate the existence of an edge.
+ Gradient boosted trees are usually used for supervised learning problems,
+ where the training data 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ has multiple features and pretends to explain (or predict) a target variable
+ 
+\begin_inset Formula $Y_{i}$
+\end_inset
+
+.
+ The corresponding implementation applied for this study is 
+\family typewriter
+XGBoost
+\family default
+.
+\end_layout
+
+\begin_layout Subsection
+Result Validation
+\end_layout
+
+\begin_layout Standard
+As mentioned before, 80% of the final dataset was randomly selected and
+ used for training, while the remaining information was used for validation.
+ The whole training-validation procedure was applied 10 times.
+\end_layout
+
+\begin_layout Standard
+The chosen metric for validation was the Area under the Curve (
+\series bold
+AUC
+\series default
+) of the Receiver Operating Characteristic (
+\series bold
+ROC
+\series default
+).
+ This curve corresponds to plot the sensitivity (probability of predicting
+ a real positive as positive) against 1-specificity (probability of predicting
+ a real negative as positive).
+ AUC values of 1 represent a perfect prediction and 0.5 corresponds to a
+ random guess.
+ Normally, values over 0.8 of AUC are considered good.
+\end_layout
+
+\begin_layout Section
+Results and Discussion
+\end_layout
+
+\begin_layout Subsection
+Human Interactome
+\end_layout
+
+\begin_layout Standard
+As the first step in the evaluation of A2, A3 and L3 methods for link prediction
+, the full calculation and ranking of all predictions was carried out.
+ The results for the analyzed human interactomes (
+\emph on
+HI-II-14
+\emph default
+ and 
+\emph on
+HI-TESTED
+\emph default
+) is shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HI1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, in which the x axis represents a rank position 
+\begin_inset Formula $k$
+\end_inset
+
+ and the y axis displays the precision for the top 
+\begin_inset Formula $k$
+\end_inset
+
+ predictions of each method, when assuming interactome 
+\emph on
+HI-III
+\emph default
+ as the validation set.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:HI1"
+
+\end_inset
+
+Methods Comparison for 
+\emph on
+HI-II-14
+\emph default
+ and 
+\emph on
+HI-TESTED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename hi-ii-14.txt.png
+	lyxscale 50
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename hi-tested.txt.png
+	lyxscale 50
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As it can be inferred from the plots, L3-based predictions outperform their
+ 
+\begin_inset Formula $A²$
+\end_inset
+
+ counterparts.
+ Results also show that L3-score and 
+\begin_inset Formula $A^{3}$
+\end_inset
+
+predictions follow a very similar trend.
+\end_layout
+
+\begin_layout Standard
+However, it is of our interest to assess if Machine Learning can boost the
+ overall performance on the prediction, so the proposed procedure was adapted
+ to the human interactome data: Instead of having to remove a fraction of
+ edges from the network in order to predict and validate, the prediction
+ network and the validation networks are given beforehand.
+ The rest of the procedure is carried out as mentioned in Section 2.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "T1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ presents the results for the combinations of Node2Vec with each feature.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "T1"
+
+\end_inset
+
+Summary statistics for human interactomes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename T1.eps
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In general, performance of all models is above 0.96 in terms of F1-Score.
+ Although marginally, the A2 feature-enriched model for HI-TESTED performs
+ better than their counterparts based on paths of length 3.
+ The opposite is also true for HI-II-14: models enriched with L3 and A3
+ features perform better than their A2 counterpart.
+ Results for the Interactome 
+\emph on
+HI-II-14
+\emph default
+ with Node2Vec and each metric are presented in Figures S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ It can be seen that for 
+\emph on
+HI-II-14
+\emph default
+, A2 performs marginally better than L3 when comparing precision but worse
+ in terms of recall, although all metrics have AUC values of 0.99.
+\end_layout
+
+\begin_layout Standard
+On the other hand, the interactome 
+\emph on
+HI-TESTED
+\emph default
+ was assessed with the same methodology as 
+\emph on
+HI-II-14
+\emph default
+ and results are shown in Figures S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI1-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI2-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HI3-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For this interactome, A2 performs better in terms of false positives than
+ A3 and L3, but in terms of false negatives, A3 actually performs better
+ that A2 and L3.
+ In terms of AUC, metrics results are indistinguishable.
+ 
+\end_layout
+
+\begin_layout Standard
+An interesting assessment from this human datasets can be observed when
+ looking at the importance plots, which show a very biased influence of
+ the handcrafted features.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F8-importance-H1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows this behavior for the 
+\emph on
+HI-II-14
+\emph default
+ dataset, which is very similar to 
+\emph on
+HI-TESTED
+\emph default
+ (Figure S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F8-importance-H2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F8-importance-H1"
+
+\end_inset
+
+Importance gain plots for 
+\emph on
+HI-II-14
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.A2.1.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/Imp.A3.1.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.L3.1.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rice Interactome
+\end_layout
+
+\begin_layout Standard
+For the rice interactome, different combinations of features were trained
+ on the model and validated.
+ The results are shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "T2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ First, prediction based on 
+\family typewriter
+Node2Vec
+\family default
+ without any additional feature included is used as baseline of comparison.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows those results, and one can see that its mean performance using the
+ AUC is 
+\begin_inset Formula $0.93$
+\end_inset
+
+.
+ The results for all 10 repetitions of each model are consistent, meaning
+ the variance among each line is not significant.
+ The results for each model using only the default features are satisfactory.
+ This result can also be assessed when looking at the confusion matrix,
+ where a precision of 
+\begin_inset Formula $0.98$
+\end_inset
+
+ and a recall of 
+\begin_inset Formula $0.86$
+\end_inset
+
+ are obtained.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "T2"
+
+\end_inset
+
+Summary statistics for rice interactome
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename T2.eps
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F1"
+
+\end_inset
+
+Summary ROC curves for 
+\family typewriter
+Node2Vec
+\family default
+ model alone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Only_ML/ROConlyML_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Only_ML/CMonlyML_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The next experiment carried out was to add for each prediction method score
+ as a prediction feature, that is, use the score as an additional feature
+ for the ML algorithm.
+ Results for the Common Neighbors method (
+\series bold
+A2
+\series default
+), which uses paths of length 2, are shown in Figure S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ All 10 experiments have small variability among them and perform better
+ than the baseline, with AUC of 
+\begin_inset Formula $0.98$
+\end_inset
+
+.
+ When looking at the confusion matrix for this model, most guesses are true
+ positives and true negatives, resulting in a precision of 
+\begin_inset Formula $0.99$
+\end_inset
+
+ and a recall of 
+\begin_inset Formula $0.91$
+\end_inset
+
+.
+ The same analyses are done with the count of paths of length 3 (
+\series bold
+A3
+\series default
+) and with the degree-normalized length-3 score (
+\series bold
+L3
+\series default
+).
+ These results are presented in figures S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, respectively.
+ The corresponding AUC are 
+\begin_inset Formula $0.97$
+\end_inset
+
+ and 
+\begin_inset Formula $0.98$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F4"
+
+\end_inset
+
+Results for 
+\family typewriter
+Node2Vec
+\family default
+ with L3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename ML_Metric/ROCL3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ML_Metric/CML3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The precision when using the count of paths of length 3 (A3) is 
+\begin_inset Formula $0.99$
+\end_inset
+
+ while the recall is 
+\begin_inset Formula $0.90$
+\end_inset
+
+.
+ It is interesting to observe that precision decreased 
+\begin_inset Formula $0.16\%$
+\end_inset
+
+ and recall decreased 
+\begin_inset Formula $0.58\%$
+\end_inset
+
+.
+ A similar situation is obtained for the model with the normalized score
+ (L3), whose precision decreased to 
+\begin_inset Formula $0.99$
+\end_inset
+
+ (
+\begin_inset Formula $-0.08\%$
+\end_inset
+
+) and recall decreased to 
+\begin_inset Formula $0.88$
+\end_inset
+
+ (
+\begin_inset Formula $-2.38\%$
+\end_inset
+
+).
+ It can be seen also that the ROC curve achieves high values of true positive
+ rate sooner in the A2-featured model than on the other models.
+\end_layout
+
+\begin_layout Standard
+Another relevant assessment was carried out to verify the predictive power
+ of the metrics.
+ 
+\family typewriter
+XGBoost
+\family default
+ models were trained only using each metric, for the same 10 experiments.
+ Results are shown in Figures S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, S
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F6"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ XGBoost yields lower AUC values when only considering A2, A3 and L3.
+ Precision and recall for this assessments, although lower than the previous
+ experiments, are still considered satisfactory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F7"
+
+\end_inset
+
+Results for L3 feature alone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Only_Metric/ROConlyL3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Only_Metric/CMonlyL3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, an relevant evaluation on the models that include a handcrafted
+ feature is necessary: How important is the appended feature for the model
+ result? The answer can be observed by the feature importance plots for
+ A2, A3 and L3 in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "F8-importance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Each plot resembles the importance gain from each feature in the underlying
+ decision trees that 
+\family typewriter
+XGBoost
+\family default
+ uses.
+ Usually, the more bifurcations, the higher gain a feature has, the more
+ relevance a feature has on the model prediction itself.
+ All models have the appended feature as the most important by a good margin,
+ although margin for A3 is not wide as for A2 or L3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F8-importance"
+
+\end_inset
+
+Importance gain plots for 
+\family typewriter
+Node2Vec
+\family default
+ with each feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ML_Metric/Imp.A2.All.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ML_Metric/Imp.A3.All.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ML_Metric/Imp.L3.All.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+Based on previous work from other authors
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kovacs2019"
+literal "false"
+
+\end_inset
+
+, the intrinsic knowledge of existing protein-protein interaction networks
+ let scientists elucidate promising new interactions to explore.
+ In this study, a machine learning algorithm was fed with previously elucidated
+ information about the network, as well as results form a state-of-the-art
+ edge embedding technique.
+ Even if the baseline of the handcrafted features (A2, A3, L3) yields good
+ results, boosting that information with the vector embedding, which calculates
+ vector representations of the network structure improves the overall performanc
+e of each method on its own.
+\end_layout
+
+\begin_layout Standard
+On both human interactomes (
+\emph on
+HI-II-14
+\emph default
+ and 
+\emph on
+HI-TESTED
+\emph default
+), applying 
+\family typewriter
+XGBoost
+\family default
+ with the metrics yield results with high AUC for the link prediction problem,
+ and therefore this study extends previous work by other authors that only
+ consider the predictive power of the metrics alone.
+ In this case, the importance of the handcrafted features was very significant
+ and stands out of the Node2Vec features.
+\end_layout
+
+\begin_layout Standard
+On the rice interactome, PPI prediction obtained high AUC values when only
+ using the node embedding technique (AUC=0.93) and when only using the handcrafte
+d features based on protein neighborhood (AUC ~0.88).
+ Even higher AUC results were achieved when the handcrafted features and
+ the vector representation information were combined (AUC ~0.98).
+\end_layout
+
+\begin_layout Standard
+Importance values for the A3 method stand out less from the node embedding
+ information than in A2 and L3.
+ However, handcrafted features are more important for the prediction of
+ the human than in the rice interactome.
+ 
+\end_layout
+
+\begin_layout Standard
+With this study, a framework for link prediction on protein-protein interactions
+ is presented and validated against the available information on rice and
+ human interactomes.
+ However, it might be easily extended to other organisms or even to other
+ graphs not necessarily related to biology, because the only required informatio
+n is the network connectivity.
+ Satisfactory results might be expected when the framework is applied to
+ networks with a dense adjacency matrix, since calculations of L3 and Node2Vec
+ rely on network exploration for an arbitrary node and its degree.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "refs"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+\start_of_appendix
+Appendix
+\end_layout
+
+\begin_layout Section
+Supplementary Information
+\end_layout
+
+\begin_layout Subsection
+Datasets
+\end_layout
+
+\begin_layout Standard
+In the case of the human interactomes, the files were downloaded as-is from
+ the repository from Kovacs et al (2019).
+ For the rice interactome, the downloaded file was 
+\emph on
+4530.protein.links.detailed.v11.0.txt.
+
+\emph default
+ From this file, only interactions which have a curated origin (meaning
+ a value different than zero on the column 
+\emph on
+'databases'
+\emph default
+).
+\end_layout
+
+\begin_layout Subsection
+Node2Vec Parameters
+\end_layout
+
+\begin_layout Standard
+For all experiments, the following parameters hold:
+\end_layout
+
+\begin_layout Itemize
+For the (
+\family typewriter
+p=1
+\family default
+, 
+\family typewriter
+q=1
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+(
+\family typewriter
+dimensions=16, workers=4
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+(
+\family typewriter
+walk_length=5
+\family default
+, 
+\family typewriter
+num_walks=300
+\family default
+, 
+\family typewriter
+window=5
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+(
+\family typewriter
+min_count=1
+\family default
+, 
+\family typewriter
+batch_words=4
+\family default
+)
+\end_layout
+
+\begin_layout Itemize
+(
+\family typewriter
+EdgeEmbedding=EdgeHadamardEmbedder
+\family default
+)
+\end_layout
+
+\begin_layout Subsection
+XGBoost parameters
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+max_depth=3
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+colsample_bytree=0.6
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+eval_metric=
+\begin_inset Quotes erd
+\end_inset
+
+auc
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Supplementary Figures
+\end_layout
+
+\begin_layout Subsection
+Human Interactome
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI1"
+
+\end_inset
+
+
+\emph on
+HI-II-14
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with A2 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI2"
+
+\end_inset
+
+
+\emph on
+HI-II-14
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with A3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A3.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A3.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI3"
+
+\end_inset
+
+
+\emph on
+HI-II-14
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with L3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.L3.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.L3.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI1-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with A2 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A2.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A2.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI2-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with A3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.A3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.A3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "HI3-1"
+
+\end_inset
+
+
+\emph on
+HI-TESTED
+\emph default
+ results for 
+\family typewriter
+Node2Vec
+\family default
+ with L3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Human/ROC.L3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Human/CM.L3.2.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F8-importance-H2"
+
+\end_inset
+
+Importance gain plots for 
+\emph on
+HI-TESTED
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.A2.2.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.A3.2.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Human/Imp.L3.2.png
+	lyxscale 10
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rice Interactome
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F2"
+
+\end_inset
+
+Results for 
+\family typewriter
+Node2Vec
+\family default
+ with A2 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename ML_Metric/ROCA2_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ML_Metric/CMA2_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F3"
+
+\end_inset
+
+Results for 
+\family typewriter
+Node2Vec
+\family default
+ with A3 feature
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename ML_Metric/ROCA3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ML_Metric/CMA3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F5"
+
+\end_inset
+
+Results for A2 feature only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Only_Metric/ROConlyA2_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Only_Metric/CMonlyA2_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "F6"
+
+\end_inset
+
+Results for A3 feature alone
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align right
+\begin_inset Graphics
+	filename Only_Metric/ROConlyA3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Only_Metric/CMonlyA3_SUMMARY.png
+	lyxscale 10
+	width 48col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
