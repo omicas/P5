@@ -46,6 +46,7 @@
 \documentclass{bmcart}
 
 %%% Load packages
+<<<<<<< HEAD
 %\usepackage{amsthm,amsmath}
 %%\RequirePackage[numbers]{natbib}
 %%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
@@ -63,6 +64,16 @@
 \usepackage{lmodern}  % font sizes
 \usepackage{hyperref} % ref unlabeled sections
 \usepackage{subcaption}
+=======
+\usepackage{amsthm,amsmath}
+%\RequirePackage[numbers]{natbib}
+%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+%\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -79,12 +90,20 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+<<<<<<< HEAD
 %\def\includegraphic{}
 %\def\includegraphics{}
 
 %%% Put your definitions there:
 \startlocaldefs
 \newcommand{\lyxdot}{.}
+=======
+\def\includegraphic{}
+\def\includegraphics{}
+
+%%% Put your definitions there:
+\startlocaldefs
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 \endlocaldefs
 
 %%% Begin ...
@@ -195,7 +214,12 @@
 
 \begin{keyword}
 \kwd{PPI}
+<<<<<<< HEAD
 \kwd{Prediction of Protein Interaction}
+=======
+\kwd{Prediction}
+\kwd{Protein Interaction}
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 \kwd{Machine Learning}
 \kwd{Python}
 \kwd{XGBoost}
@@ -244,6 +268,7 @@
 
 \input{introduction.tex}
 
+<<<<<<< HEAD
 \section*{Materials and Methods}
 
 \input{materials.tex}
@@ -258,6 +283,8 @@
 
 
 
+=======
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %\subsection*{Sub-heading for section}
 %Text for this sub-heading\ldots
 %\subsubsection*{Sub-sub heading for section}
@@ -295,6 +322,12 @@
 %Thus we observe that this expected value is finite for all $v>0$ (also see \cite{koon,xjon,marg,schn,koha,issnic}).
 
 
+<<<<<<< HEAD
+=======
+\section*{Appendix}
+Text for this section\ldots
+
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Backmatter begins here                   %%
@@ -303,6 +336,7 @@
 
 \begin{backmatter}
 
+<<<<<<< HEAD
 \input{declarations.tex}
 
 %
@@ -333,6 +367,35 @@
 %\section*{Authors' information}%% if any
 %Text for this section\ldots
 %
+=======
+\section*{Acknowledgements}%% if any
+Text for this section\ldots
+
+\section*{Funding}%% if any
+Text for this section\ldots
+
+\section*{Abbreviations}%% if any
+Text for this section\ldots
+
+\section*{Availability of data and materials}%% if any
+Text for this section\ldots
+
+\section*{Ethics approval and consent to participate}%% if any
+Text for this section\ldots
+
+\section*{Competing interests}
+The authors declare that they have no competing interests.
+
+\section*{Consent for publication}%% if any
+Text for this section\ldots
+
+\section*{Authors' contributions}
+Text for this section \ldots
+
+\section*{Authors' information}%% if any
+Text for this section\ldots
+
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
@@ -376,6 +439,7 @@
 %%
 %% Do not use \listoffigures as most will included as separate files
 
+<<<<<<< HEAD
 %\section*{Figures}
 %  \begin{figure}[h!]
 %  \caption{Sample figure title}
@@ -384,6 +448,16 @@
 %\begin{figure}[h!]
 %  \caption{Sample figure title}
 %\end{figure}
+=======
+\section*{Figures}
+  \begin{figure}[h!]
+  \caption{Sample figure title}
+\end{figure}
+
+\begin{figure}[h!]
+  \caption{Sample figure title}
+\end{figure}
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -393,6 +467,7 @@
 
 %% Use of \listoftables is discouraged.
 %%
+<<<<<<< HEAD
 %\section*{Tables}
 %\begin{table}[h!]
 %\caption{Sample table title. This is where the description of the table should go}
@@ -404,6 +479,19 @@
 %    A3 & ..  & .   & .\\ \hline
 %  \end{tabular}
 %\end{table}
+=======
+\section*{Tables}
+\begin{table}[h!]
+\caption{Sample table title. This is where the description of the table should go}
+  \begin{tabular}{cccc}
+    \hline
+    & B1  &B2   & B3\\ \hline
+    A1 & 0.1 & 0.2 & 0.3\\
+    A2 & ... & ..  & .\\
+    A3 & ..  & .   & .\\ \hline
+  \end{tabular}
+\end{table}
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -411,6 +499,7 @@
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+<<<<<<< HEAD
 
 \section*{Appendix}
 
@@ -424,6 +513,16 @@
 %
 %  \subsection*{Additional file 2 --- Sample additional file title}
 %    Additional file descriptions text.
+=======
+\section*{Additional Files}
+  \subsection*{Additional file 1 --- Sample additional file title}
+    Additional file descriptions text (including details of how to
+    view the file, if it is in a non-standard format or the file extension).  This might
+    refer to a multi-page table or a figure.
+
+  \subsection*{Additional file 2 --- Sample additional file title}
+    Additional file descriptions text.
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 \end{backmatter}
 

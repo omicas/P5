@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  11 DEC 2020 00:54
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  9 DEC 2020 10:45
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -135,6 +139,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
+<<<<<<< HEAD
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -160,11 +165,14 @@ Package graphics Info: Driver file: dvips.def on input line 105.
 \Gin@req@height=\dimen146
 \Gin@req@width=\dimen147
 )
+=======
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks28
 \inpenc@posthook=\toks29
 )
+<<<<<<< HEAD
 (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
 Package: todonotes 2018/11/22
@@ -703,10 +711,22 @@ File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
 \g__pdf_backend_link_sf_int=\count303
+=======
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count191
+\l__pdf_backend_content_box=\box52
+\l__pdf_backend_model_box=\box53
+\g__pdf_backend_annotation_int=\count192
+\g__pdf_backend_link_int=\count193
+\g__pdf_backend_link_sf_int=\count194
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 )
 (./bmc_article.aux)
 \openout1 = `bmc_article.aux'.
 
+<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
@@ -1076,3 +1096,75 @@ Here is how much of TeX's memory you used:
  68i,10n,100p,687b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on bmc_article.dvi (15 pages, 100940 bytes).
+=======
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             ! on input line 81.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 87.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <24> not available
+(Font)              size <24.88> substituted on input line 95.
+
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 116.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 116.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
+(Font)              size <5> substituted on input line 116.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 116.
+
+\address@aff1=\toks30
+(./abstract.tex) (./introduction.tex
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 23.
+ [1
+
+]) [2] [3] (./bmc_article.bbl)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4] 
+AED: lastpage setting LastPage
+[5] (./bmc_article.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.0pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2350 strings out of 481240
+ 30345 string characters out of 5920404
+ 284793 words of memory out of 5000000
+ 17630 multiletter control sequences out of 15000+600000
+ 541158 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 32i,13n,41p,687b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on bmc_article.dvi (5 pages, 22336 bytes).
+>>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
