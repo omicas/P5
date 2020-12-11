@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{18}
+\begin{thebibliography}{16}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -74,6 +74,69 @@ doi:\doiurl{10.2174/138920210790218016}
 \endbibitem
 
 %%% 3
+\bibitem{Weimann2013Y2H}
+\begin{barticle}
+\bauthor{\bsnm{Weimann}, \binits{M.}},
+\bauthor{\bsnm{Grossmann}, \binits{A.}},
+\bauthor{\bsnm{Woodsmith}, \binits{J.}},
+\bauthor{\bsnm{Özkan}, \binits{Z.}},
+\bauthor{\bsnm{Birth}, \binits{P.}},
+\bauthor{\bsnm{Meierhofer}, \binits{D.}},
+\bauthor{\bsnm{Benlasfer}, \binits{N.}},
+\bauthor{\bsnm{Valovka}, \binits{T.}},
+\bauthor{\bsnm{Timmermann}, \binits{B.}},
+\bauthor{\bsnm{Wanker}, \binits{E.E.}},
+\bauthor{\bsnm{Sauer}, \binits{S.}},
+\bauthor{\bsnm{Stelzl}, \binits{U.}}:
+\batitle{A y2h-seq approach defines the human protein methyltransferase
+  interactome.}
+\bjtitle{Nature methods}
+\bvolume{10},
+\bfpage{339}--\blpage{42}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{Rajagopala2015Y2H}
+\begin{barticle}
+\bauthor{\bsnm{Rajagopala}, \binits{S.V.}}:
+\batitle{Mapping the protein-protein interactome networks using yeast
+  two-hybrid screens.}
+\bjtitle{Advances in experimental medicine and biology}
+\bvolume{883},
+\bfpage{187}--\blpage{214}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{Shokri2019TFY2H}
+\begin{barticle}
+\bauthor{\bsnm{Shokri}, \binits{L.}},
+\bauthor{\bsnm{Inukai}, \binits{S.}},
+\bauthor{\bsnm{Hafner}, \binits{A.}},
+\bauthor{\bsnm{Weinand}, \binits{K.}},
+\bauthor{\bsnm{Hens}, \binits{K.}},
+\bauthor{\bsnm{Vedenko}, \binits{A.}},
+\bauthor{\bsnm{Gisselbrecht}, \binits{S.S.}},
+\bauthor{\bsnm{Dainese}, \binits{R.}},
+\bauthor{\bsnm{Bischof}, \binits{J.}},
+\bauthor{\bsnm{Furger}, \binits{E.}},
+\bauthor{\bsnm{Feuz}, \binits{J.-D.}},
+\bauthor{\bsnm{Basler}, \binits{K.}},
+\bauthor{\bsnm{Deplancke}, \binits{B.}},
+\bauthor{\bsnm{Bulyk}, \binits{M.L.}}:
+\batitle{A comprehensive drosophila melanogaster transcription factor
+  interactome.}
+\bjtitle{Cell reports}
+\bvolume{27},
+\bfpage{955}--\blpage{9707}
+(\byear{2019})
+\end{barticle}
+\endbibitem
+
+%%% 6
 \bibitem{Laraia2015PPI}
 \begin{barticle}
 \bauthor{\bsnm{Laraia}, \binits{L.}},
@@ -90,7 +153,7 @@ doi:\doiurl{10.2174/138920210790218016}
 \end{barticle}
 \endbibitem
 
-%%% 4
+%%% 7
 \bibitem{Macalino2018PPI}
 \begin{botherref}
 \oauthor{\bsnm{Macalino}, \binits{S.J.Y.}},
@@ -104,60 +167,6 @@ doi:\doiurl{10.2174/138920210790218016}
 Molecules (Basel, Switzerland)
 \textbf{23}
 (2018)
-\end{botherref}
-\endbibitem
-
-%%% 5
-\bibitem{Goldberg2003SmallWorld}
-\begin{barticle}
-\bauthor{\bsnm{Goldberg}, \binits{D.S.}},
-\bauthor{\bsnm{Roth}, \binits{F.P.}}:
-\batitle{Assessing experimentally derived interactions in a small world.}
-\bjtitle{Proceedings of the National Academy of Sciences of the United States
-  of America}
-\bvolume{100},
-\bfpage{4372}--\blpage{6}
-(\byear{2003})
-\end{barticle}
-\endbibitem
-
-%%% 6
-\bibitem{Cannistraci2013Networks}
-\begin{barticle}
-\bauthor{\bsnm{Cannistraci}, \binits{C.V.}},
-\bauthor{\bsnm{Alanis-Lobato}, \binits{G.}},
-\bauthor{\bsnm{Ravasi}, \binits{T.}}:
-\batitle{From link-prediction in brain connectomes and protein interactomes to
-  the local-community-paradigm in complex networks.}
-\bjtitle{Scientific reports}
-\bvolume{3},
-\bfpage{1613}
-(\byear{2013})
-\end{barticle}
-\endbibitem
-
-%%% 7
-\bibitem{Kovacs2019}
-\begin{botherref}
-\oauthor{\bsnm{Kov{\'{a}}cs}, \binits{I.A.}},
-\oauthor{\bsnm{Luck}, \binits{K.}},
-\oauthor{\bsnm{Spirohn}, \binits{K.}},
-\oauthor{\bsnm{Wang}, \binits{Y.}},
-\oauthor{\bsnm{Pollis}, \binits{C.}},
-\oauthor{\bsnm{Schlabach}, \binits{S.}},
-\oauthor{\bsnm{Bian}, \binits{W.}},
-\oauthor{\bsnm{Kim}, \binits{D.-K.}},
-\oauthor{\bsnm{Kishore}, \binits{N.}},
-\oauthor{\bsnm{Hao}, \binits{T.}},
-\oauthor{\bsnm{Calderwood}, \binits{M.A.}},
-\oauthor{\bsnm{Vidal}, \binits{M.}},
-\oauthor{\bsnm{Barab{\'{a}}si}, \binits{A.-L.}}:
-Network-based prediction of protein interactions.
-Nature Communications
-\textbf{10}(1)
-(2019).
-doi:\doiurl{10.1038/s41467-019-09177-y}.
-\arxivurl{https://doi.org/10.1038/s41467-019-09177-y}
 \end{botherref}
 \endbibitem
 
@@ -221,6 +230,60 @@ International journal of molecular sciences
 \endbibitem
 
 %%% 11
+\bibitem{Goldberg2003SmallWorld}
+\begin{barticle}
+\bauthor{\bsnm{Goldberg}, \binits{D.S.}},
+\bauthor{\bsnm{Roth}, \binits{F.P.}}:
+\batitle{Assessing experimentally derived interactions in a small world.}
+\bjtitle{Proceedings of the National Academy of Sciences of the United States
+  of America}
+\bvolume{100},
+\bfpage{4372}--\blpage{6}
+(\byear{2003})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{Cannistraci2013Networks}
+\begin{barticle}
+\bauthor{\bsnm{Cannistraci}, \binits{C.V.}},
+\bauthor{\bsnm{Alanis-Lobato}, \binits{G.}},
+\bauthor{\bsnm{Ravasi}, \binits{T.}}:
+\batitle{From link-prediction in brain connectomes and protein interactomes to
+  the local-community-paradigm in complex networks.}
+\bjtitle{Scientific reports}
+\bvolume{3},
+\bfpage{1613}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{Kovacs2019}
+\begin{botherref}
+\oauthor{\bsnm{Kov{\'{a}}cs}, \binits{I.A.}},
+\oauthor{\bsnm{Luck}, \binits{K.}},
+\oauthor{\bsnm{Spirohn}, \binits{K.}},
+\oauthor{\bsnm{Wang}, \binits{Y.}},
+\oauthor{\bsnm{Pollis}, \binits{C.}},
+\oauthor{\bsnm{Schlabach}, \binits{S.}},
+\oauthor{\bsnm{Bian}, \binits{W.}},
+\oauthor{\bsnm{Kim}, \binits{D.-K.}},
+\oauthor{\bsnm{Kishore}, \binits{N.}},
+\oauthor{\bsnm{Hao}, \binits{T.}},
+\oauthor{\bsnm{Calderwood}, \binits{M.A.}},
+\oauthor{\bsnm{Vidal}, \binits{M.}},
+\oauthor{\bsnm{Barab{\'{a}}si}, \binits{A.-L.}}:
+Network-based prediction of protein interactions.
+Nature Communications
+\textbf{10}(1)
+(2019).
+doi:\doiurl{10.1038/s41467-019-09177-y}.
+\arxivurl{https://doi.org/10.1038/s41467-019-09177-y}
+\end{botherref}
+\endbibitem
+
+%%% 14
 \bibitem{Grover_2016}
 \begin{bchapter}
 \bauthor{\bsnm{Grover}, \binits{A.}},
@@ -234,161 +297,42 @@ doi:\doiurl{10.1145/2939672.2939754}
 \end{bchapter}
 \endbibitem
 
-%%% 12
-\bibitem{Rolland2014Human}
-\begin{barticle}
-\bauthor{\bsnm{Rolland}, \binits{T.}},
-\bauthor{\bsnm{Tasan}, \binits{M.}},
-\bauthor{\bsnm{Charloteaux}, \binits{B.}},
-\bauthor{\bsnm{Pevzner}, \binits{S.J.}},
-\bauthor{\bsnm{Zhong}, \binits{Q.}},
-\bauthor{\bsnm{Sahni}, \binits{N.}},
-\bauthor{\bsnm{Yi}, \binits{S.}},
-\bauthor{\bsnm{Lemmens}, \binits{I.}},
-\bauthor{\bsnm{Fontanillo}, \binits{C.}},
-\bauthor{\bsnm{Mosca}, \binits{R.}},
-\bauthor{\bsnm{Kamburov}, \binits{A.}},
-\bauthor{\bsnm{Ghiassian}, \binits{S.D.}},
-\bauthor{\bsnm{Yang}, \binits{X.}},
-\bauthor{\bsnm{Ghamsari}, \binits{L.}},
-\bauthor{\bsnm{Balcha}, \binits{D.}},
-\bauthor{\bsnm{Begg}, \binits{B.E.}},
-\bauthor{\bsnm{Braun}, \binits{P.}},
-\bauthor{\bsnm{Brehme}, \binits{M.}},
-\bauthor{\bsnm{Broly}, \binits{M.P.}},
-\bauthor{\bsnm{Carvunis}, \binits{A.-R.}},
-\bauthor{\bsnm{Convery-Zupan}, \binits{D.}},
-\bauthor{\bsnm{Corominas}, \binits{R.}},
-\bauthor{\bsnm{Coulombe-Huntington}, \binits{J.}},
-\bauthor{\bsnm{Dann}, \binits{E.}},
-\bauthor{\bsnm{Dreze}, \binits{M.}},
-\bauthor{\bsnm{Dricot}, \binits{A.}},
-\bauthor{\bsnm{Fan}, \binits{C.}},
-\bauthor{\bsnm{Franzosa}, \binits{E.}},
-\bauthor{\bsnm{Gebreab}, \binits{F.}},
-\bauthor{\bsnm{Gutierrez}, \binits{B.J.}},
-\bauthor{\bsnm{Hardy}, \binits{M.F.}},
-\bauthor{\bsnm{Jin}, \binits{M.}},
-\bauthor{\bsnm{Kang}, \binits{S.}},
-\bauthor{\bsnm{Kiros}, \binits{R.}},
-\bauthor{\bsnm{Lin}, \binits{G.N.}},
-\bauthor{\bsnm{Luck}, \binits{K.}},
-\bauthor{\bsnm{MacWilliams}, \binits{A.}},
-\bauthor{\bsnm{Menche}, \binits{J.}},
-\bauthor{\bsnm{Murray}, \binits{R.R.}},
-\bauthor{\bsnm{Palagi}, \binits{A.}},
-\bauthor{\bsnm{Poulin}, \binits{M.M.}},
-\bauthor{\bsnm{Rambout}, \binits{X.}},
-\bauthor{\bsnm{Rasla}, \binits{J.}},
-\bauthor{\bsnm{Reichert}, \binits{P.}},
-\bauthor{\bsnm{Romero}, \binits{V.}},
-\bauthor{\bsnm{Ruyssinck}, \binits{E.}},
-\bauthor{\bsnm{Sahalie}, \binits{J.M.}},
-\bauthor{\bsnm{Scholz}, \binits{A.}},
-\bauthor{\bsnm{Shah}, \binits{A.A.}},
-\bauthor{\bsnm{Sharma}, \binits{A.}},
-\bauthor{\bsnm{Shen}, \binits{Y.}},
-\bauthor{\bsnm{Spirohn}, \binits{K.}},
-\bauthor{\bsnm{Tam}, \binits{S.}},
-\bauthor{\bsnm{Tejeda}, \binits{A.O.}},
-\bauthor{\bsnm{Trigg}, \binits{S.A.}},
-\bauthor{\bsnm{Twizere}, \binits{J.-C.}},
-\bauthor{\bsnm{Vega}, \binits{K.}},
-\bauthor{\bsnm{Walsh}, \binits{J.}},
-\bauthor{\bsnm{Cusick}, \binits{M.E.}},
-\bauthor{\bsnm{Xia}, \binits{Y.}},
-\bauthor{\bsnm{Barabasi}, \binits{A.-L.}},
-\bauthor{\bsnm{Iakoucheva}, \binits{L.M.}},
-\bauthor{\bsnm{Aloy}, \binits{P.}},
-\bauthor{\bsnm{De~Las~Rivas}, \binits{J.}},
-\bauthor{\bsnm{Tavernier}, \binits{J.}},
-\bauthor{\bsnm{Calderwood}, \binits{M.A.}},
-\bauthor{\bsnm{Hill}, \binits{D.E.}},
-\bauthor{\bsnm{Hao}, \binits{T.}},
-\bauthor{\bsnm{Roth}, \binits{F.P.}},
-\bauthor{\bsnm{Vidal}, \binits{M.}}:
-\batitle{A proteome-scale map of the human interactome network.}
-\bjtitle{Cell}
-\bvolume{159},
-\bfpage{1212}--\blpage{1226}
-(\byear{2014})
-\end{barticle}
-\endbibitem
-
-%%% 13
-\bibitem{koon}
-\begin{barticle}
-\bauthor{\bsnm{Koonin}, \binits{E.V.}},
-\bauthor{\bsnm{Altschul}, \binits{S.F.}},
-\bauthor{\bsnm{Bork}, \binits{P.}}:
-\batitle{Brca1 protein products: functional motifs}.
-\bjtitle{Nat. Genet.}
-\bvolume{13},
-\bfpage{266}--\blpage{267}
-(\byear{1996})
-\end{barticle}
-\endbibitem
-
-%%% 14
-\bibitem{xjon}
-\begin{bchapter}
-\bauthor{\bsnm{Jones}, \binits{X.}}:
-\bctitle{Zeolites and synthetic mechanisms}.
-In: \beditor{\bsnm{Smith}, \binits{Y.}} (ed.)
-\bbtitle{Proceedings of the First National Conference on Porous Sieves: 27-30
-  June 1996; Baltimore},
-pp. \bfpage{16}--\blpage{27}
-(\byear{1996})
-\end{bchapter}
-\endbibitem
-
 %%% 15
-\bibitem{marg}
-\begin{bbook}
-\bauthor{\bsnm{Margulis}, \binits{L.}}:
-\bbtitle{Origin of Eukaryotic Cells}.
-\bpublisher{Yale University Press},
-\blocation{New Haven}
-(\byear{1970})
-\end{bbook}
+\bibitem{2016ChenXGB}
+\begin{botherref}
+\oauthor{\bsnm{{Chen}}, \binits{T.}},
+\oauthor{\bsnm{{Guestrin}}, \binits{C.}}:
+{XGBoost: A Scalable Tree Boosting System}.
+arXiv e-prints,
+1603--02754
+(2016).
+\arxivurl{1603.02754}
+\end{botherref}
 \endbibitem
 
 %%% 16
-\bibitem{schn}
-\begin{bchapter}
-\bauthor{\bsnm{Schnepf}, \binits{E.}}:
-\bctitle{From prey via endosymbiont to plastids: comparative studies in
-  dinoflagellates}.
-In: \beditor{\bsnm{Lewin}, \binits{R.A.}} (ed.)
-\bbtitle{Origins of Plastids},
-\bedition{2nd} edn.,
-pp. \bfpage{53}--\blpage{76}.
-\bpublisher{Chapman and Hall},
-\blocation{New York}
-(\byear{1993})
-\end{bchapter}
-\endbibitem
-
-%%% 17
-\bibitem{koha}
-\begin{botherref}
-\oauthor{\bsnm{Kohavi}, \binits{R.}}:
-Wrappers for performance enhancement and obvious decision graphs.
-PhD thesis,
-Stanford University, Computer Science Department
-(1995)
-\end{botherref}
-\endbibitem
-
-%%% 18
-\bibitem{issnic}
-\begin{botherref}
-\oauthor{\bsnm{{ISSN International Centre}}}:
-The ISSN register
-(2006).
-\url{http://www.issn.org}
-Accessed Accessed 20 Feb 2007
-\end{botherref}
+\bibitem{Szklarczyk2019}
+\begin{barticle}
+\bauthor{\bsnm{Szklarczyk}, \binits{D.}},
+\bauthor{\bsnm{Gable}, \binits{A.L.}},
+\bauthor{\bsnm{Lyon}, \binits{D.}},
+\bauthor{\bsnm{Junge}, \binits{A.}},
+\bauthor{\bsnm{Wyder}, \binits{S.}},
+\bauthor{\bsnm{Huerta-Cepas}, \binits{J.}},
+\bauthor{\bsnm{Simonovic}, \binits{M.}},
+\bauthor{\bsnm{Doncheva}, \binits{N.T.}},
+\bauthor{\bsnm{Morris}, \binits{J.H.}},
+\bauthor{\bsnm{Bork}, \binits{P.}},
+\bauthor{\bsnm{Jensen}, \binits{L.J.}},
+\bauthor{\bsnm{Mering}, \binits{C.v.}}:
+\batitle{String v11: protein-protein association networks with increased
+  coverage, supporting functional discovery in genome-wide experimental
+  datasets}.
+\bjtitle{Nucleic acids research}
+\bvolume{47}(\bissue{30476243}),
+\bfpage{607}--\blpage{613}
+(\byear{2019})
+\end{barticle}
 \endbibitem
 
 \end{thebibliography}
@@ -431,6 +375,70 @@ Accessed Accessed 20 Feb 2007
 </bibl>
 
 <bibl id="B3">
+  <title><p>A Y2H-seq approach defines the human protein methyltransferase
+  interactome.</p></title>
+  <aug>
+    <au><snm>Weimann</snm><fnm>M</fnm></au>
+    <au><snm>Grossmann</snm><fnm>A</fnm></au>
+    <au><snm>Woodsmith</snm><fnm>J</fnm></au>
+    <au><snm>Özkan</snm><fnm>Z</fnm></au>
+    <au><snm>Birth</snm><fnm>P</fnm></au>
+    <au><snm>Meierhofer</snm><fnm>D</fnm></au>
+    <au><snm>Benlasfer</snm><fnm>N</fnm></au>
+    <au><snm>Valovka</snm><fnm>T</fnm></au>
+    <au><snm>Timmermann</snm><fnm>B</fnm></au>
+    <au><snm>Wanker</snm><fnm>EE</fnm></au>
+    <au><snm>Sauer</snm><fnm>S</fnm></au>
+    <au><snm>Stelzl</snm><fnm>U</fnm></au>
+  </aug>
+  <source>Nature methods</source>
+  <publisher>United States</publisher>
+  <pubdate>2013</pubdate>
+  <volume>10</volume>
+  <fpage>339</fpage>
+  <lpage>42</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Mapping the Protein-Protein Interactome Networks Using Yeast
+  Two-Hybrid Screens.</p></title>
+  <aug>
+    <au><snm>Rajagopala</snm><fnm>SV</fnm></au>
+  </aug>
+  <source>Advances in experimental medicine and biology</source>
+  <pubdate>2015</pubdate>
+  <volume>883</volume>
+  <fpage>187</fpage>
+  <lpage>214</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>A Comprehensive Drosophila melanogaster Transcription Factor
+  Interactome.</p></title>
+  <aug>
+    <au><snm>Shokri</snm><fnm>L</fnm></au>
+    <au><snm>Inukai</snm><fnm>S</fnm></au>
+    <au><snm>Hafner</snm><fnm>A</fnm></au>
+    <au><snm>Weinand</snm><fnm>K</fnm></au>
+    <au><snm>Hens</snm><fnm>K</fnm></au>
+    <au><snm>Vedenko</snm><fnm>A</fnm></au>
+    <au><snm>Gisselbrecht</snm><fnm>SS</fnm></au>
+    <au><snm>Dainese</snm><fnm>R</fnm></au>
+    <au><snm>Bischof</snm><fnm>J</fnm></au>
+    <au><snm>Furger</snm><fnm>E</fnm></au>
+    <au><snm>Feuz</snm><fnm>JD</fnm></au>
+    <au><snm>Basler</snm><fnm>K</fnm></au>
+    <au><snm>Deplancke</snm><fnm>B</fnm></au>
+    <au><snm>Bulyk</snm><fnm>ML</fnm></au>
+  </aug>
+  <source>Cell reports</source>
+  <pubdate>2019</pubdate>
+  <volume>27</volume>
+  <fpage>955</fpage>
+  <lpage>970.e7</lpage>
+</bibl>
+
+<bibl id="B6">
   <title><p>Overcoming Chemical, Biological, and Computational Challenges in
   the Development of Inhibitors Targeting Protein-Protein
   Interactions</p></title>
@@ -448,7 +456,7 @@ Accessed Accessed 20 Feb 2007
   <lpage>703</lpage>
 </bibl>
 
-<bibl id="B4">
+<bibl id="B7">
   <title><p>{Evolution of In Silico Strategies for Protein-Protein Interaction
   Drug Discovery}</p></title>
   <aug>
@@ -462,60 +470,6 @@ Accessed Accessed 20 Feb 2007
   <source>Molecules (Basel, Switzerland)</source>
   <pubdate>2018</pubdate>
   <volume>23</volume>
-</bibl>
-
-<bibl id="B5">
-  <title><p>Assessing experimentally derived interactions in a small
-  world.</p></title>
-  <aug>
-    <au><snm>Goldberg</snm><fnm>DS</fnm></au>
-    <au><snm>Roth</snm><fnm>FP</fnm></au>
-  </aug>
-  <source>Proceedings of the National Academy of Sciences of the United States
-  of America</source>
-  <pubdate>2003</pubdate>
-  <volume>100</volume>
-  <fpage>4372</fpage>
-  <lpage>6</lpage>
-</bibl>
-
-<bibl id="B6">
-  <title><p>From link-prediction in brain connectomes and protein interactomes
-  to the local-community-paradigm in complex networks.</p></title>
-  <aug>
-    <au><snm>Cannistraci</snm><fnm>CV</fnm></au>
-    <au><snm>Alanis Lobato</snm><fnm>G</fnm></au>
-    <au><snm>Ravasi</snm><fnm>T</fnm></au>
-  </aug>
-  <source>Scientific reports</source>
-  <pubdate>2013</pubdate>
-  <volume>3</volume>
-  <fpage>1613</fpage>
-</bibl>
-
-<bibl id="B7">
-  <title><p>Network-based prediction of protein interactions</p></title>
-  <aug>
-    <au><snm>Kov{\'{a}}cs</snm><fnm>IA</fnm></au>
-    <au><snm>Luck</snm><fnm>K</fnm></au>
-    <au><snm>Spirohn</snm><fnm>K</fnm></au>
-    <au><snm>Wang</snm><fnm>Y</fnm></au>
-    <au><snm>Pollis</snm><fnm>C</fnm></au>
-    <au><snm>Schlabach</snm><fnm>S</fnm></au>
-    <au><snm>Bian</snm><fnm>W</fnm></au>
-    <au><snm>Kim</snm><fnm>DK</fnm></au>
-    <au><snm>Kishore</snm><fnm>N</fnm></au>
-    <au><snm>Hao</snm><fnm>T</fnm></au>
-    <au><snm>Calderwood</snm><fnm>MA</fnm></au>
-    <au><snm>Vidal</snm><fnm>M</fnm></au>
-    <au><snm>Barab{\'{a}}si</snm><fnm>AL</fnm></au>
-  </aug>
-  <source>Nature Communications</source>
-  <publisher>Springer Science and Business Media {LLC}</publisher>
-  <pubdate>2019</pubdate>
-  <volume>10</volume>
-  <issue>1</issue>
-  <url>https://doi.org/10.1038/s41467-019-09177-y</url>
 </bibl>
 
 <bibl id="B8">
@@ -579,6 +533,60 @@ Accessed Accessed 20 Feb 2007
 </bibl>
 
 <bibl id="B11">
+  <title><p>Assessing experimentally derived interactions in a small
+  world.</p></title>
+  <aug>
+    <au><snm>Goldberg</snm><fnm>DS</fnm></au>
+    <au><snm>Roth</snm><fnm>FP</fnm></au>
+  </aug>
+  <source>Proceedings of the National Academy of Sciences of the United States
+  of America</source>
+  <pubdate>2003</pubdate>
+  <volume>100</volume>
+  <fpage>4372</fpage>
+  <lpage>6</lpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>From link-prediction in brain connectomes and protein interactomes
+  to the local-community-paradigm in complex networks.</p></title>
+  <aug>
+    <au><snm>Cannistraci</snm><fnm>CV</fnm></au>
+    <au><snm>Alanis Lobato</snm><fnm>G</fnm></au>
+    <au><snm>Ravasi</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Scientific reports</source>
+  <pubdate>2013</pubdate>
+  <volume>3</volume>
+  <fpage>1613</fpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Network-based prediction of protein interactions</p></title>
+  <aug>
+    <au><snm>Kov{\'{a}}cs</snm><fnm>IA</fnm></au>
+    <au><snm>Luck</snm><fnm>K</fnm></au>
+    <au><snm>Spirohn</snm><fnm>K</fnm></au>
+    <au><snm>Wang</snm><fnm>Y</fnm></au>
+    <au><snm>Pollis</snm><fnm>C</fnm></au>
+    <au><snm>Schlabach</snm><fnm>S</fnm></au>
+    <au><snm>Bian</snm><fnm>W</fnm></au>
+    <au><snm>Kim</snm><fnm>DK</fnm></au>
+    <au><snm>Kishore</snm><fnm>N</fnm></au>
+    <au><snm>Hao</snm><fnm>T</fnm></au>
+    <au><snm>Calderwood</snm><fnm>MA</fnm></au>
+    <au><snm>Vidal</snm><fnm>M</fnm></au>
+    <au><snm>Barab{\'{a}}si</snm><fnm>AL</fnm></au>
+  </aug>
+  <source>Nature Communications</source>
+  <publisher>Springer Science and Business Media {LLC}</publisher>
+  <pubdate>2019</pubdate>
+  <volume>10</volume>
+  <issue>1</issue>
+  <url>https://doi.org/10.1038/s41467-019-09177-y</url>
+</bibl>
+
+<bibl id="B14">
   <title><p>node2vec: Scalable Feature Learning for Networks</p></title>
   <aug>
     <au><snm>Grover</snm><fnm>A</fnm></au>
@@ -590,156 +598,43 @@ Accessed Accessed 20 Feb 2007
   <pubdate>2016</pubdate>
 </bibl>
 
-<bibl id="B12">
-  <title><p>A proteome-scale map of the human interactome network.</p></title>
-  <aug>
-    <au><snm>Rolland</snm><fnm>T</fnm></au>
-    <au><snm>Tasan</snm><fnm>M</fnm></au>
-    <au><snm>Charloteaux</snm><fnm>B</fnm></au>
-    <au><snm>Pevzner</snm><fnm>SJ</fnm></au>
-    <au><snm>Zhong</snm><fnm>Q</fnm></au>
-    <au><snm>Sahni</snm><fnm>N</fnm></au>
-    <au><snm>Yi</snm><fnm>S</fnm></au>
-    <au><snm>Lemmens</snm><fnm>I</fnm></au>
-    <au><snm>Fontanillo</snm><fnm>C</fnm></au>
-    <au><snm>Mosca</snm><fnm>R</fnm></au>
-    <au><snm>Kamburov</snm><fnm>A</fnm></au>
-    <au><snm>Ghiassian</snm><fnm>SD</fnm></au>
-    <au><snm>Yang</snm><fnm>X</fnm></au>
-    <au><snm>Ghamsari</snm><fnm>L</fnm></au>
-    <au><snm>Balcha</snm><fnm>D</fnm></au>
-    <au><snm>Begg</snm><fnm>BE</fnm></au>
-    <au><snm>Braun</snm><fnm>P</fnm></au>
-    <au><snm>Brehme</snm><fnm>M</fnm></au>
-    <au><snm>Broly</snm><fnm>MP</fnm></au>
-    <au><snm>Carvunis</snm><fnm>AR</fnm></au>
-    <au><snm>Convery Zupan</snm><fnm>D</fnm></au>
-    <au><snm>Corominas</snm><fnm>R</fnm></au>
-    <au><snm>Coulombe Huntington</snm><fnm>J</fnm></au>
-    <au><snm>Dann</snm><fnm>E</fnm></au>
-    <au><snm>Dreze</snm><fnm>M</fnm></au>
-    <au><snm>Dricot</snm><fnm>A</fnm></au>
-    <au><snm>Fan</snm><fnm>C</fnm></au>
-    <au><snm>Franzosa</snm><fnm>E</fnm></au>
-    <au><snm>Gebreab</snm><fnm>F</fnm></au>
-    <au><snm>Gutierrez</snm><fnm>BJ</fnm></au>
-    <au><snm>Hardy</snm><fnm>MF</fnm></au>
-    <au><snm>Jin</snm><fnm>M</fnm></au>
-    <au><snm>Kang</snm><fnm>S</fnm></au>
-    <au><snm>Kiros</snm><fnm>R</fnm></au>
-    <au><snm>Lin</snm><fnm>GN</fnm></au>
-    <au><snm>Luck</snm><fnm>K</fnm></au>
-    <au><snm>MacWilliams</snm><fnm>A</fnm></au>
-    <au><snm>Menche</snm><fnm>J</fnm></au>
-    <au><snm>Murray</snm><fnm>RR</fnm></au>
-    <au><snm>Palagi</snm><fnm>A</fnm></au>
-    <au><snm>Poulin</snm><fnm>MM</fnm></au>
-    <au><snm>Rambout</snm><fnm>X</fnm></au>
-    <au><snm>Rasla</snm><fnm>J</fnm></au>
-    <au><snm>Reichert</snm><fnm>P</fnm></au>
-    <au><snm>Romero</snm><fnm>V</fnm></au>
-    <au><snm>Ruyssinck</snm><fnm>E</fnm></au>
-    <au><snm>Sahalie</snm><fnm>JM</fnm></au>
-    <au><snm>Scholz</snm><fnm>A</fnm></au>
-    <au><snm>Shah</snm><fnm>AA</fnm></au>
-    <au><snm>Sharma</snm><fnm>A</fnm></au>
-    <au><snm>Shen</snm><fnm>Y</fnm></au>
-    <au><snm>Spirohn</snm><fnm>K</fnm></au>
-    <au><snm>Tam</snm><fnm>S</fnm></au>
-    <au><snm>Tejeda</snm><fnm>AO</fnm></au>
-    <au><snm>Trigg</snm><fnm>SA</fnm></au>
-    <au><snm>Twizere</snm><fnm>JC</fnm></au>
-    <au><snm>Vega</snm><fnm>K</fnm></au>
-    <au><snm>Walsh</snm><fnm>J</fnm></au>
-    <au><snm>Cusick</snm><fnm>ME</fnm></au>
-    <au><snm>Xia</snm><fnm>Y</fnm></au>
-    <au><snm>Barabasi</snm><fnm>AL</fnm></au>
-    <au><snm>Iakoucheva</snm><fnm>LM</fnm></au>
-    <au><snm>Aloy</snm><fnm>P</fnm></au>
-    <au><snm>De Las Rivas</snm><fnm>J</fnm></au>
-    <au><snm>Tavernier</snm><fnm>J</fnm></au>
-    <au><snm>Calderwood</snm><fnm>MA</fnm></au>
-    <au><snm>Hill</snm><fnm>DE</fnm></au>
-    <au><snm>Hao</snm><fnm>T</fnm></au>
-    <au><snm>Roth</snm><fnm>FP</fnm></au>
-    <au><snm>Vidal</snm><fnm>M</fnm></au>
-  </aug>
-  <source>Cell</source>
-  <pubdate>2014</pubdate>
-  <volume>159</volume>
-  <fpage>1212</fpage>
-  <lpage>1226</lpage>
-</bibl>
-
-<bibl id="B13">
-  <title><p>BRCA1 protein products: functional motifs</p></title>
-  <aug>
-    <au><snm>Koonin</snm><fnm>E V</fnm></au>
-    <au><snm>Altschul</snm><fnm>S F</fnm></au>
-    <au><snm>Bork</snm><fnm>P</fnm></au>
-  </aug>
-  <source>Nat. Genet.</source>
-  <pubdate>1996</pubdate>
-  <volume>13</volume>
-  <fpage>266</fpage>
-  <lpage>267</lpage>
-</bibl>
-
-<bibl id="B14">
-  <title><p>Zeolites and synthetic mechanisms</p></title>
-  <aug>
-    <au><snm>Jones</snm><fnm>X</fnm></au>
-  </aug>
-  <source>Proceedings of the First National Conference on Porous Sieves: 27-30
-  June 1996; Baltimore</source>
-  <editor>Y Smith</editor>
-  <pubdate>1996</pubdate>
-  <fpage>16</fpage>
-  <lpage>27</lpage>
-</bibl>
-
 <bibl id="B15">
-  <title><p>Origin of Eukaryotic Cells</p></title>
+  <title><p>{XGBoost: A Scalable Tree Boosting System}</p></title>
   <aug>
-    <au><snm>Margulis</snm><fnm>L</fnm></au>
+    <au><snm>{Chen}</snm><fnm>T</fnm></au>
+    <au><snm>{Guestrin}</snm><fnm>C</fnm></au>
   </aug>
-  <publisher>New Haven: Yale University Press</publisher>
-  <pubdate>1970</pubdate>
+  <source>arXiv e-prints</source>
+  <pubdate>2016</pubdate>
+  <fpage>arXiv:1603.02754</fpage>
 </bibl>
 
 <bibl id="B16">
-  <title><p>From prey via endosymbiont to plastids: comparative studies in
-  dinoflagellates</p></title>
+  <title><p>STRING v11: protein-protein association networks with increased
+  coverage, supporting functional discovery in genome-wide experimental
+  datasets</p></title>
   <aug>
-    <au><snm>Schnepf</snm><fnm>E</fnm></au>
+    <au><snm>Szklarczyk</snm><fnm>D</fnm></au>
+    <au><snm>Gable</snm><fnm>AL</fnm></au>
+    <au><snm>Lyon</snm><fnm>D</fnm></au>
+    <au><snm>Junge</snm><fnm>A</fnm></au>
+    <au><snm>Wyder</snm><fnm>S</fnm></au>
+    <au><snm>Huerta Cepas</snm><fnm>J</fnm></au>
+    <au><snm>Simonovic</snm><fnm>M</fnm></au>
+    <au><snm>Doncheva</snm><fnm>NT</fnm></au>
+    <au><snm>Morris</snm><fnm>JH</fnm></au>
+    <au><snm>Bork</snm><fnm>P</fnm></au>
+    <au><snm>Jensen</snm><fnm>LJ</fnm></au>
+    <au><snm>Mering</snm><fnm>Cv</fnm></au>
   </aug>
-  <source>Origins of Plastids</source>
-  <publisher>New York: Chapman and Hall</publisher>
-  <editor>R A Lewin</editor>
-  <edition>2</edition>
-  <pubdate>1993</pubdate>
-  <fpage>53</fpage>
-  <lpage>76</lpage>
-</bibl>
-
-<bibl id="B17">
-  <title><p>Wrappers for performance enhancement and obvious decision
-  graphs</p></title>
-  <aug>
-    <au><snm>Kohavi</snm><fnm>R</fnm></au>
-  </aug>
-  <source>PhD thesis</source>
-  <publisher>Stanford University, Computer Science Department</publisher>
-  <pubdate>1995</pubdate>
-</bibl>
-
-<bibl id="B18">
-  <title><p>The ISSN register</p></title>
-  <aug>
-    <au><cnm>{ISSN International Centre}</cnm></au>
-  </aug>
-  <pubdate>2006</pubdate>
-  <url>http://www.issn.org</url>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2019</pubdate>
+  <volume>47</volume>
+  <issue>30476243</issue>
+  <fpage>D607</fpage>
+  <lpage>-D613</lpage>
+  <url>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6323986/</url>
 </bibl>
 
 </refgrp>

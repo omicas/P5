@@ -1,0 +1,36 @@
+Based on previous work from other authors\cite{Kovacs2019}, the intrinsic
+knowledge of existing protein-protein interaction networks let scientists
+elucidate promising new interactions to explore. In this study, a
+machine learning algorithm was fed with previously elucidated information
+about the network, as well as results form a state-of-the-art edge
+embedding technique. Even if the baseline of the handcrafted features
+(A2, A3, L3) yields good results, boosting that information with the
+vector embedding, which calculates vector representations of the network
+structure improves the overall performance of each method on its own.
+
+On both human interactomes (\emph{HI-II-14} and \emph{HI-TESTED}),
+applying \texttt{XGBoost} with the metrics yield results with high
+AUC for the link prediction problem, and therefore this study extends
+previous work by other authors that only consider the predictive power
+of the metrics alone. In this case, the importance of the handcrafted
+features was very significant and stands out of the Node2Vec features.
+
+On the rice interactome, PPI prediction obtained high AUC values when
+only using the node embedding technique (AUC=0.93) and when only using
+the handcrafted features based on protein neighborhood (AUC \textasciitilde 0.88).
+Even higher AUC results were achieved when the handcrafted features
+and the vector representation information were combined (AUC \textasciitilde 0.98).
+
+Importance values for the A3 method stand out less from the node embedding
+information than in A2 and L3. However, handcrafted features are more
+important for the prediction of the human than in the rice interactome. 
+
+With this study, a framework for link prediction on protein-protein
+interactions is presented and validated against the available information
+on rice and human interactomes. However, it might be easily extended
+to other organisms or even to other graphs not necessarily related
+to biology, because the only required information is the network connectivity.
+Satisfactory results might be expected when the framework is applied
+to networks with a dense adjacency matrix, since calculations of L3
+and Node2Vec rely on network exploration for an arbitrary node and
+its degree.
