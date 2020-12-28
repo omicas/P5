@@ -1,0 +1,91 @@
+% case.tex
+
+For the rice interactome, different combinations of features were
+trained on the model and validated. The results are shown in Table
+\ref{T2}. First, prediction based on \texttt{Node2Vec} without any
+additional feature included is used as baseline of comparison. Figure
+\ref{F1} shows those results, and one can see that its mean performance
+using the AUC is $0.93$. The results for all 10 repetitions of each
+model are consistent, meaning the variance among each line is not
+significant. The results for each model using only the default features
+are satisfactory. This result can also be assessed when looking at
+the confusion matrix, where a precision of $0.98$ and a recall of
+$0.86$ are obtained.
+
+\begin{table}
+\caption{\label{T2}Summary statistics for rice interactome}
+\includegraphics[width=1\columnwidth]{figures/T2.eps}
+\end{table}
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\caption{\label{F1}Summary ROC curves for \texttt{Node2Vec} model alone}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{figures/Only_ML/ROConlyML_SUMMARY.eps}\includegraphics[width=0.48\columnwidth]{figures/Only_ML/CMonlyML_SUMMARY.eps}
+\end{figure}
+
+The next experiment carried out was to add for each prediction method
+score as a prediction feature, that is, use the score as an additional
+feature for the ML algorithm. Results for the Common Neighbors method
+(\textbf{A2}), which uses paths of length 2, are shown in Figure S\ref{F2}.
+All 10 experiments have small variability among them and perform better
+than the baseline, with AUC of $0.98$. When looking at the confusion
+matrix for this model, most guesses are true positives and true negatives,
+resulting in a precision of $0.99$ and a recall of $0.91$. The same
+analyses are done with the count of paths of length 3 (\textbf{A3})
+and with the degree-normalized length-3 score (\textbf{L3}). These
+results are presented in figures S\ref{F3} and \ref{F4}, respectively.
+The corresponding AUC are $0.97$ and $0.98$.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\caption{\label{F4}Results for \texttt{Node2Vec} with L3 feature}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{figures/ML_Metric/ROCL3_SUMMARY.eps}\includegraphics[width=0.48\columnwidth]{figures/ML_Metric/CML3_SUMMARY.eps}
+\end{figure}
+
+The precision when using the count of paths of length 3 (A3) is $0.99$
+while the recall is $0.90$. It is interesting to observe that precision
+decreased $0.16\%$ and recall decreased $0.58\%$. A similar situation
+is obtained for the model with the normalized score (L3), whose precision
+decreased to $0.99$ ($-0.08\%$) and recall decreased to $0.88$
+($-2.38\%$). It can be seen also that the ROC curve achieves high
+values of true positive rate sooner in the A2-featured model than
+on the other models.
+
+Another relevant assessment was carried out to verify the predictive
+power of the metrics. \texttt{XGBoost} models were trained only using
+each metric, for the same 10 experiments. Results are shown in Figures
+S\ref{F5}, S\ref{F6} and \ref{F7}. XGBoost yields lower AUC values
+when only considering A2, A3 and L3. Precision and recall for this
+assessments, although lower than the previous experiments, are still
+considered satisfactory.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\caption{\label{F7}Results for L3 feature alone}
+\par\end{centering}
+\noindent \raggedleft{}\includegraphics[width=0.48\columnwidth]{figures/Only_Metric/ROConlyL3_SUMMARY.eps}\includegraphics[width=0.48\columnwidth]{figures/Only_Metric/CMonlyL3_SUMMARY.eps}
+\end{figure}
+
+Finally, an relevant evaluation on the models that include a handcrafted
+feature is necessary: How important is the appended feature for the
+model result? The answer can be observed by the feature importance
+plots for A2, A3 and L3 in Figure \ref{F8-importance}. Each plot
+resembles the importance gain from each feature in the underlying
+decision trees that \texttt{XGBoost} uses. Usually, the more bifurcations,
+the higher gain a feature has, the more relevance a feature has on
+the model prediction itself. All models have the appended feature
+as the most important by a good margin, although margin for A3 is
+not wide as for A2 or L3.
+
+\begin{figure}[h]
+\noindent \begin{centering}
+\caption{\label{F8-importance}Importance gain plots for \texttt{Node2Vec}
+with each feature}
+\par\end{centering}
+\begin{centering}
+\includegraphics[width=0.48\columnwidth]{figures/ML_Metric/Imp\lyxdot A2\lyxdot All.eps}\includegraphics[width=0.48\columnwidth]{figures/ML_Metric/Imp\lyxdot A3\lyxdot All.eps}
+\par\end{centering}
+\centering{}\includegraphics[width=0.48\columnwidth]{figures/ML_Metric/Imp\lyxdot L3\lyxdot All.eps}
+\end{figure}

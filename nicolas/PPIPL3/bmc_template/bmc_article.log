@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  11 DEC 2020 00:54
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  9 DEC 2020 10:45
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  28 DEC 2020 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -139,7 +135,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
-<<<<<<< HEAD
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -165,14 +160,11 @@ Package graphics Info: Driver file: dvips.def on input line 105.
 \Gin@req@height=\dimen146
 \Gin@req@width=\dimen147
 )
-=======
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks28
 \inpenc@posthook=\toks29
 )
-<<<<<<< HEAD
 (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
 Package: todonotes 2018/11/22
@@ -711,22 +703,10 @@ File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count301
 \g__pdf_backend_link_int=\count302
 \g__pdf_backend_link_sf_int=\count303
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
-File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
-\l__pdf_internal_box=\box51
-\g__pdf_backend_object_int=\count191
-\l__pdf_backend_content_box=\box52
-\l__pdf_backend_model_box=\box53
-\g__pdf_backend_annotation_int=\count192
-\g__pdf_backend_link_int=\count193
-\g__pdf_backend_link_sf_int=\count194
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 )
 (./bmc_article.aux)
 \openout1 = `bmc_article.aux'.
 
-<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
@@ -783,38 +763,38 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 126.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 127.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-26.
+27.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-126.
+127.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-126.
+127.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 126.
+(Font)              <11> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 126.
+(Font)              <7.69997> on input line 127.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 126.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
+(Font)              <5.5> on input line 127.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 127
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
+LaTeX Font Info:    Trying to load font information for U+msb on input line 127
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -822,9 +802,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \address@aff1=\toks47
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 167.
+(Font)              <7> on input line 168.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 167.
+(Font)              <5> on input line 168.
  (./abstract.tex)
 (./introduction.tex
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
@@ -849,27 +829,27 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line
 
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (./materials.tex
+)) (./preliminaries.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 13.
- [3] [4] [5])
-(./results.tex
+(Font)              <10> on input line 4.
+)
+(./framework.tex [3]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 12.
+(caption)                particular \caption on input line 20.
 See the caption package documentation for explanation.
 
 File: figures/figure2.eps Graphic file (type eps)
 <figures/figure2.eps>
-Overfull \hbox (12.5pt too wide) in paragraph at lines 13--15
+Overfull \hbox (12.5pt too wide) in paragraph at lines 21--23
  [][] 
  []
 
 File: figures/T1.eps Graphic file (type eps)
-<figures/T1.eps> [6]
+<figures/T1.eps> [4]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 61.
+(caption)                particular \caption on input line 69.
 See the caption package documentation for explanation.
 
 File: figures/Human/Imp.A2.1.eps Graphic file (type eps)
@@ -878,15 +858,12 @@ File: figures/Human/Imp.A3.1.eps Graphic file (type eps)
  <figures/Human/Imp.A3.1.eps>
 File: figures/Human/Imp.L3.1.eps Graphic file (type eps)
 
-<figures/Human/Imp.L3.1.eps>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+<figures/Human/Imp.L3.1.eps>) (./case.tex
 File: figures/T2.eps Graphic file (type eps)
-<figures/T2.eps>
+ <figures/T2.eps>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 91.
+(caption)                particular \caption on input line 22.
 See the caption package documentation for explanation.
 
 File: figures/Only_ML/ROConlyML_SUMMARY.eps Graphic file (type eps)
@@ -896,22 +873,20 @@ File: figures/Only_ML/CMonlyML_SUMMARY.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[5]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 111.
+(caption)                particular \caption on input line 42.
 See the caption package documentation for explanation.
 
 File: figures/ML_Metric/ROCL3_SUMMARY.eps Graphic file (type eps)
 <figures/ML_Metric/ROCL3_SUMMARY.eps>
 File: figures/ML_Metric/CML3_SUMMARY.eps Graphic file (type eps)
  <figures/ML_Metric/CML3_SUMMARY.eps>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7]
+[6]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 135.
+(caption)                particular \caption on input line 66.
 See the caption package documentation for explanation.
 
 File: figures/Only_Metric/ROConlyL3_SUMMARY.eps Graphic file (type eps)
@@ -920,12 +895,8 @@ File: figures/Only_Metric/CMonlyL3_SUMMARY.eps Graphic file (type eps)
 
 <figures/Only_Metric/CMonlyL3_SUMMARY.eps>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8]
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 154.
+(caption)                particular \caption on input line 85.
 See the caption package documentation for explanation.
 
 File: figures/ML_Metric/Imp.A2.All.eps Graphic file (type eps)
@@ -934,15 +905,11 @@ File: figures/ML_Metric/Imp.A3.All.eps Graphic file (type eps)
  <figures/ML_Metric/Imp.A3.All.eps>
 File: figures/ML_Metric/Imp.L3.All.eps Graphic file (type eps)
 
-<figures/ML_Metric/Imp.L3.All.eps>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./conclusions.tex [9]) (./declarations.tex [10]
+<figures/ML_Metric/Imp.L3.All.eps>) (./related.tex) [7] (./conclusions.tex)
+(./declarations.tex
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 29.
-) (./bmc_article.bbl [11])
-(./appendix.tex
+ [8]) (./bmc_article.bbl) (./appendix.tex [9]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 26.
@@ -970,9 +937,6 @@ File: figures/Human/ROC.L3.eps Graphic file (type eps)
 <figures/Human/ROC.L3.eps>
 File: figures/Human/CM.L3.eps Graphic file (type eps)
  <figures/Human/CM.L3.eps>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 50.
@@ -1076,95 +1040,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) 
 AED: lastpage setting LastPage
-[12] [13] [14] [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
+[10] [11] [12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
  (./bmc_article.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 430.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 380.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 380.
 Package rerunfilecheck Info: File `bmc_article.out' has not changed.
 (rerunfilecheck)             Checksum: ED3CDF9133C37D676C26CC0D4896F289;44.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
  ) 
 Here is how much of TeX's memory you used:
- 18650 strings out of 481240
- 354083 string characters out of 5920404
- 622965 words of memory out of 5000000
+ 18656 strings out of 481240
+ 354145 string characters out of 5920404
+ 620927 words of memory out of 5000000
  33434 multiletter control sequences out of 15000+600000
  606274 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,10n,100p,687b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,100p,455b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bmc_article.dvi (15 pages, 100940 bytes).
-=======
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-Package lastpage Info: Please have a look at the pageslts package at
-(lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 81.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <13> not available
-(Font)              size <12> substituted on input line 87.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <24> not available
-(Font)              size <24.88> substituted on input line 95.
-
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 116.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 116.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 116.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 116.
-
-\address@aff1=\toks30
-(./abstract.tex) (./introduction.tex
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 23.
- [1
-
-]) [2] [3] (./bmc_article.bbl)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4] 
-AED: lastpage setting LastPage
-[5] (./bmc_article.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.0pt have occurred.
-
- ) 
-Here is how much of TeX's memory you used:
- 2350 strings out of 481240
- 30345 string characters out of 5920404
- 284793 words of memory out of 5000000
- 17630 multiletter control sequences out of 15000+600000
- 541158 words of font info for 55 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 32i,13n,41p,687b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on bmc_article.dvi (5 pages, 22336 bytes).
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
+Output written on bmc_article.dvi (13 pages, 87340 bytes).

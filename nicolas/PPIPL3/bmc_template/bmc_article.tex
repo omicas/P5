@@ -46,7 +46,6 @@
 \documentclass{bmcart}
 
 %%% Load packages
-<<<<<<< HEAD
 %\usepackage{amsthm,amsmath}
 %%\RequirePackage[numbers]{natbib}
 %%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
@@ -64,16 +63,6 @@
 \usepackage{lmodern}  % font sizes
 \usepackage{hyperref} % ref unlabeled sections
 \usepackage{subcaption}
-=======
-\usepackage{amsthm,amsmath}
-%\RequirePackage[numbers]{natbib}
-%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
-%\RequirePackage{hyperref}
-\usepackage[utf8]{inputenc} %unicode support
-%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
-%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -90,20 +79,12 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-<<<<<<< HEAD
 %\def\includegraphic{}
 %\def\includegraphics{}
 
 %%% Put your definitions there:
 \startlocaldefs
 \newcommand{\lyxdot}{.}
-=======
-\def\includegraphic{}
-\def\includegraphics{}
-
-%%% Put your definitions there:
-\startlocaldefs
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 \endlocaldefs
 
 %%% Begin ...
@@ -121,7 +102,8 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Prediction of Protein-Protein Interactions on the Human and Rice Interactomes}
+%\title{Prediction of Protein-Protein Interactions on the Human and Rice Interactomes}
+\title{Protein-Protein Interaction Prediction based on Interactome Connectivity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -142,7 +124,7 @@
   corref={aff1},                       % id of corresponding address, if any
 % noteref={n1},                        % id's of article notes, if any
   email={nicolaslopez@javerianacali.edu.co}   % email address
-]{\inits{N.L.}\fnm{Nicolas A.} \snm{Lopez-Rozo}}
+]{\inits{N.L.}\fnm{Nicolás A.} \snm{López-Rozo}}
 \author[
   addressref={aff1},
   email={jfinke@javerianacali.edu.co}
@@ -214,12 +196,7 @@
 
 \begin{keyword}
 \kwd{PPI}
-<<<<<<< HEAD
 \kwd{Prediction of Protein Interaction}
-=======
-\kwd{Prediction}
-\kwd{Protein Interaction}
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 \kwd{Machine Learning}
 \kwd{Python}
 \kwd{XGBoost}
@@ -268,66 +245,33 @@
 
 \input{introduction.tex}
 
-<<<<<<< HEAD
-\section*{Materials and Methods}
+\section*{Preliminaries}
 
-\input{materials.tex}
+\input{preliminaries.tex}
 
-\section*{Results and Discussion}
+\section*{Prediction Framework}
 
-\input{results.tex}
+\input{framework.tex}
 
-\section*{Conclusions}
+\section*{Case Study: Rice Interactome Exploration}
+
+\input{case.tex}
+
+\section*{Related Work}
+
+\input{related.tex}
+
+\section*{Conclusion}
 
 \input{conclusions.tex}
 
-
-
-=======
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %\subsection*{Sub-heading for section}
 %Text for this sub-heading\ldots
 %\subsubsection*{Sub-sub heading for section}
 %Text for this sub-sub-heading\ldots
 %\paragraph*{Sub-sub-sub heading for section}
 %Text for this sub-sub-sub-heading\ldots
-%
-%In this section we examine the growth rate of the mean of $Z_0$, $Z_1$ and $Z_2$. In
-%addition, we examine a common modeling assumption and note the
-%importance of considering the tails of the extinction time $T_x$ in
-%studies of escape dynamics.
-%We will first consider the expected resistant population at $vT_x$ for
-%some $v>0$, (and temporarily assume $\alpha=0$)
-%%
-%\[
-%E \bigl[Z_1(vT_x) \bigr]=
-%\int_0^{v\wedge
-%1}Z_0(uT_x)
-%\exp (\lambda_1)\,du .
-%\]
-%%
-%If we assume that sensitive cells follow a deterministic decay
-%$Z_0(t)=xe^{\lambda_0 t}$ and approximate their extinction time as
-%$T_x\approx-\frac{1}{\lambda_0}\log x$, then we can heuristically
-%estimate the expected value as
-%%
-%\begin{equation}\label{eqexpmuts}
-%\begin{aligned}[b]
-%&      E\bigl[Z_1(vT_x)\bigr]\\
-%&\quad      = \frac{\mu}{r}\log x
-%\int_0^{v\wedge1}x^{1-u}x^{({\lambda_1}/{r})(v-u)}\,du .
-%\end{aligned}
-%\end{equation}
-%%
-%Thus we observe that this expected value is finite for all $v>0$ (also see \cite{koon,xjon,marg,schn,koha,issnic}).
 
-
-<<<<<<< HEAD
-=======
-\section*{Appendix}
-Text for this section\ldots
-
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
 %% Backmatter begins here                   %%
@@ -336,66 +280,9 @@ Text for this section\ldots
 
 \begin{backmatter}
 
-<<<<<<< HEAD
 \input{declarations.tex}
 
 %
-%\section*{Acknowledgements}%% if any
-%Text for this section\ldots
-%
-%\section*{Funding}%% if any
-%Text for this section\ldots
-%
-%\section*{Abbreviations}%% if any
-%Text for this section\ldots
-%
-%\section*{Availability of data and materials}%% if any
-%Text for this section\ldots
-%
-%\section*{Ethics approval and consent to participate}%% if any
-%Text for this section\ldots
-%
-%\section*{Competing interests}
-%The authors declare that they have no competing interests.
-%
-%\section*{Consent for publication}%% if any
-%Text for this section\ldots
-%
-%\section*{Authors' contributions}
-%Text for this section \ldots
-%
-%\section*{Authors' information}%% if any
-%Text for this section\ldots
-%
-=======
-\section*{Acknowledgements}%% if any
-Text for this section\ldots
-
-\section*{Funding}%% if any
-Text for this section\ldots
-
-\section*{Abbreviations}%% if any
-Text for this section\ldots
-
-\section*{Availability of data and materials}%% if any
-Text for this section\ldots
-
-\section*{Ethics approval and consent to participate}%% if any
-Text for this section\ldots
-
-\section*{Competing interests}
-The authors declare that they have no competing interests.
-
-\section*{Consent for publication}%% if any
-Text for this section\ldots
-
-\section*{Authors' contributions}
-Text for this section \ldots
-
-\section*{Authors' information}%% if any
-Text for this section\ldots
-
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
@@ -439,7 +326,6 @@ Text for this section\ldots
 %%
 %% Do not use \listoffigures as most will included as separate files
 
-<<<<<<< HEAD
 %\section*{Figures}
 %  \begin{figure}[h!]
 %  \caption{Sample figure title}
@@ -448,16 +334,6 @@ Text for this section\ldots
 %\begin{figure}[h!]
 %  \caption{Sample figure title}
 %\end{figure}
-=======
-\section*{Figures}
-  \begin{figure}[h!]
-  \caption{Sample figure title}
-\end{figure}
-
-\begin{figure}[h!]
-  \caption{Sample figure title}
-\end{figure}
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -467,7 +343,6 @@ Text for this section\ldots
 
 %% Use of \listoftables is discouraged.
 %%
-<<<<<<< HEAD
 %\section*{Tables}
 %\begin{table}[h!]
 %\caption{Sample table title. This is where the description of the table should go}
@@ -479,19 +354,6 @@ Text for this section\ldots
 %    A3 & ..  & .   & .\\ \hline
 %  \end{tabular}
 %\end{table}
-=======
-\section*{Tables}
-\begin{table}[h!]
-\caption{Sample table title. This is where the description of the table should go}
-  \begin{tabular}{cccc}
-    \hline
-    & B1  &B2   & B3\\ \hline
-    A1 & 0.1 & 0.2 & 0.3\\
-    A2 & ... & ..  & .\\
-    A3 & ..  & .   & .\\ \hline
-  \end{tabular}
-\end{table}
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -499,7 +361,6 @@ Text for this section\ldots
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-<<<<<<< HEAD
 
 \section*{Appendix}
 
@@ -513,16 +374,6 @@ Text for this section\ldots
 %
 %  \subsection*{Additional file 2 --- Sample additional file title}
 %    Additional file descriptions text.
-=======
-\section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
-
-  \subsection*{Additional file 2 --- Sample additional file title}
-    Additional file descriptions text.
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
 
 \end{backmatter}
 

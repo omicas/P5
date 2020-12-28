@@ -1,0 +1,10 @@
+% "Preliminaries" refers to fundaments for the new reader on the main topics of
+% the paper
+
+Let $G=(V,E), n=|V|, m=|E|$ be an undirected graph describing $n$
+proteins and $m$ pairwise interactions between them. $G$ can be represented as a Boolean 
+adjacency matrix $A$ of size $n\cdot n$, where the value for a position
+$(i,j), 0\leq i,j < n$ is set to $1$ if there is a direct interaction
+between proteins $i$ and $j$, or set to $0$ otherwise. As it is an undirected network, $A$ is symmetric.
+
+Given this matrix $A$, to find the number of paths of exactly $k$ steps  in the network, $A$ can be raised to the \textit{k}-th power. 

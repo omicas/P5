@@ -25,88 +25,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-<<<<<<< HEAD
-You've used 16 entries,
+You've used 15 entries,
             7128 wiz_defined-function locations,
-            1248 strings with 13913 characters,
-and the built_in function-call counts, 240018 in all, are:
-= -- 38505
-> -- 756
-< -- 370
-+ -- 19352
-- -- 254
-* -- 11676
-:= -- 44043
-add.period$ -- 23
-call.type$ -- 16
-change.case$ -- 214
-chr.to.int$ -- 679
-cite$ -- 16
-duplicate$ -- 1958
-empty$ -- 7759
-format.name$ -- 997
-if$ -- 57767
+            1239 strings with 13381 characters,
+and the built_in function-call counts, 228424 in all, are:
+= -- 37241
+> -- 678
+< -- 332
++ -- 19210
+- -- 230
+* -- 10542
+:= -- 41733
+add.period$ -- 22
+call.type$ -- 15
+change.case$ -- 197
+chr.to.int$ -- 606
+cite$ -- 15
+duplicate$ -- 1780
+empty$ -- 6911
+format.name$ -- 886
+if$ -- 55344
 int.to.chr$ -- 1
-int.to.str$ -- 43
-missing$ -- 650
-newline$ -- 613
-num.names$ -- 83
-pop$ -- 897
+int.to.str$ -- 41
+missing$ -- 598
+newline$ -- 564
+num.names$ -- 78
+pop$ -- 823
 preamble$ -- 1
-purify$ -- 74
-quote$ -- 32
-skip$ -- 21543
+purify$ -- 70
+quote$ -- 30
+skip$ -- 21048
 stack$ -- 0
-substring$ -- 28508
-swap$ -- 616
-text.length$ -- 262
+substring$ -- 26513
+swap$ -- 551
+text.length$ -- 248
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 648
+type$ -- 602
 warning$ -- 0
-while$ -- 730
+while$ -- 668
 width$ -- 0
-write$ -- 932
-=======
-You've used 18 entries,
-            7128 wiz_defined-function locations,
-            1259 strings with 14466 characters,
-and the built_in function-call counts, 368612 in all, are:
-= -- 62657
-> -- 888
-< -- 371
-+ -- 34487
-- -- 354
-* -- 15318
-:= -- 66311
-add.period$ -- 25
-call.type$ -- 18
-change.case$ -- 281
-chr.to.int$ -- 543
-cite$ -- 18
-duplicate$ -- 2322
-empty$ -- 9393
-format.name$ -- 1349
-if$ -- 90373
-int.to.chr$ -- 1
-int.to.str$ -- 48
-missing$ -- 778
-newline$ -- 723
-num.names$ -- 99
-pop$ -- 1117
-preamble$ -- 1
-purify$ -- 83
-quote$ -- 36
-skip$ -- 35997
-stack$ -- 0
-substring$ -- 41277
-swap$ -- 655
-text.length$ -- 305
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 726
-warning$ -- 0
-while$ -- 897
-width$ -- 0
-write$ -- 1161
->>>>>>> 22b1d90247115948ac96b9b0ecfb6654fd0f6268
+write$ -- 846
