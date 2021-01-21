@@ -1,27 +1,25 @@
 \parttitle{Background}
-Recent research on network-based prediction of protein-protein
-interactions (PPIs) reveals that two proteins are more likely to interact,
-the higher the number of paths of length 3 between them exist. This paper
-extends previous work on mapping binary interactions between proteins 
-by learning features (i.e. embeddings) of the PPI network. In particular, 
-this paper reports on an application of gradient boosted decision tree
-model (XGBoost) using handcrafted features  such as normalized measures 
-and algorithmic embeddings that generate a low-dimensional representation
-of the proteins and their interactions (node2vec).
+Recent research on predicting protein-protein
+interactions (PPIs) indicates that two proteins are more likely to interact if 
+there exists a higher number of paths of length 3 between them. This paper
+extends network-based approaches to map binary interactions between proteins 
+by combining hand-crafted features such as the number of paths between proteins 
+and learned features (i.e. node embeddings) of the PPI network. In particular, 
+the proposed approach introduces a gradient boosted decision tree model 
+(XGBoost) usese node2vec to infer embeddings, that is, a low-dimensional representation
+of the proteins and their interactions.
 
 \parttitle{Results}
-The main result shows that while the measure remains an important feature
-for predicting interactions, an improvement in performance is achieved when
-embedding features are considered. The proposed approach is validated for
-the human and rice interactomes. For both cases, the combination of both
-types of features yield higher performance in terms of the Area Under the
-Curve metric (i.e. AUC).
+The main result shows that while the normalized measure remains an important feature
+for predicting interactions, embeddings may improve performance of predictions by up 
+to 15\% in terms of the Area Under the Curve metric (i.e. AUC). The approach is validated for 
+the human and rice interactomes.
 
 \parttitle{Conclusions}
-As witnessed by both human and rice, when information from 
-handcrafted features based on neighborhood is enhanced with vector
-representations from random walks, the prediction power of the model
-improves. Moreover, a supervised learning model has been trained to predict
-unknown interactions based on such information. Finally, the developed
-framework could also be applied to interactomes of other organisms for which
+As shown by the two case studies in human and rice, combining information from 
+handcrafted features with embeddings enhances the prediction power of the model. 
+Improvements of supervised learning models (such as XGBoost) depend on being able 
+to extract additional information about the local neighborhood of nodes that 
+complement the measure based on the number of paths. Finally, the proposed 
+approach could also be applied to interactomes of a number of other organisms for which
 PPI networks have recently become available.
