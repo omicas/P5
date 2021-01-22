@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  28 DEC 2020 10:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2020.8.9)  22 JAN 2021 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,37 +819,47 @@ See the caption package documentation for explanation.
 
 File: ../Y2H.eps Graphic file (type eps)
 <../Y2H.eps>
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-8.
- (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-67.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (./preliminaries.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
-)
-(./framework.tex [3]
+(Font)              <10> on input line 49.
+ [2]
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+70.
+ (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(./preliminaries.tex [3]) (./framework.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 20.
+(caption)                particular \caption on input line 26.
+See the caption package documentation for explanation.
+
+File: figures/framework.eps Graphic file (type eps)
+<figures/framework.eps>
+Overfull \hbox (12.5pt too wide) in paragraph at lines 27--28
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 107.
 See the caption package documentation for explanation.
 
 File: figures/figure2.eps Graphic file (type eps)
 <figures/figure2.eps>
-Overfull \hbox (12.5pt too wide) in paragraph at lines 21--23
+Overfull \hbox (12.5pt too wide) in paragraph at lines 108--110
  [][] 
  []
 
+[6]
 File: figures/T1.eps Graphic file (type eps)
-<figures/T1.eps> [4]
+ <figures/T1.eps>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 69.
+(caption)                particular \caption on input line 156.
 See the caption package documentation for explanation.
 
 File: figures/Human/Imp.A2.1.eps Graphic file (type eps)
@@ -858,7 +868,11 @@ File: figures/Human/Imp.A3.1.eps Graphic file (type eps)
  <figures/Human/Imp.A3.1.eps>
 File: figures/Human/Imp.L3.1.eps Graphic file (type eps)
 
-<figures/Human/Imp.L3.1.eps>) (./case.tex
+<figures/Human/Imp.L3.1.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./case.tex
 File: figures/T2.eps Graphic file (type eps)
  <figures/T2.eps>
 
@@ -873,7 +887,7 @@ File: figures/Only_ML/CMonlyML_SUMMARY.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5]
+[7]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 42.
@@ -883,7 +897,10 @@ File: figures/ML_Metric/ROCL3_SUMMARY.eps Graphic file (type eps)
 <figures/ML_Metric/ROCL3_SUMMARY.eps>
 File: figures/ML_Metric/CML3_SUMMARY.eps Graphic file (type eps)
  <figures/ML_Metric/CML3_SUMMARY.eps>
-[6]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 66.
@@ -893,7 +910,7 @@ File: figures/Only_Metric/ROConlyL3_SUMMARY.eps Graphic file (type eps)
 <figures/Only_Metric/ROConlyL3_SUMMARY.eps>
 File: figures/Only_Metric/CMonlyL3_SUMMARY.eps Graphic file (type eps)
 
-<figures/Only_Metric/CMonlyL3_SUMMARY.eps>
+<figures/Only_Metric/CMonlyL3_SUMMARY.eps> [9]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 85.
@@ -905,11 +922,17 @@ File: figures/ML_Metric/Imp.A3.All.eps Graphic file (type eps)
  <figures/ML_Metric/Imp.A3.All.eps>
 File: figures/ML_Metric/Imp.L3.All.eps Graphic file (type eps)
 
-<figures/ML_Metric/Imp.L3.All.eps>) (./related.tex) [7] (./conclusions.tex)
+<figures/ML_Metric/Imp.L3.All.eps>) (./related.tex) (./conclusions.tex [10])
 (./declarations.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+7.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 29.
- [8]) (./bmc_article.bbl) (./appendix.tex [9]
+)
+(./bmc_article.bbl [11]) (./appendix.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 26.
@@ -929,6 +952,9 @@ File: figures/Human/ROC.A3.eps Graphic file (type eps)
 File: figures/Human/CM.A3.eps Graphic file (type eps)
  <figures/Human/CM.A3.eps>
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 42.
 See the caption package documentation for explanation.
@@ -937,6 +963,9 @@ File: figures/Human/ROC.L3.eps Graphic file (type eps)
 <figures/Human/ROC.L3.eps>
 File: figures/Human/CM.L3.eps Graphic file (type eps)
  <figures/Human/CM.L3.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 50.
@@ -1040,7 +1069,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) 
 AED: lastpage setting LastPage
-[10] [11] [12] [13]
+[12] [13] [14] [15] [16]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 380.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 380.
  (./bmc_article.aux)
@@ -1051,12 +1080,12 @@ Package rerunfilecheck Info: File `bmc_article.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 380.
  ) 
 Here is how much of TeX's memory you used:
- 18656 strings out of 481240
- 354145 string characters out of 5920404
- 620927 words of memory out of 5000000
- 33434 multiletter control sequences out of 15000+600000
- 606274 words of font info for 76 fonts, out of 8000000 for 9000
+ 18657 strings out of 481240
+ 354194 string characters out of 5920404
+ 625991 words of memory out of 5000000
+ 33436 multiletter control sequences out of 15000+600000
+ 605909 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,10n,100p,455b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,100p,699b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bmc_article.dvi (13 pages, 87340 bytes).
+Output written on bmc_article.dvi (16 pages, 102964 bytes).

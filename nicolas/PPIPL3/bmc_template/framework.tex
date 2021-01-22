@@ -76,8 +76,21 @@ from node2vec, resulting in 3 different tables. Dataframes including only one
 source of information (each metric or node2vec data) are also generated and 
 fed to XGBoost for comparison.
 
-For each metric, the initial prediction in step A is used to train the supervised 
-ML model 
+First, for each metric, the initial prediction in stage A is used to train the 
+supervised ML model. It is important to keep in mind that the training dataset 
+and the validation dataset should be sampled randomly to ensure an even
+distribution of the labeling. However, the intrinsic imbalance in the
+datasets has been addressed with under-sampling, so that the training 
+dataset (80\% of data) has the same amount of interactions labeled true and false. 
+Second, the validation dataset (20\% of data) is introduced in the model and it returns 
+a score in the range $(0,1)$ assessing the probability that an edge is feasible. 
+The considered metric to evaluate the ML model performance is the area under the 
+the curve (AUC) of the Receiver Operating Characteristic (ROC). This curve
+corresponds to plot the sensitivity (probability of predicting a real
+positive as positive) against 1-specificity (probability of predicting
+a real negative as positive). AUC values of 1 represent a perfect
+prediction and 0.5 corresponds to a random guess. Normally, values
+over 0.8 of AUC are considered good.
 
 
 \subsection*{Framework Evaluation on the Human Interactome}
@@ -101,10 +114,10 @@ their $A{{}^2}$ counterparts. Results also show that L3-score and
 $A^{3}$predictions follow a very similar trend.
 
 However, the interest of this study is to assess if Machine Learning can boost
-the overall performance on the prediction, so the proposed procedure
-is adapted to the human interactome data: Instead of having to remove
-a fraction of edges from the network in order to predict and validate,
-the prediction network and the validation networks are given beforehand.
+the overall performance on the prediction, so the proposed procedure 
+is adapted to the human interactome data: the prediction network and 
+the validation networks are given beforehand, so that training is done using 
+the labels from one side and the validation is done with the other side. 
 The rest of the procedure is carried out as mentioned above.
 Table \ref{T1} presents the results for the combinations of Node2Vec
 with each feature.

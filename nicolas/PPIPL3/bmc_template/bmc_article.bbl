@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{15}
+\begin{thebibliography}{16}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -310,6 +310,19 @@ arXiv e-prints,
 \end{botherref}
 \endbibitem
 
+%%% 16
+\bibitem{Sikosek2014Prot}
+\begin{barticle}
+\bauthor{\bsnm{Sikosek}, \binits{T.}},
+\bauthor{\bsnm{Chan}, \binits{H.S.}}:
+\batitle{Biophysics of protein evolution and evolutionary protein biophysics.}
+\bjtitle{Journal of the Royal Society, Interface}
+\bvolume{11},
+\bfpage{20140419}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
 \end{thebibliography}
 
 \newcommand{\BMCxmlcomment}[1]{}
@@ -582,6 +595,19 @@ arXiv e-prints,
   <source>arXiv e-prints</source>
   <pubdate>2016</pubdate>
   <fpage>arXiv:1603.02754</fpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>Biophysics of protein evolution and evolutionary protein
+  biophysics.</p></title>
+  <aug>
+    <au><snm>Sikosek</snm><fnm>T</fnm></au>
+    <au><snm>Chan</snm><fnm>HS</fnm></au>
+  </aug>
+  <source>Journal of the Royal Society, Interface</source>
+  <pubdate>2014</pubdate>
+  <volume>11</volume>
+  <fpage>20140419</fpage>
 </bibl>
 
 </refgrp>

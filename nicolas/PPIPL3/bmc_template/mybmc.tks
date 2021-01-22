@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="13">
-    <document bookmark3="0" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/bmc_article.tex" line="266" master="true" bookmark2="0" hasfocus="true"/>
-    <document bookmark3="0" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/framework.tex" line="10" master="false" bookmark2="0" hasfocus="false"/>
-    <document bookmark3="0" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/introduction.tex" line="76" master="false" bookmark2="0" hasfocus="false"/>
-    <document bookmark3="0" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/case.tex" line="1" master="false" bookmark2="0" hasfocus="false"/>
-    <document bookmark3="0" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/conclusions.tex" line="17" master="false" bookmark2="0" hasfocus="false"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/case.tex" line="0" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/conclusions.tex" line="0" bookmark3="0"/>
+    <document hasfocus="true" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/preliminaries.tex" line="24" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/abstract.tex" line="0" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="true" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/bmc_article.tex" line="37" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/introduction.tex" line="0" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/framework.tex" line="0" bookmark3="0"/>
+    <document hasfocus="false" bookmark2="0" master="false" bookmark1="0" file="/home/ocin/Documents/05 OMICAS/08 Avances 2020/PPI/Report/BMCV2/related.tex" line="0" bookmark3="0"/>
 </TexmakerSession>
